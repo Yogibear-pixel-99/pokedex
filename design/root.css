@@ -1,0 +1,17 @@
+
+
+:root {
+    --main-bg-color: #0069af91;
+    --poke-logo-darkblue: #113E79;
+    --poke-logo-blue: #0069AF;
+    --poke-logo-yellow: #FFCC01;
+    --poke-logo-darkyellow: #C8A102;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+
