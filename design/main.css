@@ -6,7 +6,16 @@
 }
 
 .pokemon-logo {
+    width: 800px;
+}
 
+.by {
+    width: 50px;
+    margin-top: 40px;
+}
+
+.name {
+    width: 500px;
 }
 
 .main-container {
