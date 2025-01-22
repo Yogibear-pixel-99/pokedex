@@ -1,0 +1,8 @@
+
+
+
+function getSmallCardTemp(){
+    return  `
+            <div>
+            `
+}

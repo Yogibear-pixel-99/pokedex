@@ -1,8 +1,11 @@
 
 
 .title-content {
+    display: flex;
     flex-direction: column;
-   /* position: relative; */
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 .pokemon-logo {
@@ -25,19 +28,55 @@
 }
 
 .title-bottom {
-    /* gap: 40px; */
+    display: flex;
+    justify-content: center;
+    /* position: absolute; */
+    /* width: 100%; */
+    /* overflow: hidden; */
+}
+
+.pokemon-title-img {
+    /* overflow: visible; */
     position: absolute;
-    left: 0;
-    right: 0;
     bottom: 0;
-    padding-bottom: 0;
-    padding-right: 0;
+    left: 20px;
+    object-fit: cover;
+    width: 300px;
+    /* background-color: yellowgreen; */
 }
 
 .pokeball-title {
     width: 300px;
     height: 150px;
     object-fit: cover;
-    overflow:visible;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+    /* overflow:hidden; */
 }
+
+.enter-wrapper {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.enter {
+    object-fit: contain;
+    width: 150px;
+    /* transition: ease-in-out; */
+    animation-name: enterLarge;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes enterLarge {
+    0% {width: 150px;}
+    50% {width: 200px;}
+    100% {width: 150px;}
+}
+
 
