@@ -61,6 +61,7 @@ async function getPokemons(){
     await renderSmallCards();
     offset += 20;
     limit += 20;
+
 }
 
 async function getPokemonCardsFromApi (URL, array){
@@ -85,16 +86,19 @@ async function getPokemonCardsFromApi (URL, array){
 }
 
 function getTypes(data){
+    let element = [];
     for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
-        return data.types[typesIndex].type.name;
-        
+        element.push(data.types[typesIndex].type.name);
     }
+    return element;
 }
 
 function getAbilities(data){
+    let element = [];
     for (let typesIndex = 0; typesIndex < data.abilities.length; typesIndex++) {
-        return data.abilities[typesIndex].ability.name;
+        element.push(data.abilities[typesIndex].ability.name);
     }
+    return element;
 }
 
 

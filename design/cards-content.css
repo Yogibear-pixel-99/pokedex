@@ -56,6 +56,12 @@
     justify-content: center;
 }
 
+.small-card-header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
 .small-card {
     display: flex;
     flex-direction: column;
@@ -68,7 +74,12 @@
     border-radius: 10px;
 }
 
-.poke-img-container-small {
+.small-card-main-content {
+
+}
+
+.small-card-img-container {
+    position: relative;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -78,10 +89,12 @@
 }
 
 .border {
+    position: absolute;
+    bottom: 0;
     margin: 0 auto;
     height: 6px;
-    width:100%;
-    border-radius: 0 0 20px 20px;
+    width:101%;
+    border-radius: 0 0 4px 4px;
     background: var(--card-border);
-    transform: translateY(-6px);
+    transform: translateY(1px);
 }

@@ -5,22 +5,32 @@ function getSmallCardsTemp(smallCardsIndex){
     
     return  `
             <div class="small-card">
-                <div>
+                <div class="small-card-header-container">
+                    <div>#${allPokemons[smallCardsIndex].id}</div>
                     <div>${allPokemons[smallCardsIndex].name}</div>
-                    <div></div>
                 </div>
 
                 <div>
-                    <div class="poke-img-container-small">
+                    <div class="small-card-img-container">
                         <img class="poke-img-small-card" src=${allPokemons[smallCardsIndex].pic}>
+                        <div class="border"></div>
                     </div>
-                    <div class="border"></div>
-                    <div>lowerContainer</div>
+                    
+                    <div class="small-card-lower-container">${getAbilitiesTemp(0, allPokemons[smallCardsIndex].abilities)}</div>
                 </div>
 
-                <div>schwäche</div>
+                
             </div>
             `
+}
+
+function getAbilitiesTemp(number, array){
+    let element = "";
+    for (let infoIndex = 0; infoIndex < array[number].length; infoIndex++) {
+        element += `<div>${array[number][infoIndex]}</div>`;
+        
+    }
+    return element;
 }
 // function getSmallCardsTemp(smallCardsIndex){
     
