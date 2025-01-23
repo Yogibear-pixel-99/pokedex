@@ -13,6 +13,7 @@
 
     <link rel="icon" type="x-icon/favicon" href="./assets/icons/pokemon-icon.svg">
 
+    <script src="./scripts/mia.js"></script>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/objects.js"></script>
@@ -41,12 +42,18 @@
                 <div class="left-content">left</div>
                 <div class="middle-content">
                     <div id="search-bar" class="search-bar">search</div>
-                    <button onclick="getPokemonCardsFromApi(MAIN_URL, OFFSET_URL, pokemonsNameAnd_URL, limit)">Get MAIN URL POKEMON</button>
-                    <button onclick="getPokemonDetails()">GET POKEMON DETAILS</button>
-                    <div id="all-cards" class="all-cards">all Cards</div>
+                    
+                    
+                    <div id="all-cards" class="all-cards"></div>
+                    <button onclick="getPokemons()">Get MAIN URL POKEMON</button>
                 </div>
                 <div class="right-content">right</div>
+                
             </div>
+        </section>
+        <section class="miacards" style="display: none">
+            <button onclick="mia()"></button>
+            <div id="allPokes"></div>
         </section>
     </main>
     

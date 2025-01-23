@@ -6,10 +6,10 @@
     height: 100vh;
 }
 
-.game-content * {
+/* .game-content * {
     border: solid 2px black;
     
-}
+} */
 
 .left-content,
 .middle-content,
@@ -22,9 +22,9 @@
 
 .left-content,
 .right-content {
-    width: 300px;
+    width: 250px;
     height: auto;
-    padding: 40px;
+    padding: 20px;
     
 }
 
@@ -43,4 +43,45 @@
 
 .all-cards {
    flex: 1;
+}
+
+/* SMALL CARD DESIGN */
+
+
+.all-cards {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.small-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    height: 300px;
+    border: solid 4px;
+    border-color: var(--poke-logo-blue);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.poke-img-container-small {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: solid 2px;
+   border-color: var(--poke-logo-darkblue);
+   border-radius: 10px 10px 5px 5px;
+}
+
+.border {
+    margin: 0 auto;
+    height: 6px;
+    width:100%;
+    border-radius: 0 0 20px 20px;
+    background: var(--card-border);
+    transform: translateY(-6px);
 }

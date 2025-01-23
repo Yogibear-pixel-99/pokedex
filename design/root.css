@@ -1,11 +1,12 @@
 
 
 :root {
-    --main-bg-color: #0069af91;
+    --main-bg-color: #6EA9D1;
     --poke-logo-darkblue: #113E79;
     --poke-logo-blue: #0069AF;
     --poke-logo-yellow: #FFCC01;
     --poke-logo-darkyellow: #C8A102;
+    --card-border: linear-gradient(90deg, rgba(0,7,36,1) 6%, rgba(84,81,255,1) 54%, rgba(9,9,121,1) 75%);
 }
 
 body {

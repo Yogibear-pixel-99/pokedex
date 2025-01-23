@@ -1,16 +1,18 @@
 
+let allPokemons = [];
+// let pokemonDetails = [];
+
 let limit = 20
 let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/'
 let OFFSET_URL = `pokemon?limit=${limit}&offset=${offset}.`
-
 
 let titlePokemonPic = '';
 let onTitle = true;
 
 function init(){
     onTitle ? getTitleInfo() : getCardsInfo();
-    setInterval(enterButton, 1000);
+    // setInterval(enterButton, 1000);
     // onTitle ? setInterval(getTitleInfo, 3500) : getCardsInfo();
     
 }
@@ -41,10 +43,7 @@ function getCardsInfo(){
     console.log(onTitle);
 }
 
-function enterButton(){
-    let enter = document.getElementById('enter');
-    enter.style.width = '200px';
-}
+
 // https://pokeapi.co/api/v2/pokemon  ---   all
 // https://pokeapi.co/api/v2/pokemon/145  ---   one pokemon
 // https://pokeapi.co/api/v2/pokemon-form/145  ---   one pokemon
@@ -55,65 +54,64 @@ function enterButton(){
 // turn Title Pokemon Interval on
 
 
-let pokemonsNameAnd_URL = [];
-let pokemonDetails = [];
 
 
-async function getPokemonCardsFromApi (mainURL, details, destinationArray, limitlength) {
-    await getServerResponse(mainURL, details, destinationArray, limitlength);
-    
+async function getPokemons(){
+    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
+    await renderSmallCards();
+    offset += 20;
+    limit += 20;
 }
 
-
-async function getServerResponse (mainURL, details, destinationArray, limitlength){
+async function getPokemonCardsFromApi (URL, array){
+    for (let loadIndex = offset; loadIndex < limit; loadIndex++) {
+    let pokeId = loadIndex + 1;
+        
     
-    let response = await fetch(mainURL + details);
-    console.log(response);
+    let response = await fetch(URL + "pokemon/" + pokeId);
     let data = await response.json();
-    console.log(data);
+                array.push(
+                    {
+                        id : data.id,
+                        name : data.name,
+                        types : [getTypes(data)],
+                        pic : data.sprites.front_default,
+                        abilities : [getAbilities(data)],
+                    }
+                )
+    }
+    console.log(allPokemons);
     
-    await savePokemonsInArray(destinationArray, data, limitlength);
-    // await  getPokemonDetails();
-
-
-
-    // limit += 20;
-    // offset += 20;
-
-   console.log(limit);
-   console.log(offset);
-   console.log(pokemonsNameAnd_URL);
-   console.log(pokemonDetails);
-
 }
 
-async function savePokemonsInArray(destinationArray, response, limitlength){
-switch (destinationArray) {
-            case pokemonsNameAnd_URL:
-            for (let pokemonIndex = offset; pokemonIndex < limitlength; pokemonIndex++) {
-            pokemonsNameAnd_URL.push(
-                {
-            name : response.results[pokemonIndex].name,
-            URL : response.results[pokemonIndex].url
-                }
-            )
-            }
-            break;
-
-            case pokemonDetails: 
-            pokemonDetails.push(
-                {
-                id : response.id
-            }
-        )
-
-        }
+function getTypes(data){
+    for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
+        return data.types[typesIndex].type.name;
+        
     }
+}
 
-    async function getPokemonDetails () {
-        for (let detailIndex = offset; detailIndex < pokemonsNameAnd_URL.length; detailIndex++) {
-            const URLPosition = detailIndex + 1;
-            const URL = `https://pokeapi.co/api/v2/pokemon/${[URLPosition]}/`;    
-            await getServerResponse(URL, "", pokemonDetails, limit);        
-        }
+function getAbilities(data){
+    for (let typesIndex = 0; typesIndex < data.abilities.length; typesIndex++) {
+        return data.abilities[typesIndex].ability.name;
     }
+}
+
+
+// ALLGEMEINE FUNCKTION FÜRS HOLEN DER INFOS
+
+// function getInfo(data, arrayName, subName){
+//     arrayName = arrayName.replace('"', '');
+//     for (let detailIndex = 0; detailIndex < data.arrayName.length; typesIndex++) {
+//         return data.arrayName[typesIndex].subName.name;
+//     }
+// }
+
+async function renderSmallCards(){
+    let contentRef = document.getElementById('all-cards');
+    
+    for (let smallCardsIndex = offset; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
+        contentRef.innerHTML += getSmallCardsTemp(smallCardsIndex);
+        
+    }
+}

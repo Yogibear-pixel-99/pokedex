@@ -12,6 +12,10 @@
     width: 800px;
 }
 
+body {
+    background-color: var(--main-bg-color);
+}
+
 .by {
     width: 50px;
     margin-top: 40px;
@@ -80,3 +84,20 @@
 }
 
 
+
+
+
+/* MIA TEST ALL POKES */
+
+.mia-poke {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.miacards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
