@@ -4,6 +4,7 @@ let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/'
 let OFFSET_URL = `pokemon?limit=${limit}&offset=${offset}.`
 
+
 let titlePokemonPic = '';
 let onTitle = true;
 
@@ -54,32 +55,65 @@ function enterButton(){
 // turn Title Pokemon Interval on
 
 
-let allPokemons = [];
+let pokemonsNameAnd_URL = [];
+let pokemonDetails = [];
 
-async function getPokemonCards(){
+
+async function getPokemonCardsFromApi (mainURL, details, destinationArray, limitlength) {
+    await getServerResponse(mainURL, details, destinationArray, limitlength);
     
-    let response = await fetch(MAIN_URL + OFFSET_URL);
+}
+
+
+async function getServerResponse (mainURL, details, destinationArray, limitlength){
+    
+    let response = await fetch(mainURL + details);
     console.log(response);
     let data = await response.json();
     console.log(data);
     
-    savePokemonsInArray(data);
-    limit += 20;
-    offset += 20;
+    await savePokemonsInArray(destinationArray, data, limitlength);
+    // await  getPokemonDetails();
+
+
+
+    // limit += 20;
+    // offset += 20;
 
    console.log(limit);
    console.log(offset);
-   console.log(allPokemons);
+   console.log(pokemonsNameAnd_URL);
+   console.log(pokemonDetails);
 
 }
 
-function savePokemonsInArray(pokemons){
-    for (let pokemonIndex = 0; pokemonIndex < pokemons.results.length; pokemonIndex++) {
-        allPokemons.push( {
-            name : pokemons.results[pokemonIndex].name,
-            pokemonUrl : pokemons.results[pokemonIndex].url
-        }
+async function savePokemonsInArray(destinationArray, response, limitlength){
+switch (destinationArray) {
+            case pokemonsNameAnd_URL:
+            for (let pokemonIndex = offset; pokemonIndex < limitlength; pokemonIndex++) {
+            pokemonsNameAnd_URL.push(
+                {
+            name : response.results[pokemonIndex].name,
+            URL : response.results[pokemonIndex].url
+                }
+            )
+            }
+            break;
 
-    )
+            case pokemonDetails: 
+            pokemonDetails.push(
+                {
+                id : response.id
+            }
+        )
+
+        }
     }
-}  
+
+    async function getPokemonDetails () {
+        for (let detailIndex = offset; detailIndex < pokemonsNameAnd_URL.length; detailIndex++) {
+            const URLPosition = detailIndex + 1;
+            const URL = `https://pokeapi.co/api/v2/pokemon/${[URLPosition]}/`;    
+            await getServerResponse(URL, "", pokemonDetails, limit);        
+        }
+    }
