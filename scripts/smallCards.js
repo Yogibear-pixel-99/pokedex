@@ -1,6 +1,4 @@
 
-let pokemonImgSmallCardStatic = '';
-
 async function renderSmallCards(){
     let contentRef = document.getElementById('all-cards');
     
@@ -24,6 +22,7 @@ async function getPokemonCardsFromApi (URL, array){
                         types : getTypes(data),
                         pic : data.sprites.front_default,
                         abilities : getAbilities(data),
+                        animation : data.sprites.other.showdown.front_default,
                     }
                 )
     }
@@ -47,18 +46,15 @@ function getAbilities(data){
     return element;
 }
 
-async function animateSmallCardPokemon (id) {
+function animateSmallCardPokemon (id) {
     let contentRef = document.getElementById(`small-pokemon${id}`);
-    pokemonImgSmallCardStatic = contentRef.innerHTML;
-    try {
-        let response = await fetch(MAIN_URL + "pokemon/" + id);
-        let data = await response.json();
-        console.log(data);
-        contentRef.src = data.sprites.other.showdown.front_default;
-    } catch (error) {
-        console.error('Fetch error', error);
-    }
-    }
+    let data = allPokemons[id - 1].animation;
+        if (data != '') {
+        contentRef.src = allPokemons[id - 1].animation;
+}}
         
-   
+function stopAnimateSmallCardPokemon (id) {
+        let contentRef = document.getElementById(`small-pokemon${id}`);
+        contentRef.src = allPokemons[id - 1].pic;
+   }
     // sprites.other.showdown.front_default
