@@ -17,7 +17,7 @@
     --grass-bgll: #44BA85;
     --grass-bgl: #27CA4F;
     --grass-bgd: #117b3d;
-    --grass-grad: linear-gradient(90deg, #000724 6%, rgb(17, 123, 61) 54%, rgb(17, 123, 61) 75%);
+    --grass-grad: linear-gradient(90deg, #000724 6%, #27CA4F 54%, #117b3d 75%);
     --grass-shadow: 2px -2px 5px #117b3d;
     --grass-shadow-hover: 10px -10px 5px 2px #117b3db4;
 
