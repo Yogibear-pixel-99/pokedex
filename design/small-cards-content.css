@@ -1,23 +1,14 @@
-
-
 .game-content {
     display: flex;
     justify-content: space-between;
     height: 100vh;
 }
 
-/* .game-content * {
-    border: solid 2px black;
-    
-} */
-
 .left-content,
 .middle-content,
 .right-content {
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
 }
 
 .left-content,
@@ -31,7 +22,6 @@
 .middle-content {
     flex: 1;
     padding: 0;
-    ;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -60,6 +50,8 @@
     display: flex;
     justify-content: space-between;
     padding: 0 8px;
+    font-family: cabin, sans-serif;
+    align-items:baseline;
 }
 
 .small-card {
@@ -70,8 +62,16 @@
     width: 150px;
     height: 250px;
     padding: 10px;
+    font-family: montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    transform: scale(1.00);
+    transition: 500ms ease-in-out;
+    /* box-shadow: 2px -2px 5px grey; */
+}
 
-   
+.small-card-name {
+    font-size: 16px;
 }
 
 .small-card-img-container {
@@ -89,8 +89,13 @@
     height: 6px;
     width:101%;
     border-radius: 0 0 4px 4px;
-    /* background: var(--card-border); */
     transform: translateY(1px);
+}
+
+.powers-header {
+    margin-bottom: 8px;
+    font-family: montserrat, sans-serif !important;
+    font-size: 14px;
 }
 
 .powers-container {
@@ -100,6 +105,8 @@
     align-items: center;
     padding-top: 8px;
     text-align: center;
+    font-family: raleway, sans-serif;
+    
 }
 
 .small-card-footer {
@@ -109,7 +116,15 @@
     left: var(--small-card-border-position);
     bottom: var(--small-card-border-position);
     right: var(--small-card-border-position);
-    /* align-self: flex-end; */
     padding: 5px;
-    
+    font-family: cabin, sans-serif;
+}
+
+
+/* HOVER EFFECT SMALL CARDS */
+
+.small-card:hover {
+    transform: scale(1.05);
+    transition: 500ms ease-in-out;
+    /* box-shadow: 12px -12px 5px 2px grey; */
 }

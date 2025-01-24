@@ -2,7 +2,7 @@
 let allPokemons = [];
 // let pokemonDetails = [];
 
-let limit = 20
+let limit = 20;
 let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/'
 let OFFSET_URL = `pokemon?limit=${limit}&offset=${offset}.`

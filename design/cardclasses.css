@@ -5,6 +5,11 @@
     border: var(--small-card-border);
     border-color: var(--grass-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--grass-shadow);
+}
+
+.grass-card:hover {
+    box-shadow: var(--grass-shadow-hover);
 }
 
 .grass-inner {
@@ -31,6 +36,11 @@
     border: var(--small-card-border);
     border-color: var(--fire-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--fire-shadow);
+}
+
+.fire-card:hover {
+    box-shadow: var(--fire-shadow-hover);
 }
 
 .fire-inner {
@@ -57,6 +67,11 @@
     border: var(--small-card-border);
     border-color: var(--water-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--water-shadow);
+}
+
+.water-card:hover {
+    box-shadow: var(--water-shadow-hover);
 }
 
 .water-inner {
@@ -83,6 +98,11 @@
     border: var(--small-card-border);
     border-color: var(--bug-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--bug-shadow);
+}
+
+.bug-card:hover {
+    box-shadow: var(--bug-shadow-hover);
 }
 
 .bug-inner {
@@ -109,6 +129,11 @@
     border: var(--small-card-border);
     border-color: var(--normal-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--normal-shadow);
+}
+
+.normal-card:hover {
+    box-shadow: var(--normal-shadow-hover);
 }
 
 .normal-inner {
@@ -135,6 +160,11 @@
     border: var(--small-card-border);
     border-color: var(--poison-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--poison-shadow);
+}
+
+.poison-card:hover {
+    box-shadow: var(--poison-shadow-hover);
 }
 
 .poison-inner {
@@ -161,6 +191,11 @@
     border: var(--small-card-border);
     border-color: var(--electric-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--electric-shadow);
+}
+
+.electric-card:hover {
+    box-shadow: var(--electric-shadow-hover);
 }
 
 .electric-inner {
@@ -187,6 +222,11 @@
     border: var(--small-card-border);
     border-color: var(--ground-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--ground-shadow);
+}
+
+.ground-card:hover {
+    box-shadow: var(--ground-shadow-hover);
 }
 
 .ground-inner {
@@ -213,6 +253,11 @@
     border: var(--small-card-border);
     border-color: var(--fairy-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--fairy-shadow);
+}
+
+.fairy-card:hover {
+    box-shadow: var(--fairy-shadow-hover);
 }
 
 .fairy-inner {
@@ -239,6 +284,11 @@
     border: var(--small-card-border);
     border-color: var(--fighting-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--fighting-shadow);
+}
+
+.fighting-card:hover {
+    box-shadow: var(--fighting-shadow-hover);
 }
 
 .fighting-inner {
@@ -265,6 +315,11 @@
     border: var(--small-card-border);
     border-color: var(--psychic-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--psychic-shadow);
+}
+
+.psychic-card:hover {
+    box-shadow: var(--psychic-shadow-hover);
 }
 
 .psychic-inner {
@@ -291,6 +346,11 @@
     border: var(--small-card-border);
     border-color: var(--rock-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--rock-shadow);
+}
+
+.rock-card:hover {
+    box-shadow: var(--rock-shadow-hover);
 }
 
 .rock-inner {
@@ -318,6 +378,11 @@
     border: var(--small-card-border);
     border-color: var(--dark-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--dark-shadow);
+}
+
+.dark-card:hover {
+    box-shadow: var(--dark-shadow-hover);
 }
 
 .dark-inner {
@@ -345,6 +410,11 @@
     border: var(--small-card-border);
     border-color: var(--dragon-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--dragon-shadow);
+}
+
+.dragon-card:hover {
+    box-shadow: var(--dragon-shadow-hover);
 }
 
 .dragon-inner {
@@ -372,6 +442,11 @@
     border: var(--small-card-border);
     border-color: var(--ghost-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--ghost-shadow);
+}
+
+.ghost-card:hover {
+    box-shadow: var(--ghost-shadow-hover);
 }
 
 .ghost-inner {
@@ -399,6 +474,11 @@
     border: var(--small-card-border);
     border-color: var(--ice-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--ice-shadow);
+}
+
+.ice-card:hover {
+    box-shadow: var(--ice-shadow-hover);
 }
 
 .ice-inner {
@@ -426,6 +506,11 @@
     border: var(--small-card-border);
     border-color: var(--steel-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--steel-shadow);
+}
+
+.steel-card:hover {
+    box-shadow: var(--steel-shadow-hover);
 }
 
 .steel-inner {
@@ -453,6 +538,11 @@
     border: var(--small-card-border);
     border-color: var(--flying-bgd);
     border-radius: var(--small-card-border-radius);
+    box-shadow: var(--flying-shadow);
+}
+
+.flying-card:hover {
+    box-shadow: var(--flying-shadow-hover);
 }
 
 .flying-inner {
@@ -472,3 +562,4 @@
 .flying-border {
    background: var(--flying-grad);
 }
+

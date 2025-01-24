@@ -7,7 +7,7 @@ function getSmallCardsTemp(smallCardsIndex){
             <div class="${getCardColor(allPokemons[smallCardsIndex])}-card small-card">
                 <div class="small-card-header">
                     <div>#${allPokemons[smallCardsIndex].id}</div>
-                    <div>${allPokemons[smallCardsIndex].name}</div>
+                    <div class="small-card-name">${allPokemons[smallCardsIndex].name}</div>
                 </div>
 
                 

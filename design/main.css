@@ -1,10 +1,38 @@
 
+@font-face {
+    font-family: montserrat;
+    src: url("../assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "montserat static";
+    src: url("../assets/fonts/montserrat/static/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: cabin;
+    src: url("../assets/fonts/cabin/Cabin-VariableFont_wdth_wght.ttf");
+}
+
+@font-face {
+    font-family: "cabin static";
+    src: url("../assets/fonts/cabin/static/Cabin-Regular.ttf");
+}
+
+@font-face {
+    font-family: raleway;
+    src: url("../assets/fonts/raleway/Raleway-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "raleway static";
+    src: url("../assets/fonts/raleway/static/Raleway-Regular.ttf");
+}
 
 body {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    
 }
 
 button {
