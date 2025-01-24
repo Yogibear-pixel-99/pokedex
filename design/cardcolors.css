@@ -1,6 +1,6 @@
 
-
 :root {
+
     --main-bg-color: #6EA9D1;
     --poke-logo-darkblue: #113E79;
     --poke-logo-blue: #0069AF;
@@ -104,16 +104,5 @@
     --flying-bgd: #4A677D;
     --flying-grad: linear-gradient(90deg, #000724 6%, #93B2C7 54%, #4A677D 75%);
    
-    
-}
 
-body {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    
-}
-
-button {
-    height: 100px;
 }
