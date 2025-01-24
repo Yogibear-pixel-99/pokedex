@@ -75,11 +75,13 @@
 }
 
 .small-card-img-container {
-    position: relative;
+position: relative;
    display: flex;
    justify-content: center;
    align-items: center;
-   
+   height: 100px;
+    width: 145px;
+    overflow: hidden;
 }
 
 .border {
