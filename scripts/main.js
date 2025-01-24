@@ -75,9 +75,9 @@ async function getPokemonCardsFromApi (URL, array){
                     {
                         id : data.id,
                         name : data.name,
-                        types : [getTypes(data)],
+                        types : getTypes(data),
                         pic : data.sprites.front_default,
-                        abilities : [getAbilities(data)],
+                        abilities : getAbilities(data),
                     }
                 )
     }

@@ -7,6 +7,17 @@
     --poke-logo-yellow: #FFCC01;
     --poke-logo-darkyellow: #C8A102;
     --card-border: linear-gradient(90deg, rgba(0,7,36,1) 6%, rgba(84,81,255,1) 54%, rgba(9,9,121,1) 75%);
+
+    --small-card-border: solid 3px;
+    --small-card-border-position: -3px;
+    --small-card-border-radius: 10px;
+    
+
+    
+    --fire-bg: 
+    --grass-bg:
+    --
+
 }
 
 body {

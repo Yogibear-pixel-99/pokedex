@@ -56,26 +56,24 @@
     justify-content: center;
 }
 
-.small-card-header-container {
+.small-card-header {
     display: flex;
     justify-content: space-between;
     padding: 0 8px;
 }
 
 .small-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 200px;
-    height: 300px;
-    border: solid 4px;
-    border-color: var(--poke-logo-blue);
+    width: 150px;
+    height: 250px;
     padding: 10px;
-    border-radius: 10px;
-}
 
-.small-card-main-content {
-
+    border: var(--small-card-border);
+    border-color: var(--poke-logo-blue);
+    border-radius: var(--small-card-border-radius);
 }
 
 .small-card-img-container {
@@ -97,4 +95,27 @@
     border-radius: 0 0 4px 4px;
     background: var(--card-border);
     transform: translateY(1px);
+}
+
+.powers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.small-card-footer {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    left: var(--small-card-border-position);
+    bottom: var(--small-card-border-position);
+    right: var(--small-card-border-position);
+    /* align-self: flex-end; */
+    padding: 5px;
+    border: var(--small-card-border);
+    border-color: var(--poke-logo-blue);
+    border-radius: var(--small-card-border-radius);
 }

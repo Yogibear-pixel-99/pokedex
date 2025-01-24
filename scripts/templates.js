@@ -4,33 +4,41 @@
 function getSmallCardsTemp(smallCardsIndex){
     
     return  `
-            <div class="small-card">
-                <div class="small-card-header-container">
+            <div class="small-card ${getCardColor(allPokemons[smallCardsIndex])}">
+                <div class="small-card-header">
                     <div>#${allPokemons[smallCardsIndex].id}</div>
                     <div>${allPokemons[smallCardsIndex].name}</div>
                 </div>
 
-                <div>
+                
                     <div class="small-card-img-container">
                         <img class="poke-img-small-card" src=${allPokemons[smallCardsIndex].pic}>
                         <div class="border"></div>
                     </div>
                     
-                    <div class="small-card-lower-container">${getAbilitiesTemp(0, allPokemons[smallCardsIndex].abilities)}</div>
-                </div>
+                <div class="powers-container">
+                    <div class="powers-header">Powers</div>
+                    <div>${getDetailsTemp(allPokemons[smallCardsIndex].abilities)}</div>
+                
+                <div class="small-card-footer">${getDetailsTemp(allPokemons[smallCardsIndex].types)}</div>
+            </div> 
+                    
 
                 
-            </div>
+            
             `
 }
 
-function getAbilitiesTemp(number, array){
+function getDetailsTemp(array){
     let element = "";
-    for (let infoIndex = 0; infoIndex < array[number].length; infoIndex++) {
-        element += `<div>${array[number][infoIndex]}</div>`;
-        
+    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+        element += `<div>${array[detailIndex]}</div>`;
     }
     return element;
+}
+
+function getCardColor(array){
+    return array.types[0];
 }
 // function getSmallCardsTemp(smallCardsIndex){
     
