@@ -71,9 +71,7 @@
     height: 250px;
     padding: 10px;
 
-    border: var(--small-card-border);
-    border-color: var(--poke-logo-blue);
-    border-radius: var(--small-card-border-radius);
+   
 }
 
 .small-card-img-container {
@@ -81,9 +79,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   border: solid 2px;
-   border-color: var(--poke-logo-darkblue);
-   border-radius: 10px 10px 5px 5px;
+   
 }
 
 .border {
@@ -93,7 +89,7 @@
     height: 6px;
     width:101%;
     border-radius: 0 0 4px 4px;
-    background: var(--card-border);
+    /* background: var(--card-border); */
     transform: translateY(1px);
 }
 
@@ -115,7 +111,5 @@
     right: var(--small-card-border-position);
     /* align-self: flex-end; */
     padding: 5px;
-    border: var(--small-card-border);
-    border-color: var(--poke-logo-blue);
-    border-radius: var(--small-card-border-radius);
+    
 }

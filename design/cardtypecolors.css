@@ -1,0 +1,474 @@
+
+/* 1 */
+.grass-card {
+    background-color:var(--grass-bgl);
+    border: var(--small-card-border);
+    border-color: var(--grass-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.grass-inner {
+    background-color: var(--grass-bgll);
+    border: solid 2px;
+    border-color: var(--grass-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.grass-footer {
+    background-color: var(--grass-bgll);
+    border: var(--small-card-border);
+    border-color: var(--grass-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.grass-border {
+   background: var(--grass-grad);
+}
+
+/* 2 */
+.fire-card {
+    background-color:var(--fire-bgl);
+    border: var(--small-card-border);
+    border-color: var(--fire-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.fire-inner {
+    background-color: var(--fire-bgll);
+    border: solid 2px;
+    border-color: var(--fire-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.fire-footer {
+    background-color: var(--fire-bgll);
+    border: var(--small-card-border);
+    border-color: var(--fire-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.fire-border {
+   background: var(--fire-grad);
+}
+
+/* 3 */
+.water-card {
+    background-color:var(--water-bgl);
+    border: var(--small-card-border);
+    border-color: var(--water-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.water-inner {
+    background-color: var(--water-bgll);
+    border: solid 2px;
+    border-color: var(--water-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.water-footer {
+    background-color: var(--water-bgll);
+    border: var(--small-card-border);
+    border-color: var(--water-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.water-border {
+   background: var(--water-grad);
+}
+
+/* 4 */
+.bug-card {
+    background-color:var(--bug-bgl);
+    border: var(--small-card-border);
+    border-color: var(--bug-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.bug-inner {
+    background-color: var(--bug-bgll);
+    border: solid 2px;
+    border-color: var(--bug-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.bug-footer {
+    background-color: var(--bug-bgll);
+    border: var(--small-card-border);
+    border-color: var(--bug-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.bug-border {
+   background: var(--bug-grad);
+}
+
+/* 5 */
+.normal-card {
+    background-color:var(--normal-bgl);
+    border: var(--small-card-border);
+    border-color: var(--normal-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.normal-inner {
+    background-color: var(--normal-bgll);
+    border: solid 2px;
+    border-color: var(--normal-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.normal-footer {
+    background-color: var(--normal-bgll);
+    border: var(--small-card-border);
+    border-color: var(--normal-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.normal-border {
+   background: var(--normal-grad);
+}
+
+/* 6 */
+.poison-card {
+    background-color:var(--poison-bgl);
+    border: var(--small-card-border);
+    border-color: var(--poison-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.poison-inner {
+    background-color: var(--poison-bgll);
+    border: solid 2px;
+    border-color: var(--poison-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.poison-footer {
+    background-color: var(--poison-bgll);
+    border: var(--small-card-border);
+    border-color: var(--poison-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.poison-border {
+   background: var(--poison-grad);
+}
+
+/* 7 */
+.electric-card {
+    background-color:var(--electric-bgl);
+    border: var(--small-card-border);
+    border-color: var(--electric-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.electric-inner {
+    background-color: var(--electric-bgll);
+    border: solid 2px;
+    border-color: var(--electric-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.electric-footer {
+    background-color: var(--electric-bgll);
+    border: var(--small-card-border);
+    border-color: var(--electric-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.electric-border {
+   background: var(--electric-grad);
+}
+
+/* 8 */
+.ground-card {
+    background-color:var(--ground-bgl);
+    border: var(--small-card-border);
+    border-color: var(--ground-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.ground-inner {
+    background-color: var(--ground-bgll);
+    border: solid 2px;
+    border-color: var(--ground-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.ground-footer {
+    background-color: var(--ground-bgll);
+    border: var(--small-card-border);
+    border-color: var(--ground-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.ground-border {
+   background: var(--ground-grad);
+}
+
+/* 9 */
+.fairy-card {
+    background-color:var(--fairy-bgl);
+    border: var(--small-card-border);
+    border-color: var(--fairy-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.fairy-inner {
+    background-color: var(--fairy-bgll);
+    border: solid 2px;
+    border-color: var(--fairy-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.fairy-footer {
+    background-color: var(--fairy-bgll);
+    border: var(--small-card-border);
+    border-color: var(--fairy-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.fairy-border {
+   background: var(--fairy-grad);
+}
+
+/* 10 */
+.fighting-card {
+    background-color:var(--fighting-bgl);
+    border: var(--small-card-border);
+    border-color: var(--fighting-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.fighting-inner {
+    background-color: var(--fighting-bgll);
+    border: solid 2px;
+    border-color: var(--fighting-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.fighting-footer {
+    background-color: var(--fighting-bgll);
+    border: var(--small-card-border);
+    border-color: var(--fighting-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.fighting-border {
+   background: var(--fighting-grad);
+}
+
+/* 11 */
+.psychic-card {
+    background-color:var(--psychic-bgl);
+    border: var(--small-card-border);
+    border-color: var(--psychic-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.psychic-inner {
+    background-color: var(--psychic-bgll);
+    border: solid 2px;
+    border-color: var(--psychic-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.psychic-footer {
+    background-color: var(--psychic-bgll);
+    border: var(--small-card-border);
+    border-color: var(--psychic-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.psychic-border {
+   background: var(--psychic-grad);
+}
+
+/* 12 */
+.rock-card {
+    background-color:var(--rock-bgl);
+    border: var(--small-card-border);
+    border-color: var(--rock-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.rock-inner {
+    background-color: var(--rock-bgll);
+    border: solid 2px;
+    border-color: var(--rock-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.rock-footer {
+    background-color: var(--rock-bgll);
+    border: var(--small-card-border);
+    border-color: var(--rock-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.rock-border {
+   background: var(--rock-grad);
+}
+
+
+/* 13 */
+.dark-card {
+    background-color:var(--dark-bgl);
+    border: var(--small-card-border);
+    border-color: var(--dark-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.dark-inner {
+    background-color: var(--dark-bgll);
+    border: solid 2px;
+    border-color: var(--dark-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.dark-footer {
+    background-color: var(--dark-bgll);
+    border: var(--small-card-border);
+    border-color: var(--dark-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.dark-border {
+   background: var(--dark-grad);
+}
+
+
+/* 14 */
+.dragon-card {
+    background-color:var(--dragon-bgl);
+    border: var(--small-card-border);
+    border-color: var(--dragon-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.dragon-inner {
+    background-color: var(--dragon-bgll);
+    border: solid 2px;
+    border-color: var(--dragon-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.dragon-footer {
+    background-color: var(--dragon-bgll);
+    border: var(--small-card-border);
+    border-color: var(--dragon-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.dragon-border {
+   background: var(--dragon-grad);
+}
+
+
+/* 15 */
+.ghost-card {
+    background-color:var(--ghost-bgl);
+    border: var(--small-card-border);
+    border-color: var(--ghost-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.ghost-inner {
+    background-color: var(--ghost-bgll);
+    border: solid 2px;
+    border-color: var(--ghost-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.ghost-footer {
+    background-color: var(--ghost-bgll);
+    border: var(--small-card-border);
+    border-color: var(--ghost-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.ghost-border {
+   background: var(--ghost-grad);
+}
+
+
+/* 16 */
+.ice-card {
+    background-color:var(--ice-bgl);
+    border: var(--small-card-border);
+    border-color: var(--ice-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.ice-inner {
+    background-color: var(--ice-bgll);
+    border: solid 2px;
+    border-color: var(--ice-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.ice-footer {
+    background-color: var(--ice-bgll);
+    border: var(--small-card-border);
+    border-color: var(--ice-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.ice-border {
+   background: var(--ice-grad);
+}
+
+
+/* 17 */
+.steel-card {
+    background-color:var(--steel-bgl);
+    border: var(--small-card-border);
+    border-color: var(--steel-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.steel-inner {
+    background-color: var(--steel-bgll);
+    border: solid 2px;
+    border-color: var(--steel-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.steel-footer {
+    background-color: var(--steel-bgll);
+    border: var(--small-card-border);
+    border-color: var(--steel-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.steel-border {
+   background: var(--steel-grad);
+}
+
+
+/* 18 */
+.flying-card {
+    background-color:var(--flying-bgl);
+    border: var(--small-card-border);
+    border-color: var(--flying-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.flying-inner {
+    background-color: var(--flying-bgll);
+    border: solid 2px;
+    border-color: var(--flying-bgd);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.flying-footer {
+    background-color: var(--flying-bgll);
+    border: var(--small-card-border);
+    border-color: var(--flying-bgd);
+    border-radius: var(--small-card-border-radius);
+}
+
+.flying-border {
+   background: var(--flying-grad);
+}

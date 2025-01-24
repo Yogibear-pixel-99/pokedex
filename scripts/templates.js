@@ -4,23 +4,23 @@
 function getSmallCardsTemp(smallCardsIndex){
     
     return  `
-            <div class="small-card ${getCardColor(allPokemons[smallCardsIndex])}">
+            <div class="${getCardColor(allPokemons[smallCardsIndex])}-card small-card">
                 <div class="small-card-header">
                     <div>#${allPokemons[smallCardsIndex].id}</div>
                     <div>${allPokemons[smallCardsIndex].name}</div>
                 </div>
 
                 
-                    <div class="small-card-img-container">
+                    <div class="small-card-img-container ${getCardColor(allPokemons[smallCardsIndex])}-inner">
                         <img class="poke-img-small-card" src=${allPokemons[smallCardsIndex].pic}>
-                        <div class="border"></div>
+                        <div class="border ${getCardColor(allPokemons[smallCardsIndex])}-border"></div>
                     </div>
                     
                 <div class="powers-container">
                     <div class="powers-header">Powers</div>
                     <div>${getDetailsTemp(allPokemons[smallCardsIndex].abilities)}</div>
                 
-                <div class="small-card-footer">${getDetailsTemp(allPokemons[smallCardsIndex].types)}</div>
+                <div class="small-card-footer ${getCardColor(allPokemons[smallCardsIndex])}-footer">${getDetailsTemp(allPokemons[smallCardsIndex].types)}</div>
             </div> 
                     
 

@@ -13,11 +13,98 @@
     --small-card-border-radius: 10px;
     
 
-    
-    --fire-bg: 
-    --grass-bg:
-    --
 
+    --grass-bgll: #44BA85;
+    --grass-bgl: #27CA4F;
+    --grass-bgd: #117b3d;
+    --grass-grad: linear-gradient(90deg, #000724 6%, rgb(17, 123, 61) 54%, rgb(17, 123, 61) 75%);
+
+    --fire-bgll: #ff717d;
+    --fire-bgl: #FC4C5A;
+    --fire-bgd: #AB1E23;
+    --fire-grad: linear-gradient(90deg, #000724 6%, #fc5e6b 54%, #AB1E23 75%);
+
+    --water-bgll: #b7cbff;
+    --water-bgl: #86A8FC;
+    --water-bgd: #1552E2;
+    --water-grad: linear-gradient(90deg, #000724 6%, #86A8FC 54%, #1552E2 75%);
+
+    --bug-bgll: #58af6b;
+    --bug-bgl: #3B9950;
+    --bug-bgd: #1C4B27;
+    --bug-grad: linear-gradient(90deg, #000724 6%, #3B9950 54%, #1C4B27 75%);
+
+    --normal-bgll: #cfaeb8;
+    --normal-bgl: #CA98A7;
+    --normal-bgd: #75515B;
+    --normal-grad: linear-gradient(90deg, #000724 6%, #CA98A7 54%, #75515B 75%);
+
+    --poison-bgll: #bda1df;
+    --poison-bgl: #9B69D9;
+    --poison-bgd: #5E2C88;
+    --poison-grad: linear-gradient(90deg, #000724 6%, #9B69D9 54%, #5E2C88 75%);
+    
+    --electric-bgll: #fcfcc3;
+    --electric-bgl: #FBFB72;
+    --electric-bgd: #b9b920;
+    --electric-grad: linear-gradient(90deg, #000724 6%, #FBFB72 54%, #E3E32B 75%);
+
+    --ground-bgll: #af8b60;
+    --ground-bgl: #A7702C;
+    --ground-bgd: #6E491F;
+    --ground-grad: linear-gradient(90deg, #000724 6%, #A7702C 54%, #6E491F 75%);
+
+    --fairy-bgll: #e46598;
+    --fairy-bgl: #EA1369;
+    --fairy-bgd: #951944;
+    --fairy-grad: linear-gradient(90deg, #000724 6%, #EA1369 54%, #951944 75%);
+
+    --fighting-bgll: #e98769;
+    --fighting-bgl: #ED6138;
+    --fighting-bgd: #983F24;
+    --fighting-grad: linear-gradient(90deg, #000724 6%, #ED6138 54%, #983F24 75%);
+
+    --psychic-bgll: #f772b9;
+    --psychic-bgl: #F81C91;
+    --psychic-bgd: #A7286A;
+    --psychic-grad: linear-gradient(90deg, #000724 6%, #F81C91 54%, #A7286A 75%);
+
+    --rock-bgll: #be6e51;
+    --rock-bgl: #8B3E21;
+    --rock-bgd: #48180B;
+    --rock-grad: linear-gradient(90deg, #000724 6%, #8B3E21 54%, #48180B 75%);
+
+    --dark-bgll: #9a99b9;
+    --dark-bgl: #5A5979;
+    --dark-bgd: #040606;
+    --dark-grad: linear-gradient(90deg, #000724 6%, #5A5979 54%, #040606 75%);
+
+    --dragon-bgll: #95d2db;
+    --dragon-bgl: #61CAD9;
+    --dragon-bgd: #438B95;
+    --dragon-grad: linear-gradient(90deg, #000724 6%, #61CAD9 54%, #438B95 75%);
+
+    --ghost-bgll: #b897b8;
+    --ghost-bgl: #906790;
+    --ghost-bgd: #33336B;
+    --ghost-grad: linear-gradient(90deg, #000724 6%, #906790 54%, #33336B 75%);
+
+    --ice-bgll: #f7feff;
+    --ice-bgl: #D6F0F6;
+    --ice-bgd: #86D2F5;
+    --ice-grad: linear-gradient(90deg, #000724 6%, #D6F0F6 54%, #86D2F5 75%);
+
+    --steel-bgll: #98c2b4;
+    --steel-bgl: #42BD94;
+    --steel-bgd: #5F756D;
+    --steel-grad: linear-gradient(90deg, #000724 6%, #42BD94 54%, #5F756D 75%);
+
+    --flying-bgll: #ccd9e2;
+    --flying-bgl: #93B2C7;
+    --flying-bgd: #4A677D;
+    --flying-grad: linear-gradient(90deg, #000724 6%, #93B2C7 54%, #4A677D 75%);
+   
+    
 }
 
 body {
