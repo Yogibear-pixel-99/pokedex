@@ -4,8 +4,8 @@
 function getSmallCardsTemp(smallCardsIndex){
     
     return  `
-            
-            <div id="card-content${smallCardsIndex}" class="${getCardColor(allPokemons[smallCardsIndex])}-card small-card" onclick="expandCard(${smallCardsIndex})" onmouseover="animateSmallCardPokemon(${smallCardsIndex + 1})" onmouseout="stopAnimateSmallCardPokemon(${smallCardsIndex + 1})">
+            <div id="small-card-wrapper${smallCardsIndex}">
+            <div id="card-content${smallCardsIndex}" class="${getCardColor(allPokemons[smallCardsIndex])}-card small-card" onclick="cardDetails(${smallCardsIndex})" onmouseover="animateSmallCardPokemon(${smallCardsIndex + 1})" onmouseout="stopAnimateSmallCardPokemon(${smallCardsIndex + 1})">
                 <div class="small-card-header">
                     <div>#${allPokemons[smallCardsIndex].id}</div>
                     <div class="small-card-name">${allPokemons[smallCardsIndex].name}</div>
@@ -23,7 +23,7 @@ function getSmallCardsTemp(smallCardsIndex){
                 
                 <div class="small-card-footer ${getCardColor(allPokemons[smallCardsIndex])}-footer">${getDetailsTemp(allPokemons[smallCardsIndex].types)}</div>
             </div> 
-                    
+           </div>
 
                 
             

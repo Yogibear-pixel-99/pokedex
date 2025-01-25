@@ -54,15 +54,14 @@
     align-items:baseline;
 }
 
-.small-card-wrapper {
-    position: relative;
-
-}
-
 .small-card {
-    position: relative;
+    /* filter: brightness */
     display: flex;
     flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     gap: 10px;
     width: 150px;
     height: 250px;

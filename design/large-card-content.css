@@ -1,15 +1,31 @@
 
-.large-card {
-    /* transform: translate(-50%, -50%) !important;
-    top: 50% !important;
-    left: 50% !important; */
-    position: absolute !important;
-    top: 80px !important;
-    right: 80px !important;
-    left: 80px !important;
-    bottom: 80px !important;
-    width: auto !important;
-    height: auto !important;
-    transition: 2s !important;
-    z-index: 100;
+
+.click-animation {
+    animation-name: card-click;
+    animation-duration: 200ms;
+    animation-iteration-count: 2;
+}
+
+@keyframes card-click {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.large-card-container {
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.large-card-container-animation {
+    
 }

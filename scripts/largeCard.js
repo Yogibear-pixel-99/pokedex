@@ -1,5 +1,22 @@
 
-function expandCard(id) {
-    let contentRef = document.getElementById(`card-content${id}`);
-    contentRef.classList.contains('large-card') ? contentRef.classList.remove('large-card') : contentRef.classList.add('large-card');
+function cardDetails(cardId) {
+    let contentRef = document.getElementById(`small-card-wrapper${cardId}`);
+
+    getAnimation(contentRef);
+    setTimeout(() => getLargeCardContainer(contentRef), 415);
+
+}
+
+function getAnimation(cardId) {
+    cardId.classList.add('click-animation');
+    setTimeout(() => {cardId.classList.remove('click-animation');
+            }, 410);
+}
+
+function getLargeCardContainer (smallCardInfo) {
+    cardInfo = smallCardInfo.innerHTML;
+    smallCardInfo.innerHTML = '';
+    let contentRef = document.getElementById('large-card-container');
+        contentRef.style.display = "block";
+        contentRef.innerHTML = cardInfo;
 }
