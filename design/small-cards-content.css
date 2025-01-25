@@ -54,6 +54,11 @@
     align-items:baseline;
 }
 
+.small-card-wrapper {
+    position: relative;
+
+}
+
 .small-card {
     position: relative;
     display: flex;

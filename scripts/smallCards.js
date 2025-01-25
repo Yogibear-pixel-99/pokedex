@@ -57,4 +57,4 @@ function stopAnimateSmallCardPokemon (id) {
         let contentRef = document.getElementById(`small-pokemon${id}`);
         contentRef.src = allPokemons[id - 1].pic;
    }
-    // sprites.other.showdown.front_default
+   
