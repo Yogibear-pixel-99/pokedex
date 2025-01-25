@@ -29,6 +29,10 @@
     src: url("../assets/fonts/raleway/static/Raleway-Regular.ttf");
 }
 
+.d_none {
+    display: none;
+}
+
 body {
     margin: 0;
     box-sizing: border-box;

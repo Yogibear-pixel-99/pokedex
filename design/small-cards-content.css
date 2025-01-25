@@ -48,16 +48,18 @@
 
 .small-card-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
     padding: 0 8px;
     font-family: cabin, sans-serif;
     align-items:baseline;
+    width: 90%;
 }
 
 .small-card {
     /* filter: brightness */
     display: flex;
     flex-direction: column;
+    align-items: center;
     top: 0;
     left: 0;
     right: 0;
