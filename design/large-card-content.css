@@ -23,44 +23,30 @@
     justify-content: center;
     align-items: center; */
     position: fixed;
-    top: 80px;
-    right: 80px;
-    left: 80px;
-    bottom: 80px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* right: 20px; */
     
-    padding: 40px;
+    /* bottom: 80px; */
+    /* transform: translate(-50%, -50%); */
+    /* padding: 40px; */
     border-radius: 30px;
+    margin: 80px 160px;
 }
 
 .large-card-animation {
-    position: absolute;
-    /* right: 0;
-    bottom: 0;
-    left: 0;
-    top: 20px; */
-    width: 100% !important;
-    height: 100% !important;
-    transition: 400ms ease-in-out;
-    border-radius: 30px;
-}
-
-.small-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 0;
-    left: 0;
+    /* position: absolute; */
     right: 0;
     bottom: 0;
-    gap: 10px;
-    width: 150px;
-    height: 250px;
-    padding: 20px;
-    font-family: montserrat, sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    /* transform: scale(1.00); */
-    transition: 500ms ease-in-out;
+    left: 0;
+    top: 0;
+    width: 98% !important;
+    height: 98% !important;
+    transition: 400ms ease-in-out;
+    border-radius: 30px;
+    transform: scale(1) !important;
 }
 
 .large-card {
@@ -73,9 +59,9 @@
     right: 0;
     bottom: 0;
     gap: 10px;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+    width: 98%; 
+    height: 98%;
+    padding: 10px;
     font-family: montserrat, sans-serif;
     font-weight: 600;
     font-size: 12px;

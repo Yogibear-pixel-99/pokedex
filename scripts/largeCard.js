@@ -12,7 +12,7 @@ function cardDetails(cardId) {
     setTimeout(() => getLargeCard(largeCardContentRef, cardId), 480);
     // setTimeout(() => getSmallCardInfos(largeCardContentRef, cardId), 480);
     setTimeout(() => animateSmallCardToLarge(cardId), 490);
-    largeCardOpen = true;
+    // largeCardOpen = true;
     
 } 
 
@@ -35,6 +35,7 @@ function getLargeCard(largeCardContentRef, cardId) {
 function animateSmallCardToLarge(cardId) {
     let cardContentRef = document.getElementById(`large-card-content${cardId}`)
         cardContentRef.classList.add('large-card-animation');
+        largeCardOpen = true;
 }
 
 function largeCardTemp (cardId) {
