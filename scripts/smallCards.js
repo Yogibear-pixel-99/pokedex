@@ -1,18 +1,6 @@
-
-async function renderSmallCards(){
-    let contentRef = document.getElementById('all-cards');
-    
-    for (let smallCardsIndex = offset; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
-        contentRef.innerHTML += getSmallCardsTemp(smallCardsIndex);
-        
-    }
-}
-
-async function getPokemonCardsFromApi (URL, array){
+async function getSmallPokemonCardsFromApi (URL, array){
     for (let loadIndex = offset; loadIndex < limit; loadIndex++) {
     let pokeId = loadIndex + 1;
-        
-    
     let response = await fetch(URL + "pokemon/" + pokeId);
     let data = await response.json();
                 array.push(
@@ -23,12 +11,22 @@ async function getPokemonCardsFromApi (URL, array){
                         pic : data.sprites.front_default,
                         abilities : getAbilities(data),
                         animation : data.sprites.other.showdown.front_default,
+                        // statsName : getStatsName(data),
+                        // statsValue : getStatsValue(data),
                     }
                 )
     }
     console.log(allPokemons);
-    
 }
+
+
+async function renderSmallPokemonCards(){
+    let contentRef = document.getElementById('all-cards');
+    for (let smallCardsIndex = offset; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
+        contentRef.innerHTML += getSmallCardsTemp(smallCardsIndex);
+    }
+}
+
 
 function getTypes(data){
     let element = [];
@@ -38,6 +36,7 @@ function getTypes(data){
     return element;
 }
 
+
 function getAbilities(data){
     let element = [];
     for (let typesIndex = 0; typesIndex < data.abilities.length; typesIndex++) {
@@ -46,13 +45,16 @@ function getAbilities(data){
     return element;
 }
 
-function animateSmallCardPokemon (id) {
+
+function startAnimateSmallCardPokemon (id) {
     let contentRef = document.getElementById(`small-pokemon${id}`);
     let data = allPokemons[id - 1].animation;
         if (data != '') {
         contentRef.src = allPokemons[id - 1].animation;
-}}
-        
+    }
+}
+     
+
 function stopAnimateSmallCardPokemon (id) {
         let contentRef = document.getElementById(`small-pokemon${id}`);
         contentRef.src = allPokemons[id - 1].pic;

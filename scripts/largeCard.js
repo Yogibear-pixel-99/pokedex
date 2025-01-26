@@ -1,76 +1,91 @@
 
-let largeCardOpen = false;
 
-function cardDetails(cardId) {
+async function cardDetails(cardId) {
     let smallCardContentRef = document.getElementById(`card-content${cardId}`);
-    let largeCardContentRef = document.getElementById('large-card-container');
-
-
-    getClickEffect(smallCardContentRef);
-
-    setTimeout(() => getLargeContainer(largeCardContentRef), 450);
-    setTimeout(() => getLargeCard(largeCardContentRef, cardId), 480);
-    // setTimeout(() => getSmallCardInfos(largeCardContentRef, cardId), 480);
-    setTimeout(() => animateSmallCardToLarge(cardId), 490);
-    // largeCardOpen = true;
-    
+    // let largeCardContentRef = document.getElementById('large-card-container');
+    await getClickEffect(smallCardContentRef);
+    await getLargeContainer();
+    await delay(400);
+    await getLargePokemonCard(cardId);
+    await delay(400);
+    await animateSmallCardToLarge(cardId);  
+    await delay(400); 
+    await toggleCardClassSmallLarge(cardId);
+    await delay(400);
+    await getLargeCardDetailsFromApi(cardId);
+    await delay(400);
+    await renderLargeCard(cardId); 
+    await delay(400);
+    await renderLargeCardDetails(cardId); 
 } 
 
-function getClickEffect(cardId) {
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getClickEffect(cardId) {
     cardId.classList.add('click-animation');
     setTimeout(() => {cardId.classList.remove('click-animation');
-            }, 401);
+            }, 400);
 }
 
-function getLargeContainer (largeCardContentRef) {
-    // let contentRef = document.getElementById('large-card-container');
-    largeCardContentRef.style.display = "block";
+
+async function getLargeContainer () {
+    let contentRef = document.getElementById('large-card-container');
+    contentRef.style.display = "block";
 }
 
-function getLargeCard(largeCardContentRef, cardId) {
-    largeCardContentRef.innerHTML = largeCardTemp(cardId);
-    
+
+async function getLargePokemonCard(cardId) {
+    let contentRef = document.getElementById('large-card-container');
+    contentRef.innerHTML = getLargePokemonCardTemp (cardId);
 }
 
-function animateSmallCardToLarge(cardId) {
-    let cardContentRef = document.getElementById(`large-card-content${cardId}`)
-        cardContentRef.classList.add('large-card-animation');
-        largeCardOpen = true;
+
+async function animateSmallCardToLarge(cardId) {
+    let contentRef = document.getElementById(`large-card-content${cardId}`)
+        contentRef.classList.add('large-card-animation');
 }
 
-function largeCardTemp (cardId) {
-    return  `
-    <div id="large-card-content${cardId}" class="${getCardColor(allPokemons[cardId])}-card ${checkIfMenuIsOpen()}">
-        <div class="small-card-header">
-            <div>#${allPokemons[cardId].id}</div>
-            <div class="small-card-name">${allPokemons[cardId].name}</div>
-        </div>
-            <div class="small-card-img-container ${getCardColor(allPokemons[cardId])}-inner">
-                <img id="large-pokemon${cardId + 1}" src=${allPokemons[cardId].pic}>
-                <div class="border ${getCardColor(allPokemons[cardId])}-border"></div>
-            </div>    
-        <div class="powers-container">
-            <div class="powers-header">Powers</div>
-            <div>${getDetailsTemp(allPokemons[cardId].abilities)}</div>
-            ${getLargeFooter(cardId)}    
-    </div> 
-    `
+
+async function toggleCardClassSmallLarge(cardId) {
+    document.getElementById(`large-card-content${cardId}`).classList.add('large-card');
+    document.getElementById(`large-card-content${cardId}`).classList.remove('small-card');
+    largeCardOpen = true;
 }
 
-function checkIfMenuIsOpen() {
-    return largeCardOpen ? 'large-card' : 'small-card';
+
+async function getLargeCardDetailsFromApi (cardId) {
+    cardId++;
+    let response = await fetch(MAIN_URL + 'pokemon/' + cardId);
+    console.log(response);
+    data = await response.json();
+    allPokemonsLargeCardDetails = [];
+    for (let statsApiIndex = 0; statsApiIndex < data.stats.length; statsApiIndex++) {
+        
+        allPokemonsLargeCardDetails.push(
+        {
+            statname : data.stats[statsApiIndex].stat.name,
+            statvalue : data.stats[statsApiIndex].base_stat,
+        }
+        )
+    }
+    console.log(allPokemonsLargeCardDetails);
 }
 
-function getLargeFooter (cardId) {
-    return `
-        <div class="large-card-footer ${getCardColor(allPokemons[cardId])}-footer">
-            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchDown"><--</button>
-            ${getDetailsTemp(allPokemons[cardId].types)}
-            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchUp(${cardId})">--></button>
-            </div>
-        `
+
+async function renderLargeCard (cardId) {
+    let contentRef = document.getElementById(`large-card-content${cardId}`);
+        contentRef = getLargePokemonCardTemp(cardId);
+}
+
+
+async function renderLargeCardDetails () {
+    let contentRef = document.getElementById('large-card-details-container');
+    contentRef.innerHTML = '';
+        for (let statsLokalIndex = 0; statsLokalIndex < allPokemonsLargeCardDetails.length; statsLokalIndex++) {
+            contentRef.innerHTML += getLargeCardStatsTemp(statsLokalIndex);
+        }
 }
 
 
@@ -78,9 +93,11 @@ function switchDown (cardId) {
     let contentRef = document.getElementById('large-card-container');
     if (cardId == 0) {
         cardId = allPokemons.length;
-        contentRef.innerHTML = largeCardTemp(cardId);
+        contentRef.innerHTML = getLargePokemonCardTemp(cardId);
+        
     } else {
-        contentRef.innerHTML =largeCardTemp(cardId - 1);
+        contentRef.innerHTML =getLargePokemonCardTemp(cardId - 1);
+        
 }
 }
 
@@ -88,8 +105,10 @@ function switchUp (cardId) {
     let contentRef = document.getElementById('large-card-container');
     if (cardId == allPokemons.length) {
         cardId = 0;
-        contentRef.innerHTML = largeCardTemp(cardId);
+        contentRef.innerHTML = getLargePokemonCardTemp(cardId);
+        
     } else {
-        contentRef.innerHTML = largeCardTemp(cardId + 1);
+        contentRef.innerHTML = getLargePokemonCardTemp(cardId + 1);
+        
     }
 }
