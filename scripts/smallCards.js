@@ -1,23 +1,4 @@
-async function getSmallPokemonCardsFromApi (URL, array){
-    for (let loadIndex = offset; loadIndex < limit; loadIndex++) {
-    let pokeId = loadIndex + 1;
-    let response = await fetch(URL + "pokemon/" + pokeId);
-    let data = await response.json();
-                array.push(
-                    {
-                        id : data.id,
-                        name : data.name,
-                        types : getTypes(data),
-                        pic : data.sprites.front_default,
-                        abilities : getAbilities(data),
-                        animation : data.sprites.other.showdown.front_default,
-                        // statsName : getStatsName(data),
-                        // statsValue : getStatsValue(data),
-                    }
-                )
-    }
-    console.log(allPokemons);
-}
+
 
 
 async function renderSmallPokemonCards(){
@@ -28,26 +9,8 @@ async function renderSmallPokemonCards(){
 }
 
 
-function getTypes(data){
-    let element = [];
-    for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
-        element.push(data.types[typesIndex].type.name);
-    }
-    return element;
-}
-
-
-function getAbilities(data){
-    let element = [];
-    for (let typesIndex = 0; typesIndex < data.abilities.length; typesIndex++) {
-        element.push(data.abilities[typesIndex].ability.name);
-    }
-    return element;
-}
-
-
 function startAnimateSmallCardPokemon (id) {
-    let contentRef = document.getElementById(`small-pokemon${id}`);
+    let contentRef = document.getElementById(`small-card-pokemon-img${id}`);
     let data = allPokemons[id - 1].animation;
         if (data != '') {
         contentRef.src = allPokemons[id - 1].animation;
@@ -56,7 +19,7 @@ function startAnimateSmallCardPokemon (id) {
      
 
 function stopAnimateSmallCardPokemon (id) {
-        let contentRef = document.getElementById(`small-pokemon${id}`);
+        let contentRef = document.getElementById(`small-card-pokemon-img${id}`);
         contentRef.src = allPokemons[id - 1].pic;
    }
    

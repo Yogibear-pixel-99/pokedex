@@ -21,6 +21,7 @@ function init(){
 }
 
 
+
 async function getTitleInfo (){
     await getTitlePokemon();
     setTitlePokemon();
@@ -47,8 +48,74 @@ function getCardsInfo(){
 
 
 async function getPokemons(){
-    await getSmallPokemonCardsFromApi(MAIN_URL, allPokemons);
+    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
     await renderSmallPokemonCards();
     offset += 20;
     limit += 20;
 }
+
+
+async function getPokemonCardsFromApi (URL, array){
+    for (let loadIndex = offset; loadIndex < limit; loadIndex++) {
+    let pokeId = loadIndex + 1;
+    let response = await fetch(URL + "pokemon/" + pokeId);
+    let data = await response.json();
+    // console.log(data);
+                array.push(
+                    {
+                        id : data.id,
+                        name : data.name,
+                        types : getTypes(data),
+                        pic : data.sprites.front_default,
+                        abilities : getAbilities(data),
+                        animation : data.sprites.other.showdown.front_default,
+                        stats : getStatsFromApi(data),
+                        artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`,
+                        weight : data.weight,                 
+                    }
+                )
+    }
+    console.log(allPokemons);
+}
+
+
+function getTypes(data){
+    let element = [];
+    for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
+        element.push(data.types[typesIndex].type.name);
+    }
+    return element;
+}
+
+
+function getAbilities(data){
+    let element = [];
+    for (let typesIndex = 0; typesIndex < data.abilities.length; typesIndex++) {
+        element.push(data.abilities[typesIndex].ability.name);
+    }
+    return element;
+}
+
+
+function getStatsFromApi(data) {
+    let element = [];
+        for (let statsIndex = 0; statsIndex < data.stats.length; statsIndex++) {
+            element.push(
+                {
+                    name : data.stats[statsIndex].stat.name,
+                    value : data.stats[statsIndex].base_stat,
+                }
+            )
+            
+        }
+    return element;
+}
+
+
+
+
+//  TEEEEESSSST
+
+
+
+

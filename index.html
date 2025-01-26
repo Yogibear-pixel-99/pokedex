@@ -21,6 +21,7 @@
     <script src="./scripts/largeCard.js"></script>
 </head>
 <body onload="init()">
+<!-- <body onload="init()" onclick="closeLargeCard()"> -->
     
     <main class="main-container">
         <section class="title-content" style="display: none;">
@@ -54,8 +55,9 @@
             </div>
         </section>
 
-        <section id="large-card-container" class="large-card-container" style="display: none;">
-
+        <section id="large-card-container" class="large-card-container" onclick="stopBubbling(event)" style="display: none;">
+        
+            
         </section>
     </main>
     
