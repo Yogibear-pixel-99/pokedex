@@ -67,7 +67,8 @@ async function getPokemonCardsFromApi (URL, array){
                         name : data.name,
                         types : getTypes(data),
                         pic : data.sprites.front_default,
-                        abilities : getAbilities(data),
+                        abilities : await getAbilities(data),
+                        
                         animation : data.sprites.other.showdown.front_default,
                         stats : getStatsFromApi(data),
                         artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeId}.png`,
@@ -82,20 +83,39 @@ async function getPokemonCardsFromApi (URL, array){
 function getTypes(data){
     let element = [];
     for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
-        element.push(data.types[typesIndex].type.name);
+        element.push(
+            {
+                name : data.types[typesIndex].type.name,
+            }
+        )
+
+
+
+    
     }
     return element;
 }
 
 
-function getAbilities(data){
+async function getAbilities(data){
     let element = [];
-    for (let typesIndex = 0; typesIndex < data.abilities.length; typesIndex++) {
-        element.push(data.abilities[typesIndex].ability.name);
-    }
+    for (let absIndex = 0; absIndex < data.abilities.length; absIndex++) {
+        element.push(
+            {
+                name : data.abilities[absIndex].ability.name,
+                text : await getAbilitiesText(data, absIndex),
+
+            }
+    )}
     return element;
 }
 
+async function getAbilitiesText(data, absIndex) {
+    let response = await fetch(data.abilities[absIndex].ability.url)
+    let effectData = await response.json();
+        return effectData.effect_entries[0].short_effect;
+
+}   
 
 function getStatsFromApi(data) {
     let element = [];

@@ -30,7 +30,7 @@
 
 
 .large-card {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,10 +46,11 @@
     padding: 10px;
     font-family: montserrat, sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     /* transform: scale(1.00); */
     transition: 500ms ease-in-out;
     z-index: -200;
+    height: 100%;
 }
 
 .bg-wrapper {
@@ -91,7 +92,7 @@
     font-family: cabin, sans-serif;
     align-items:baseline;
     width: 90%;
-    
+    font-size: 16px;
     padding: 8px;
    
    
@@ -126,6 +127,10 @@
     transform: translateY(1px);
 }
 
+.empty {
+    flex: 1;
+}
+
 .large-card-powers-header {
     margin-bottom: 8px;
     font-family: montserrat, sans-serif !important;
@@ -136,12 +141,25 @@
 .large-card-powers-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 8px;
-    text-align: center;
-    font-family: raleway, sans-serif;
-    
+    width: 90%;
+    margin-bottom: 50px;
+}
+
+.abs-container {
+    display: flex;
+    vertical-align: top;
+    border-bottom: solid black 2px;
+    margin-top: 8px;
+}
+
+.abs-name {
+   height: 100%;
+   font-weight: 600;
+}
+
+.abs-text {
+  width: 70%;
+  text-align: end;
 }
 
 .stats-container {
@@ -150,23 +168,39 @@
     justify-content:center;
     gap: 8px;
     width: 90%;
-    flex: 1;
+    /* flex: 1; */
+    
 }
 
 .large-details-wrapper {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    
+    flex-direction: row;
+    /* width: 100%; */
 }
 
-.weight-container {
-    display: flex;
-    justify-content: space-between;
-    /* align-self:self-end; */
-    gap: 40px;
-    width: 90%;
-    margin-bottom: 50px;
+.stats-border-empty{
+    position: relative;
+    width: 40%;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.stats-value {
+    width: 30px;
+    text-align: right;
+}
+
+.stats-border-filled-all {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+
+.weight {
+    border-bottom: none;
 }
 
 .large-card-footer {
@@ -175,6 +209,7 @@
     align-items: center;
     padding: 8px 8px;
     position: absolute;
+
     left: var(--small-card-border-position);
     bottom: var(--small-card-border-position);
     right: var(--small-card-border-position);
@@ -208,3 +243,6 @@
     transform: scale(0.95);
 }
 
+.d-opacity {
+    filter: opacity(20%);
+}

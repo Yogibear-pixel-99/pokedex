@@ -15,6 +15,7 @@ function cardDetails(cardId) {
     getClickEffect(cardId);
     setTimeout(() =>  displayLargeCardContainer(), 500);
     getLargeCard(cardId);
+    fillStatsBorderWithValue(cardId);
 } 
 
 
@@ -45,8 +46,10 @@ function switchDown (cardId) {
     if (cardId == 0) {
         cardId = allPokemons.length;
         getLargeCard(cardId);
+        fillStatsBorderWithValue(cardId);
     } else {
         getLargeCard(cardId - 1);
+        fillStatsBorderWithValue(cardId);
         
 }
 }
@@ -56,8 +59,10 @@ function switchUp (cardId) {
     if (cardId == allPokemons.length) {
         cardId = 0;
         getLargeCard(cardId);
+        fillStatsBorderWithValue(cardId);
     } else {
         getLargeCard(cardId + 1);
+        fillStatsBorderWithValue(cardId);
     }
 }
 
@@ -70,7 +75,7 @@ function showLargePokemon(cardId) {
         contentRef.classList.add('large-card-bg-active');
     let hide = document.getElementsByClassName('large-content-hide')
     for (let index = 0; index < hide.length; index++) {
-        hide[index].classList.add('d_none');  
+        hide[index].classList.add('d-opacity');  
     }
    
 }
@@ -82,5 +87,17 @@ function hideLargePokemon(cardId) {
         contentRef.classList.remove('large-card-bg-active');
         let hide = document.getElementsByClassName('large-content-hide')
     for (let index = 0; index < hide.length; index++) {
-        hide[index].classList.remove('d_none');  
-}}
+        hide[index].classList.remove('d-opacity');  
+    }
+}
+
+
+function fillStatsBorderWithValue (cardId) {
+    // let statsValueRef = document.getElementsByClassName('stats-value');
+    let borderValueRef = document.getElementsByClassName('stats-border-filled-all');
+    console.log(borderValueRef);
+    for (let valueIndex = 0; valueIndex < allPokemons[cardId].stats.length; valueIndex++) {
+        borderValueRef[valueIndex].style.width = `${allPokemons[cardId].stats[valueIndex].value}%`;
+        
+    }
+}
