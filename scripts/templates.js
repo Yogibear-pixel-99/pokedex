@@ -51,36 +51,29 @@ function getSmallCardDetailsTemp(array){
 // }
 
 
-function getLargeFooter (cardId) {
-    return `
-        <div class="large-card-footer ${getCardColor(allPokemons[cardId])}-footer">
-            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchDown(${cardId})"><--</button>
-            ${getSmallCardDetailsTemp(allPokemons[cardId].types)}
-            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchUp(${cardId})">--></button>
-            </div>
-        `
-}
 
 
 function getLargePokemonCardTemp (cardId) {
     return  `
     <div id="large-card-content${cardId}" class="${getCardColor(allPokemons[cardId])}-card large-card">
-        <div class="large-card-header">
+        <div class="large-card-header large-content-hide">
             <div>#${allPokemons[cardId].id}</div>
             <div class="large-card-name">${allPokemons[cardId].name}</div>
         </div>
-            
+        
+        
+        <img id="large-card-bg-img${cardId}" class="large-card-bg-img" src="${allPokemons[cardId].artwork}">
+        
 
-        <div class="large-card-powers-container">
+        <div class="large-card-powers-container large-content-hide">
             <div class="large-card-powers-header">Powers</div>
             <div>${getSmallCardDetailsTemp(allPokemons[cardId].abilities)}</div>
         </div>
-        <div class="stats-container">
+
+        <div class="stats-container large-content-hide">
             ${getStatsLargeCard(cardId)}
         </div>
-        <div class="weight-container">
+        <div class="weight-container large-content-hide">
             <div>weight</div>
             <div>${allPokemons[cardId].weight}</div>
         </div>
@@ -93,6 +86,21 @@ function getLargePokemonCardTemp (cardId) {
 
     </div> 
     `
+}
+
+
+
+function getLargeFooter (cardId) {
+    return `
+        <div class="large-card-footer ${getCardColor(allPokemons[cardId])}-footer" onmouseover="showLargePokemon(${cardId})" onmouseout="hideLargePokemon(${cardId})">
+            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
+            onclick="switchDown(${cardId})"><--</button>
+            ${getLargeCardDetailsTemp(allPokemons[cardId].types)}
+            <div id="pokemon-footer-name${cardId}" class="pokemon-footer-name"></div>
+            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
+            onclick="switchUp(${cardId})">--></button>
+            </div>
+        `
 }
 
 
@@ -114,4 +122,13 @@ function getStatsTemp(cardId,statsCardIndex) {
                      <div>${allPokemons[cardId].stats[statsCardIndex].value}</div>
                     </div>
             `
+}
+
+
+function getLargeCardDetailsTemp(array){
+    let element = "";
+    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+        element += `<div class="large-content-hide">${array[detailIndex]}</div>`;
+    }
+    return element;
 }
