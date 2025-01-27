@@ -33,26 +33,37 @@
     display: none;
 }
 
+html {
+    max-width: 1920px;
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
     padding: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 button {
     height: 100px;
 }
 
-.title-content {
+.title-container {
+    position: relative;
+    top : 0;
+    right: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     height: 100%;
 }
 
 .pokemon-logo {
-    width: 800px;
+    width: 400px;
 }
 
 body {
@@ -60,12 +71,12 @@ body {
 }
 
 .by {
-    width: 50px;
+    width: 40px;
     margin-top: 40px;
 }
 
 .name {
-    width: 500px;
+    width: 300px;
 }
 
 .main-container {
@@ -88,7 +99,7 @@ body {
     bottom: 0;
     left: 20px;
     object-fit: cover;
-    width: 300px;
+    width: 200px;
     /* background-color: yellowgreen; */
 }
 
@@ -114,6 +125,9 @@ body {
 .enter {
     object-fit: contain;
     width: 150px;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 40px;
     /* transition: ease-in-out; */
     animation-name: enterLarge;
     animation-duration: 2s;
@@ -126,21 +140,28 @@ body {
     100% {width: 150px;}
 }
 
-
-
-
-
-/* MIA TEST ALL POKES */
-
-.mia-poke {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+.card-container {
+    /* position: absolute;
+    top: 100vh; */
 }
 
-.miacards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    
+
+.animate-title-content {
+    /* overflow:scroll; */
+    /* animation-name: main-menu-off;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    position: relative; */
+    transform: translateY(100vh);
+    transition: 1.2s ease-in-out;
 }
+
+.animate-cards-content {
+    transform: translateY(-100vh);
+    transition: 1.2s ease-in-out;
+}
+
+/* @keyframes main-menu-off {
+    from {bottom: 0}
+    to {bottom: 100vh}
+} */

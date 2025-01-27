@@ -12,7 +12,7 @@ function getSmallCardsTemp(smallCardsIndex){
                         <img id="small-card-pokemon-img${smallCardsIndex + 1}" src=${allPokemons[smallCardsIndex].pic}>
                         <div class="small-card-border ${getCardColor(allPokemons[smallCardsIndex])}-border"></div>
                     </div>
-                <div class="powers-container">
+                <div class="small-card-powers-container">
                     <div class="powers-header">Powers</div>
                     <div>${getSmallCardDetailsTemp(allPokemons[smallCardsIndex].abilities)}</div>
                 <div class="small-card-footer ${getCardColor(allPokemons[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(allPokemons[smallCardsIndex].types)}</div>
@@ -78,7 +78,7 @@ function getLargePokemonCardTemp (cardId) {
 function getLargeCardPowers (cardId) {
     return `<div class="large-card-powers-container large-content-hide">
                 
-                    <div class="large-card-powers-header">Powers</div>
+                    
                 
 
                 
@@ -110,11 +110,15 @@ function getLargeFooter (cardId) {
     return `
         <div class="large-card-footer ${getCardColor(allPokemons[cardId])}-footer" onmouseover="showLargePokemon(${cardId})" onmouseout="hideLargePokemon(${cardId})">
             <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchDown(${cardId})"><--</button>
+            onclick="switchDown(${cardId})" onmouseover="stopBubbling(event)"><--</button>
             ${getLargeCardDetailsTemp(allPokemons[cardId])}
             <div id="pokemon-footer-name${cardId}" class="pokemon-footer-name"></div>
             <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchUp(${cardId})">--></button>
+            onclick="switchUp(${cardId})" onmouseover="stopBubbling(event)">--></button>
+            
+            <div class="left-footer-bubble" onmouseover="stopBubbling(event)"></div>
+            <div class="right-footer-bubble" onmouseover="stopBubbling(event)"></div>
+
             </div>
         `
 }

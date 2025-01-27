@@ -14,32 +14,37 @@ let onTitle = true;
 
 
 function init(){
-    onTitle ? getTitleInfo() : getCardsInfo();
-    // setInterval(enterButton, 1000);
-    // onTitle ? setInterval(getTitleInfo, 3500) : getCardsInfo();
-    
+    setInterval(getTitleInfo, 3000);
 }
 
 
 
 async function getTitleInfo (){
-    await getTitlePokemon();
-    setTitlePokemon();
+    if (onTitle === true) {
+        getTitlePokemon()
+    } ;
 }
 
 
-async function getTitlePokemon(){
-    let positionNr = Math.floor(Math.random() * 200) + 1;
-    let response = await fetch (MAIN_URL + `pokemon/${positionNr}`);
-    let data = await  response.json();
-    titlePokemonPic = data.sprites.front_default;
-}
-
-
-function setTitlePokemon(){
+function getTitlePokemon(){
     let contentRef = document.getElementById('title-pokemon');
-    contentRef.src = titlePokemonPic;
+    let positionNr = Math.floor(Math.random() * 200) + 1;
+        contentRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`;
+    
 }
+
+
+function enterCardsContent() {
+    onTitle = false;
+    let titleRef = document.getElementById('title-container');
+        titleRef.classList.add('animate-title-content');
+    let cardsRef = document.getElementById('card-container');
+    setTimeout(() => cardsRef.classList.add('animate-cards-content'), 1500);
+    getLoadingSpinner();
+    
+        
+}
+
 
 
 function getCardsInfo(){
