@@ -3,6 +3,7 @@
 
 async function renderSmallPokemonCards(){
     let contentRef = document.getElementById('all-cards');
+
     for (let smallCardsIndex = offset; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
         contentRef.innerHTML += getSmallCardsTemp(smallCardsIndex);
     }

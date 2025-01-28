@@ -31,9 +31,9 @@
     margin-top: 20px;
 }
 
-.all-cards {
+/* .all-cards {
    flex: 1;
-}
+} */
 
 /* SMALL CARD DESIGN */
 
@@ -45,6 +45,7 @@
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
+    /* overflow: scroll; */
 }
 
 .small-card-header {

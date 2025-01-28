@@ -34,17 +34,45 @@ function getTitlePokemon(){
 }
 
 
-function enterCardsContent() {
+async function enterCardsContent() {
     onTitle = false;
-    let titleRef = document.getElementById('title-container');
-        titleRef.classList.add('animate-title-content');
-    let cardsRef = document.getElementById('card-container');
-    setTimeout(() => cardsRef.classList.add('animate-cards-content'), 1500);
-    getLoadingSpinner();
-    
-        
+        await hideTitleContent();
+        await showCardContent();  
 }
 
+async function hideTitleContent() {
+    let titleRef = document.getElementById('title-container');
+        titleRef.classList.add('animate-title-content');
+        setTimeout(() => titleRef.innerHTML = '', 2000);
+        setTimeout(() => titleRef.classList.add('d_none'), 2000);
+        // setTimeout(() => titleRef.style.height = '0px', 2000);
+}
+
+async function showCardContent() {
+    let cardsRef = document.getElementById('card-container');
+    setTimeout(() => cardsRef.classList.add('animate-cards-content'), 1500);
+    document.body.style.overflow = "visible";
+}
+
+async function showLoadingSpinner (ms) {
+    let contentRef = document.getElementById('all-cards');
+        contentRef.innerHTML += `<div id="loading-spinner" class="loading-spinner-container">
+        <img class="loading-spinner-img" src="./assets/img/logo.png" alt="loading-spinner">
+        </div>`
+}
+
+
+async function hideLoadingSpinner () {
+    let contentRef = document.getElementById('loading-spinner');
+        contentRef.innerHTML = ``
+}
+
+
+async function spinnerDelay(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {resolve('');}, ms);
+    })
+}
 
 
 function getCardsInfo(){
@@ -53,7 +81,10 @@ function getCardsInfo(){
 
 
 async function getPokemons(){
+    await showLoadingSpinner();
+    await spinnerDelay(2000);
     await getPokemonCardsFromApi(MAIN_URL, allPokemons);
+    await hideLoadingSpinner();
     await renderSmallPokemonCards();
     offset += 20;
     limit += 20;
