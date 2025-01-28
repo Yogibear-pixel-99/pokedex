@@ -54,6 +54,7 @@ body {
 
 .main-container {
     position: relative;
+    height: 100vh;
     top: 0;
     left: 0;
     right: 0;
@@ -61,11 +62,25 @@ body {
 }
 
 .card-conatiner {
-    position: absolute;
-    top: 0;
+    /* position: absolute; */
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    /* top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
+}
+
+.middle-content {
+    /* top: -200px; */
+    height: 100%;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 button {
@@ -142,7 +157,6 @@ body {
     align-self: flex-end;
     position: absolute;
     bottom: 40px;
-    /* transition: ease-in-out; */
     animation-name: enterLarge;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -178,33 +192,12 @@ body {
    
 }
 
-/* @keyframes enter-menu {
-    0% {top: 0;}
-    50%{top: 110vh;}
-    100% {top: 0;}
-
-} */
-
-
-/* @keyframes enter-menu {
-    0% {transform: translateY(0vh);}
-    50%{transform: translateY(110vh);}
-    100% {transform: translateY(0vh);}
-} */
-
-
-/* .animate-cards-content {
-    transform: translateY(-100vh);
-    transition: 1.2s ease-in-out;
-} */
-
 .middle-content {
-    /* top: -200px; */
-    height: 100dvh;
+    height: 100%;
     position: relative;
+    top: 0;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -216,21 +209,23 @@ body {
     left: 0;
     right: 0;
     gap: 40px;
-    
+    margin: 0 80px 60px;
 }
 
 .get-pokemon-button {
     font-family: cabin, sans-serif;
     font-weight: 500;
-    height: 30px;
-    width: 200px;
-    box-shadow: 4px -4px 4px;
+    height: auto;
+    padding: 16px 0;
+    width: 250px;
+    box-shadow: 4px -4px 4px ;
     border: solid 2px black;
     border-radius: 5px;
-    margin-bottom: 20px;
-    animation-name: get-buttons;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
+    background-color: var(--poke-logo-yellow);
+    color: var(--poke-logo-blue);
+    font-family: montserrat, sans-serif;
+    font-weight: 600;
+    border: solid 3px var(--poke-logo-darkblue);
 }
 
 .get-pokemon-button:hover {
@@ -242,10 +237,14 @@ body {
 .get-pokemon-button:active {
     transform: scale(0.95);
     filter: brightness(150%);
-    box-shadow: 2px -2px 3px;
+    box-shadow: 2px -2px 3px var(--poke-logo-darkblue);
+
+    border: solid 3px var(--poke-logo-blue);
+    background-color: var(--poke-logo-darkblue);
+    color: var(--poke-logo-yellow);
 }
 
-@keyframes get-buttons {
+/* @keyframes get-buttons {
 0% {background-color: var(--grass-bgl);}
 6% {background-color: var(--fire-bgl);}
 12% {background-color: var(--water-bgl);}
@@ -265,4 +264,4 @@ body {
 91% {background-color: var(--steel-bgl);}
 95% {background-color: var(--flying-bgl);}
 100% {background-color: var(--grass-bgl);}
-}
+} */

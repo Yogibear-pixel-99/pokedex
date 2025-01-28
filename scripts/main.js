@@ -2,8 +2,6 @@
 
 let allPokemons = [];
 let responseErrors = [];
-// let allPokemonsLargeCardDetails = [];
-// let pokemonDetails = [];
 let renderPosition = 0;
 let limit = 20;
 let offset = 0;
@@ -42,12 +40,14 @@ function getTitlePokemon(){
 async function enterCardsContent() {
     onTitle = false;
         await hideTitleContent();
-        await delay(1500);
+        await delay(0);
+        // await delay(1500);
         await getCardsContent();
         getPlaceholderPokemon();
         setInterval(getPlaceholderPokemon, 5000);
-        await delay(1500);
-        document.body.style.overflow = 'visible';
+        await delay(0);
+        // await delay(1500);
+        
 }
 
 
@@ -78,6 +78,7 @@ async function getPokemons(){
     offset += 20;
     limit += 20;
     renderPosition += 20;
+    document.body.style.overflow = 'visible';
 }
 
 function getPlaceholderPokemon(){
@@ -90,15 +91,7 @@ function getPlaceholderPokemon(){
 async function getRandomPokemons() {
     offset = getRndNumber(1006);
     limit = offset + 20;
-    await showLoadingSpinner();
-    await delay(3000);
-    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
-    await hideLoadingSpinner();
-    await renderSmallPokemonCards();
-    changeGet20PokemonButtonText();
-    offset += 20;
-    limit += 20;
-    renderPosition += 20;
+    getPokemons();
 }
 
 function getRndNumber (maxNr) {
@@ -163,6 +156,7 @@ async function getPokemonCardsFromApi (URL, array){
 }
 
 
+
 function getTypes(data){
     let element = [];
     for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
@@ -178,6 +172,7 @@ function getTypes(data){
     }
     return element;
 }
+
 
 
 async function getAbilities(data){
@@ -223,3 +218,18 @@ function changeGet20PokemonButtonText(){
         contentRef[0].innerText = `Get another 20 Pokemons`;
 }
 
+
+function selectName () {
+    let nameRef = document.getElementById('check-name-color');
+    let typeRef = document.getElementById('check-type-color');
+    nameRef.classList.remove('greyscale');
+    typeRef.classList.add('greyscale');
+}
+
+
+function selectType () {
+    let nameRef = document.getElementById('check-name-color');
+    let typeRef = document.getElementById('check-type-color');
+    nameRef.classList.add('greyscale');
+    typeRef.classList.remove('greyscale');
+}

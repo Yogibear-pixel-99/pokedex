@@ -1,0 +1,124 @@
+
+
+
+
+/* SEARCH BAR */
+.search-bar {
+    border: solid 2px var(--poke-logo-darkblue);
+    border-radius: 10px;
+    padding: 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: montserrat;
+    margin: 0 40px;
+    background-color: var(--poke-logo-blue);
+    color: var(--poke-logo-darkblue);
+    box-shadow: 4px -4px 8px var(--poke-logo-darkblue);
+    font-size: 18px;
+}
+
+.search-bar * {
+    border: none;
+    font-family: montserrat, sans-serif;
+    
+}
+
+.search-button {
+    border: solid 2px var(--poke-logo-blue);
+    vertical-align: baseline;
+    padding: 6px;
+    filter: brightness(95%);
+    border: solid 1px var(--poke-logo-blue) !important;
+    border-radius: 5px;
+    width: 58px;
+    /* height: 30px; */
+}
+
+.search-button:hover {
+    filter: brightness(110%);
+}
+
+.search-button:active {
+    border: solid 2px var(--poke-logo-blue) !important;
+    font-size: 11px;
+    filter: brightness(80%);
+}
+
+select {
+    background-color: var(--poke-logo-yellow);
+    border: none;
+    outline: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    height: auto;
+    background-color: var(--poke-logo-yellow);
+    border: none;
+}
+
+.search-input {
+    width: 250px;
+    background-color: var(--poke-logo-blue);
+    height: 26px;
+    color: var(--poke-logo-yellow);
+    padding-left: 12px;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.search-input::placeholder {
+    color: var(--poke-logo-yellow);
+    /* padding-left: 6px; */
+}
+
+
+.search-input:focus {
+    border: none;
+    border-radius: none;
+    outline: none;
+    color: var(--poke-logo-yellow);
+}
+
+.search-wrapper {
+
+background-color: var(--poke-logo-yellow);
+}
+
+.search-wrapper,
+.filter-wrapper {
+    padding: 14px;
+    vertical-align: center;
+    border-radius: 5px;
+}
+
+.filter-wrapper {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+}
+
+.name-type {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.check-img {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.greyscale {
+    filter: grayscale(1);
+}
