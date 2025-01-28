@@ -1,23 +1,29 @@
 
 
 let allPokemons = [];
-let allPokemonsLargeCardDetails = [];
+let responseErrors = [];
+// let allPokemonsLargeCardDetails = [];
 // let pokemonDetails = [];
-
+let renderPosition = 0;
 let limit = 20;
 let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/'
-// let OFFSET_URL = `pokemon?limit=${limit}&offset=${offset}.`
 
 let titlePokemonPic = '';
 let onTitle = true;
 
 
 function init(){
+    getTitleContent();
+    getTitleInfo();
     setInterval(getTitleInfo, 3000);
 }
 
-
+// Get title content
+function getTitleContent(){
+    let contentRef = document.getElementById('main-container');
+        contentRef.innerHTML = getTitleTemp();
+}
 
 async function getTitleInfo (){
     if (onTitle === true) {
@@ -25,77 +31,112 @@ async function getTitleInfo (){
     } ;
 }
 
-
 function getTitlePokemon(){
     let contentRef = document.getElementById('title-pokemon');
-    let positionNr = Math.floor(Math.random() * 200) + 1;
+    let positionNr = getRndNumber(200);
         contentRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`;
     
 }
 
-
+// Enter Cards Content
 async function enterCardsContent() {
     onTitle = false;
         await hideTitleContent();
-        await showCardContent();  
+        await delay(1500);
+        await getCardsContent();
+        getPlaceholderPokemon();
+        setInterval(getPlaceholderPokemon, 5000);
+        await delay(1500);
+        document.body.style.overflow = 'visible';
 }
+
 
 async function hideTitleContent() {
-    let titleRef = document.getElementById('title-container');
-        titleRef.classList.add('animate-title-content');
-        setTimeout(() => titleRef.innerHTML = '', 2000);
-        setTimeout(() => titleRef.classList.add('d_none'), 2000);
-        // setTimeout(() => titleRef.style.height = '0px', 2000);
+    let titleRef = document.getElementById('main-container');
+        titleRef.classList.add('animate-main-content');
 }
 
-async function showCardContent() {
-    let cardsRef = document.getElementById('card-container');
-    setTimeout(() => cardsRef.classList.add('animate-cards-content'), 1500);
-    document.body.style.overflow = "visible";
+async function delay(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(), ms)
+    })
+    
 }
 
-async function showLoadingSpinner (ms) {
-    let contentRef = document.getElementById('all-cards');
-        contentRef.innerHTML += `<div id="loading-spinner" class="loading-spinner-container">
+async function getCardsContent () {
+    let contentRef = document.getElementById('main-container');
+        contentRef.innerHTML = getCardsTemp();
+}
+
+async function getPokemons(){
+    await showLoadingSpinner();
+    await delay(3000);
+    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
+    await hideLoadingSpinner();
+    await renderSmallPokemonCards();
+    changeGet20PokemonButtonText();
+    offset += 20;
+    limit += 20;
+    renderPosition += 20;
+}
+
+function getPlaceholderPokemon(){
+    let contentRef = document.getElementById('img-placeholder');
+    let positionNr = getRndNumber(200);
+        contentRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`;
+    
+}
+
+async function getRandomPokemons() {
+    offset = getRndNumber(1006);
+    limit = offset + 20;
+    await showLoadingSpinner();
+    await delay(3000);
+    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
+    await hideLoadingSpinner();
+    await renderSmallPokemonCards();
+    changeGet20PokemonButtonText();
+    offset += 20;
+    limit += 20;
+    renderPosition += 20;
+}
+
+function getRndNumber (maxNr) {
+    return Math.floor(Math.random() * maxNr) + 1;
+}
+
+async function showLoadingSpinner () {
+    let contentRef = document.getElementById(`loading-spinner-container${limit - offset}`);
+        contentRef.innerHTML += `
         <img class="loading-spinner-img" src="./assets/img/logo.png" alt="loading-spinner">
         </div>`
 }
 
 
 async function hideLoadingSpinner () {
-    let contentRef = document.getElementById('loading-spinner');
+    let contentRef = document.getElementById(`loading-spinner-container${limit - offset}`);
         contentRef.innerHTML = ``
 }
-
-
-async function spinnerDelay(ms) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {resolve('');}, ms);
-    })
-}
-
 
 function getCardsInfo(){
     console.log(onTitle);
 }
 
 
-async function getPokemons(){
-    await showLoadingSpinner();
-    await spinnerDelay(2000);
-    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
-    await hideLoadingSpinner();
-    await renderSmallPokemonCards();
-    offset += 20;
-    limit += 20;
+try {
+    
+} catch (error) {
+    
 }
-
 
 async function getPokemonCardsFromApi (URL, array){
     for (let loadIndex = offset; loadIndex < limit; loadIndex++) {
     let pokeId = loadIndex + 1;
-    let response = await fetch(URL + "pokemon/" + pokeId);
-    let data = await response.json();
+    
+    
+    try {
+        let response = await fetch(URL + "pokemon/" + pokeId);
+        let data = await response.json();
     // console.log(data);
                 array.push(
                     {
@@ -111,6 +152,12 @@ async function getPokemonCardsFromApi (URL, array){
                         weight : data.weight,                 
                     }
                 )
+
+    }   catch (error) {
+        responseErrors.push(pokeId + ' not found');
+    }
+    
+    
     }
     console.log(allPokemons);
 }
@@ -136,20 +183,23 @@ function getTypes(data){
 async function getAbilities(data){
     let element = [];
     for (let absIndex = 0; absIndex < data.abilities.length; absIndex++) {
+        if (data.abilities != null) {
         element.push(
             {
                 name : data.abilities[absIndex].ability.name,
                 text : await getAbilitiesText(data, absIndex),
 
             }
-    )}
+    )} else {return ''}}
     return element;
 }
 
 async function getAbilitiesText(data, absIndex) {
     let response = await fetch(data.abilities[absIndex].ability.url)
     let effectData = await response.json();
+        if (effectData.effect_entries[0] != null) {
         return effectData.effect_entries[0].short_effect;
+        } else {return '';}
 
 }   
 
@@ -168,10 +218,8 @@ function getStatsFromApi(data) {
 }
 
 
-
-
-//  TEEEEESSSST
-
-
-
+function changeGet20PokemonButtonText(){
+    let contentRef = document.getElementsByClassName('get-pokemon-button');
+        contentRef[0].innerText = `Get another 20 Pokemons`;
+}
 

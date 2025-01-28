@@ -1,7 +1,6 @@
 
 
 function closeLargeCard(){
-    
     let contentRef = document.getElementById('large-card-container');
         contentRef.style.display = 'none';
 }

@@ -22,42 +22,13 @@
     <script src="./scripts/largeCard.js"></script>
 </head>
 <!-- <body onload="init()"> -->
-<body onload="init()" onclick="closeLargeCard()">
+<body onload="init()" class="body">
     
-    <main class="main-container">
-        <section id="title-container" class="title-container">
-            <img class="pokemon-logo" src="/assets/img/International_Pokémon_logo.svg.png" al="pokemon header">
-            <div>
-                <img class="by" src="/assets/img/by.png">
-                <img class="name" src="/assets/img/name.png" alt="Joachim Pürcher">
-            </div>
-            <div class="title-bottom">
-                <img id="title-pokemon" class="pokemon-title-img" src="/assets/img/pokemon-1536847_1280.png">
-                <div class="enter-wrapper">
-                    <img onclick="enterCardsContent()" id="enter" class="enter" src="/assets/img/enterlarge.png">
-                </div>
-                
-                <img class="pokeball-title" src="/assets/img/pokebol-2898038_1280.png" alt="pokeball">
-                
-            </div>
-        </section>
-        <section id="card-container" class="card-container">
-            <div class="game-content">
-               
-                <div class="middle-content">
+    <main id="main-container" class="main-container" onclick="closeLargeCard()">
+        
+        
 
-                    <div id="search-bar" class="search-bar">search</div>
-                    
-                    
-                    <div id="all-cards" class="all-cards"></div>
-                    <button class="get-pokemon-button" onclick="getPokemons()">Get MAIN URL POKEMON</button>
-                </div>
-               
-                
-            </div>
-        </section>
-
-        <section id="large-card-container" class="large-card-container" onclick="stopBubbling(event)" style="display: none;">
+        
         
             
         </section>

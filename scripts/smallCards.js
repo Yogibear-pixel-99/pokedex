@@ -3,11 +3,21 @@
 
 async function renderSmallPokemonCards(){
     let contentRef = document.getElementById('all-cards');
+        
 
-    for (let smallCardsIndex = offset; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
+    for (let smallCardsIndex = renderPosition; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
         contentRef.innerHTML += getSmallCardsTemp(smallCardsIndex);
     }
 }
+
+// async function renderSmallPokemonCards(){
+//     let contentRef = document.getElementById('all-cards');
+        
+
+//     for (let smallCardsIndex = offset; smallCardsIndex < allPokemons.length; smallCardsIndex++) {
+//         contentRef.innerHTML += getSmallCardsTemp(smallCardsIndex);
+//     }
+// }
 
 
 function startAnimateSmallCardPokemon (id) {

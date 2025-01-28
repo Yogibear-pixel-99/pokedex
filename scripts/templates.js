@@ -1,4 +1,58 @@
 
+
+function getTitleTemp() {
+    return `<section id="title-container" class="title-container">
+            <img class="pokemon-logo" src="/assets/img/International_Pokémon_logo.svg.png" al="pokemon header">
+            <div>
+                <img class="by" src="/assets/img/by.png">
+                <img class="name" src="/assets/img/name.png" alt="Joachim Pürcher">
+            </div>
+            <div class="title-bottom">
+                <img id="title-pokemon" class="pokemon-title-img" src="">
+                <div class="enter-wrapper" onclick="stopBubbling(event)">
+                    <img onclick="enterCardsContent()" id="enter" class="enter" src="/assets/img/enterlarge.png">
+                </div>
+                
+                <img class="pokeball-title" src="/assets/img/pokebol-2898038_1280.png" alt="pokeball">
+                
+            </div>
+        </section>`
+}
+
+
+function getCardsTemp() {
+    return`<section id="card-container" class="card-container">
+            
+               
+                <div class="middle-content">
+
+                    <div id="search-bar" class="search-bar">search</div>
+                    
+
+                    <div class="cards-wrapper">
+                        <img id="img-placeholder" class="img-placeholder" src="" alt="pokemon-placeholder">
+                        <div id="all-cards" class="all-cards">
+                            
+                        </div>
+                        <div id="loading-spinner-container${limit}" class="loading-spinner-container"></div>
+                    </div>
+                    <div class="button-wrapper">
+                        <button class="get-pokemon-button" onclick="getPokemons()">Get 20 Pokemons</button>
+                        <button class="get-pokemon-button" onclick="getRandomPokemons()">Get 20 Random Pokemons</button>
+                    </div>
+                </div>
+               
+                
+            
+        </section>
+        <section id="large-card-container" class="large-card-container" onclick="stopBubbling(event)" style="display: none;">
+        `
+}
+
+
+
+
+
 // SMALL CARDS TEMPS
 function getSmallCardsTemp(smallCardsIndex){
     
