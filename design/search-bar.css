@@ -6,26 +6,29 @@
 .search-bar {
     border: solid 2px var(--poke-logo-darkblue);
     border-radius: 10px;
-    padding: 16px 16px;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     gap: 10px;
     font-family: montserrat;
-    margin: 0 40px;
+    margin: 14px 20px;
     background-color: var(--poke-logo-blue);
     color: var(--poke-logo-darkblue);
     box-shadow: 4px -4px 8px var(--poke-logo-darkblue);
     font-size: 18px;
+
+    font-weight: 600;
 }
 
 .search-bar * {
     border: none;
     font-family: montserrat, sans-serif;
-    
+    color: var(--poke-logo-darkblue);
+    font-weight: 600;
 }
 
 .search-button {
-    border: solid 2px var(--poke-logo-blue);
+    /* border: solid 2px var(--poke-logo-blue) !important; */
     vertical-align: baseline;
     padding: 6px;
     filter: brightness(95%);
@@ -92,7 +95,7 @@ background-color: var(--poke-logo-yellow);
 
 .search-wrapper,
 .filter-wrapper {
-    padding: 14px;
+    padding: 8px 14px;
     vertical-align: center;
     border-radius: 5px;
 }
@@ -121,4 +124,13 @@ background-color: var(--poke-logo-yellow);
 
 .greyscale {
     filter: grayscale(1);
+}
+
+#searched-cards {
+    background-color: var(--poke-logo-blue) !important;
+}
+
+.nothing-found {
+    width: 500px;
+    
 }

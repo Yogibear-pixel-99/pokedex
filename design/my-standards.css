@@ -53,3 +53,11 @@
 .m20 {
     margin: 20px;
 }
+
+.blur-grey-effect {
+    filter: grayscale(60%) blur(3px);
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

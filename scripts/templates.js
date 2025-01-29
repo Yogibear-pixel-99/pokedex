@@ -24,18 +24,20 @@ function getCardsTemp() {
                     ${getSearchTemp()}
                     
                     <div class="cards-wrapper">
-                        
-                        <img id="img-placeholder" class="img-placeholder" src="" alt="pokemon-placeholder">
+                        <div id="placeholder-wrapper" class="placeholder-wrapper" onclick="addPokemonToSmallCardsArray()">
+                        </div>
+                        <div id="searched-cards" class="all-cards"></div>
                         <div id="all-cards" class="all-cards">
                             
                         </div>
                         <div id="loading-spinner-container${limit}" class="loading-spinner-container"></div>
                     </div>
+                    <div class="bottom-sticky" onclick="stopBubbling(event)">
                     <div class="button-wrapper">
                         <button class="get-pokemon-button" onclick="getPokemons()">Get 20 Pokemons</button>
                         <button class="get-pokemon-button" onclick="getRandomPokemons()">Get 20 Random Pokemons</button>
                     </div>
-                
+                    </div>
         </section>
         <section id="large-card-container" class="large-card-container" onclick="stopBubbling(event)" style="display: none;">
         `
@@ -43,7 +45,9 @@ function getCardsTemp() {
 
 
 function getSearchTemp(){
-    return `<div id="search-bar" class="search-bar">
+    return `
+    <div class="top-sticky" onclick="stopBubbling">
+    <div id="search-bar" class="search-bar">
         <div class="search-wrapper">
             <button class="search-button" onclick="searchPokemons()">Search</button>
             <input id="search-input" class="search-input" type="text" minlength="3" maxlength="20" value="" placeholder="put in a name or a type">
@@ -71,27 +75,38 @@ function getSearchTemp(){
             </select>
             <button class="search-button">sort</button>
     </div>
-    </div>`
+    </div>
+
+    </div>
+    
+    `
+}
+
+
+ function getPlaceholderInfosTemp () {
+    return `<div id="id-placeholder" class="placeholder-id">#${placeholderPokemon[0].id}</div>
+            <img id="img-placeholder" class="img-placeholder" src="${placeholderPokemon[0].artwork}" alt="pokemon-placeholder">
+            <div id="id-placeholder" class="placeholder-name">${placeholderPokemon[0].name}</div>`
 }
 
 
 // SMALL CARDS TEMPS
-function getSmallCardsTemp(smallCardsIndex){
+function getSmallCardsTemp(smallCardsIndex, pokeAarray){
     
     return `
-            <div id="small-card-content${smallCardsIndex}" class="${getCardColor(allPokemons[smallCardsIndex])}-card small-card" ${getSmallCardFunctions(smallCardsIndex)} >
+            <div id="small-card-content${smallCardsIndex}" class="${getCardColor(pokeAarray[smallCardsIndex])}-card small-card" ${getSmallCardFunctions(smallCardsIndex)} >
                 <div class="small-card-header">
-                    <div>#${allPokemons[smallCardsIndex].id}</div>
-                    <div class="small-card-name">${allPokemons[smallCardsIndex].name}</div>
+                    <div>#${pokeAarray[smallCardsIndex].id}</div>
+                    <div class="small-card-name">${pokeAarray[smallCardsIndex].name}</div>
                 </div>
-                    <div class="small-card-img-container ${getCardColor(allPokemons[smallCardsIndex])}-inner">
-                        <img id="small-card-pokemon-img${smallCardsIndex + 1}" src=${allPokemons[smallCardsIndex].pic}>
-                        <div class="small-card-border ${getCardColor(allPokemons[smallCardsIndex])}-border"></div>
+                    <div class="small-card-img-container ${getCardColor(pokeAarray[smallCardsIndex])}-inner">
+                        <img id="small-card-pokemon-img${smallCardsIndex + 1}" src=${pokeAarray[smallCardsIndex].pic}>
+                        <div class="small-card-border ${getCardColor(pokeAarray[smallCardsIndex])}-border"></div>
                     </div>
                 <div class="small-card-powers-container">
                     <div class="powers-header">Powers</div>
-                    <div>${getSmallCardDetailsTemp(allPokemons[smallCardsIndex].abilities)}</div>
-                <div class="small-card-footer ${getCardColor(allPokemons[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(allPokemons[smallCardsIndex].types)}</div>
+                    <div>${getSmallCardDetailsTemp(pokeAarray[smallCardsIndex].abilities)}</div>
+                <div class="small-card-footer ${getCardColor(pokeAarray[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(pokeAarray[smallCardsIndex].types)}</div>
             </div> 
            `
 }
