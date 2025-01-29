@@ -16,7 +16,14 @@ async function searchPokemons () {
         await getSearchUserInput (nameId, typeId, userInput);
         await getSearchedPokemons ();
         await renderSearchedPokemons();
+        showContainer('searched-cards');
+        // emptyAllCardsContainer();
 }
+
+// function emptyAllCardsContainer() {
+//     let contentRef = document.getElementById('all-cards');
+//         contentRef.innerHTML = '';
+// }
 
 async function getSearchUserInput (nameId, typeId, userInput) {
     if (nameId.checked) {
@@ -71,5 +78,6 @@ async function renderSearchedPokemons () {
 }
 
 function nothingFoundTemp () {
-    return `<div class="placeholder-name nothing-found">No pokemon found, try a different name or type in the exact type!</div>`
+    return `<div class="nothing-found">No pokemon found, try a different name or type in the exact type!</div>`
 }
+

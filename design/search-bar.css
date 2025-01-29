@@ -126,11 +126,26 @@ background-color: var(--poke-logo-yellow);
     filter: grayscale(1);
 }
 
-#searched-cards {
-    background-color: var(--poke-logo-blue) !important;
+.searched-cards {
+    background-color: var(--poke-logo-blue);
+    width: 80%;
+    border-radius: 10px;
 }
 
 .nothing-found {
-    width: 500px;
-    
+    font-family: montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--poke-logo-yellow);
+}
+
+.nothing-found button {
+    margin-top: 20px;
+}
+
+.start-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

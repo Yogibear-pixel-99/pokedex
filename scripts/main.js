@@ -1,5 +1,4 @@
 
-
 let allPokemons = [];
 let responseErrors = [];
 let renderPosition = 0;
@@ -9,12 +8,13 @@ let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/'
 let titlePokemonPic = '';
 let onTitle = true;
+let placeholderAlreadyAdded = false;
 
 
 function init(){
     getTitleContent();
     getTitleInfo();
-    // setInterval(getTitleInfo, 3000);
+    setInterval(getTitleInfo, 3000);
 }
 
 
@@ -43,13 +43,13 @@ function getTitlePokemon(){
 // Enter Cards Content
 async function enterCardsContent() {
     onTitle = false;
-        // clearInterval(getTitleInfo);
+        clearInterval(getTitleInfo);
         await hideTitleContent();
         await delay(0);
         // await delay(1500);
         await getCardsContent();
         await getPlaceholderPokemon();
-        // setInterval(getPlaceholderPokemon, 5000);
+        setInterval(getPlaceholderPokemon, 5000);
         await delay(0);
         // await delay(1500);
         
@@ -100,6 +100,7 @@ async function getPlaceholderPokemon(){
         await getFiltertInfos (MAIN_URL, positionNr, placeholderPokemon);
         // imgRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`;
         contentRef.innerHTML = getPlaceholderInfosTemp();
+        placeholderAlreadyAdded = false;
 }
 
 
@@ -129,10 +130,13 @@ async function getFiltertInfos (MAIN_URL, positionNr, array) {
 
 
 function addPokemonToSmallCardsArray() {
+    if (placeholderAlreadyAdded == false) {
     allPokemons.unshift(placeholderPokemon[0]);
     let contentRef = document.getElementById('all-cards');
         contentRef.innerHTML = '';
     renderAllSmallPokemonCards(allPokemons, 'all-cards');
+    }
+    placeholderAlreadyAdded = true;
 }
 
 

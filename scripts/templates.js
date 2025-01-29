@@ -26,7 +26,7 @@ function getCardsTemp() {
                     <div class="cards-wrapper">
                         <div id="placeholder-wrapper" class="placeholder-wrapper" onclick="addPokemonToSmallCardsArray()">
                         </div>
-                        <div id="searched-cards" class="all-cards"></div>
+                        <div id="searched-cards" class="all-cards searched-cards">${getStartTextTemp()}</div>
                         <div id="all-cards" class="all-cards">
                             
                         </div>
@@ -44,12 +44,28 @@ function getCardsTemp() {
 }
 
 
+function getStartTextTemp() {
+    return `<div class="nothing-found start-text">
+    Welcome to the world off pokemon-cards. 
+    Feel free to get 20 cards in a row or 20 cards by random. 
+    You can search the cards listet below by type or name.
+    You can sort the searched pokemons by diffrent stats. Highest first. 
+    Click on a small card to expand and hover over the cardfooter, 
+    to see the pokemon art design.
+    <button class="get-pokemon-button" onclick="hideContainer('searched-cards')">
+    Click to close
+    </button>
+    </div>`
+}
+
+
+
 function getSearchTemp(){
     return `
     <div class="top-sticky" onclick="stopBubbling">
     <div id="search-bar" class="search-bar">
         <div class="search-wrapper">
-            <button class="search-button" onclick="searchPokemons()">Search</button>
+            <a href="#card-container"><button id="search-button" class="search-button" onclick="searchPokemons()">Search</button></a>
             <input id="search-input" class="search-input" type="text" minlength="3" maxlength="20" value="" placeholder="put in a name or a type">
             <label class="search-type name-type" onclick="selectName()">
                 
@@ -91,22 +107,24 @@ function getSearchTemp(){
 
 
 // SMALL CARDS TEMPS
-function getSmallCardsTemp(smallCardsIndex, pokeAarray){
+function getSmallCardsTemp(smallCardsIndex, pokeArray){
     
     return `
-            <div id="small-card-content${smallCardsIndex}" class="${getCardColor(pokeAarray[smallCardsIndex])}-card small-card" ${getSmallCardFunctions(smallCardsIndex)} >
+            <div id="small-card-content${smallCardsIndex}" 
+            class="${getCardColor(pokeArray[smallCardsIndex])}-card small-card" 
+            ${getSmallCardFunctions(smallCardsIndex, pokeArray)} >
                 <div class="small-card-header">
-                    <div>#${pokeAarray[smallCardsIndex].id}</div>
-                    <div class="small-card-name">${pokeAarray[smallCardsIndex].name}</div>
+                    <div>#${pokeArray[smallCardsIndex].id}</div>
+                    <div class="small-card-name">${pokeArray[smallCardsIndex].name}</div>
                 </div>
-                    <div class="small-card-img-container ${getCardColor(pokeAarray[smallCardsIndex])}-inner">
-                        <img id="small-card-pokemon-img${smallCardsIndex + 1}" src=${pokeAarray[smallCardsIndex].pic}>
-                        <div class="small-card-border ${getCardColor(pokeAarray[smallCardsIndex])}-border"></div>
+                    <div class="small-card-img-container ${getCardColor(pokeArray[smallCardsIndex])}-inner">
+                        <img id="small-card-pokemon-img${smallCardsIndex}" src=${pokeArray[smallCardsIndex].pic}>
+                        <div class="small-card-border ${getCardColor(pokeArray[smallCardsIndex])}-border"></div>
                     </div>
                 <div class="small-card-powers-container">
                     <div class="powers-header">Powers</div>
-                    <div>${getSmallCardDetailsTemp(pokeAarray[smallCardsIndex].abilities)}</div>
-                <div class="small-card-footer ${getCardColor(pokeAarray[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(pokeAarray[smallCardsIndex].types)}</div>
+                    <div>${getSmallCardDetailsTemp(pokeArray[smallCardsIndex].abilities)}</div>
+                <div class="small-card-footer ${getCardColor(pokeArray[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(pokeArray[smallCardsIndex].types)}</div>
             </div> 
            `
 }
@@ -118,10 +136,11 @@ function getCardColor(array){
 
 
 function getSmallCardFunctions (smallCardsIndex) {
+
     return `
         onclick="cardDetails(${smallCardsIndex})" 
-        onmouseover="startAnimateSmallCardPokemon(${smallCardsIndex + 1})" 
-        onmouseout="stopAnimateSmallCardPokemon(${smallCardsIndex + 1})"`
+        onmouseover="startAnimateSmallCardPokemon(${smallCardsIndex})" 
+        onmouseout="stopAnimateSmallCardPokemon(${smallCardsIndex})"`
 }
 
 
@@ -242,4 +261,35 @@ function getLargeCardDetailsTemp(array){
         element += `<div class="large-content-hide">${array.types[detailIndex].name}</div>`;
     }
     return element;
+}
+
+// CHANGE TEMPLATE TO SEARCH , ANIMATION HOVER PROBLEM
+function getSearchedSmallCardsTemp(smallCardsIndex, pokeAarray){
+    
+    return `
+            <div id="search-small-card-content${smallCardsIndex}" 
+            class="${getCardColor(pokeAarray[smallCardsIndex])}-card small-card" 
+            ${getSearchedSmallCardFunctions(smallCardsIndex)} >
+                <div class="small-card-header">
+                    <div>#${pokeAarray[smallCardsIndex].id}</div>
+                    <div class="small-card-name">${pokeAarray[smallCardsIndex].name}</div>
+                </div>
+                    <div class="small-card-img-container ${getCardColor(pokeAarray[smallCardsIndex])}-inner">
+                        <img id="searched-small-card-pokemon-img${smallCardsIndex}" src=${pokeAarray[smallCardsIndex].pic}>
+                        <div class="small-card-border ${getCardColor(pokeAarray[smallCardsIndex])}-border"></div>
+                    </div>
+                <div class="small-card-powers-container">
+                    <div class="powers-header">Powers</div>
+                    <div>${getSmallCardDetailsTemp(pokeAarray[smallCardsIndex].abilities)}</div>
+                <div class="small-card-footer ${getCardColor(pokeAarray[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(pokeAarray[smallCardsIndex].types)}</div>
+            </div> 
+           `
+}
+
+function getSearchedSmallCardFunctions (smallCardsIndex) {
+// CHANGE ABOVE TO! -1 +1
+    return `
+        onclick="cardDetails(${smallCardsIndex})" 
+        onmouseover="startAnimateSearchedSmallCardPokemon(${smallCardsIndex})" 
+        onmouseout="stopAnimateSearchedSmallCardPokemon(${smallCardsIndex})"`
 }
