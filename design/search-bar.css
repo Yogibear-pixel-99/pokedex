@@ -22,13 +22,14 @@
 
 .bottom-sticky {
     bottom: 0;
+    
     position: fixed;
+    /* width: 100%; */
 }
 
 .search-bar {
     background-color: var(--poke-logo-blue);
     padding: 10px;
-    /* position: fixed; */
     bottom: 14px;
     display: flex;
     justify-content: space-between;
@@ -39,20 +40,7 @@
     border-radius: 10px;
     box-shadow: 0 0 8px 2px var(--poke-logo-darkblue);
 }
-/* .search-bar {
-    border: solid 2px var(--poke-logo-darkblue);
-    border-radius: 10px;
-    padding: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    font-family: montserrat;
-    background-color: var(--poke-logo-blue);
-    color: var(--poke-logo-darkblue);
-    box-shadow: 4px -4px 8px var(--poke-logo-darkblue);
-    font-size: 18px;
-    font-weight: 600;
-} */
+
 
 .search-bar * {
     border: none;
@@ -92,7 +80,7 @@ select {
 }
 
 .search-bar button {
-    height: auto;
+    /* height: auto; */
     background-color: var(--poke-logo-yellow);
     border: none;
 }
@@ -141,7 +129,7 @@ background-color: var(--poke-logo-yellow);
 }
 
 .name-type {
-    position: relative;
+    /* position: relative; */
     width: 15px;
     height: 15px;
     margin-left: 4px;
@@ -149,7 +137,7 @@ background-color: var(--poke-logo-yellow);
 }
 
 .check-img {
-    position: absolute;
+    /* position: absolute; */
     top: 2px;
     left: 0;
     width: 18px;
@@ -160,26 +148,5 @@ background-color: var(--poke-logo-yellow);
     filter: grayscale(1);
 }
 
-.searched-cards {
-    background-color: var(--poke-logo-blue);
-    width: 80%;
-    border-radius: 10px;
-}
 
-.nothing-found {
-    font-family: montserrat, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--poke-logo-yellow);
-}
 
-.nothing-found button {
-    margin-top: 20px;
-}
-
-.start-text {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}

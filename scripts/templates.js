@@ -118,8 +118,8 @@ function getHeaderSearchTemp () {
 
 function getRandomPokemonTemp () {
     return `<div 
-                id="placeholder-wrapper" 
-                class="placeholder-wrapper" 
+                id="random-pokemon-wrapper" 
+                class="random-pokemon-wrapper" 
                 onclick="addPokemonToSmallCardsArray()">
             </div>`
 }
@@ -198,8 +198,11 @@ function getStartTextTemp() {
 }
 
 
-
-
+function getRandomPokemonMainTemp () {
+    return `<div class="random-pokemon-id">#${randomPokemon[0].id}</div>
+            <img id="random-pokemon-img" class="random-pokemon-img" src="${randomPokemon[0].artwork}" alt="random-pokemon">
+            <div class="random-pokemon-name">${randomPokemon[0].name}</div>`
+}
 
 
 

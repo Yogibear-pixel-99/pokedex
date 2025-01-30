@@ -10,7 +10,7 @@ let offset = 0;
 
 async function init(){
     // getTitleContent();
-    getCardsContent('main-container');
+    enterCardsContent('main-container');
     await getRandomPokemon();
     // setPokemonImageTitle('title-pokemon');
 }
@@ -25,7 +25,7 @@ function getTitleContent(){
 
 async function getRandomPokemon(){
     randomPokemon = [];
-    let randomNr = getRndNumber(1000);
+    let randomNr = getRndNumber(1006);
         await getPokemonFromApi (randomNr, randomPokemon);
 }
 
@@ -40,7 +40,6 @@ function setPokemonImageTitle(id) {
 async function getPokemonFromApi (positionNr, array) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
-    console.log(response);
     let data = await response.json();
         array.push(
             {
@@ -114,20 +113,12 @@ function getStats(data) {
 // --------------------------------------------------------------
 // Enter Cards Content
 async function enterCardsContent() {
-   
-        
         // animateEnterButton('main-container');
-        
         // await delay(1500);
-
-        
         getCardsContent('main-container');
-
-        await getPlaceholderPokemon();
-        setInterval(getPlaceholderPokemon, 5000);
-        
-        // await delay(1500);
-        
+        setRandomPokemonToMainContainer('random-pokemon-wrapper');
+        setInterval(setRandomPokemonToMainContainer, 5000);
+        // await delay(1500);  
 }
 // --------------------------------------------------------------
 
@@ -143,7 +134,12 @@ function getCardsContent (id) {
 }
 
 
+async function setRandomPokemonToMainContainer (id) {
+    let contentRef = document.getElementById(id);
+        await getRandomPokemon();
+        contentRef.innerHTML = getRandomPokemonMainTemp();
 
+}
 
 
 
