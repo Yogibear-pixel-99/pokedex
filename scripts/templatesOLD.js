@@ -42,32 +42,6 @@
 
 
 
-function getLargePokemonCardTemp (cardId) {
-    return  `
-    <div id="large-card-content${cardId}" class="${getCardColor(allPokemons[cardId])}-card large-card">
-        <div class="large-card-header large-content-hide">
-            <div>#${allPokemons[cardId].id}</div>
-            <div class="large-card-name">${allPokemons[cardId].name}</div>
-        </div>
-        <img id="large-card-bg-img${cardId}" class="large-card-bg-img" src="${allPokemons[cardId].artwork}">
-        <div class="stats-container large-content-hide">
-            ${getStatsLargeCard(cardId)}
-        </div>
-
-        <div class="empty"></div>
-        ${getLargeCardPowers(cardId)}
-
-        
-
-        
-
-            ${getLargeFooter(cardId)}    
-    
-        
-
-    </div> 
-    `
-}
 
 {/* <div id="large-card-details-container" class="large-card-detail-container">
         

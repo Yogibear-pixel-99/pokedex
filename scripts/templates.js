@@ -213,7 +213,7 @@ function getSmallPokemonCardTemp(array, index){
                 id="small-card-content${index}" 
                 class="${getCardColor(array[index])}-card 
                 small-card" 
-                ${getSmallCardFunctions(index, array)} >
+                ${getSmallCardFunctions(array, index)} >
                 <div class="small-card-header">
                     <div>#${array[index].id}</div>
                     <div class="small-card-name">${array[index].name}</div>
@@ -240,19 +240,19 @@ function getCardColor(array){
 }
 
 
-function getSmallCardFunctions (index) {
+function getSmallCardFunctions (array, index) {
 
     return `
-        onclick="cardDetails(${index})" 
-        onmouseover="startAnimateSmallCardPokemon(${index})" 
-        onmouseout="stopAnimateSmallCardPokemon(${index})"`
+        onclick="cardDetails(${array[index].arrayname}, ${index})" 
+        onmouseover="startAnimateSmallCardPokemon(${array[index].arrayname}, ${index})" 
+        onmouseout="stopAnimateSmallCardPokemon(${array[index].arrayname}, ${index})"`
 }
 
 
 function getSmallCardAbilities(array){
     let element = "";
-    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
-        element += `<div>${array[detailIndex].name}</div>`;
+        for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+            element += `<div>${array[detailIndex].name}</div>`;
     }
     return element;
 }
@@ -260,8 +260,37 @@ function getSmallCardAbilities(array){
 
 function getSmallCardTypes(array) {
     let element = "";
-    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
-        element += `<div>${array[detailIndex]}</div>`;
+        for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+            element += `<div>${array[detailIndex]}</div>`;
     }
     return element;
 }
+
+
+
+function getLargePokemonCardTemp (array, id) {
+   return  `<div 
+                id="large-card-content${id}" 
+                class="${getCardColor(array[id])}-card large-card">
+                    <div class="large-card-header large-content-hide">
+                        <div>#${array[id].id}</div>
+                        <div class="large-card-name">${array[id].name}</div>
+                    </div>
+                    <img id="large-card-bg-img${id}" class="large-card-bg-img" src="${array[id].artwork}">
+                        <div class="stats-container large-content-hide">
+                        
+
+
+
+
+
+
+                            ${getStatsLargeCard(id)}
+                        </div>
+
+                    <div class="empty"></div>
+                        ${getLargeCardPowers(id)}
+                        ${getLargeFooter(id)}    
+            </div>`
+}
+// OVER HERE STOPPED AT GET STATS LARGE CARD

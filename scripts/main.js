@@ -29,7 +29,7 @@ function getTitleContent(){
 
 async function getRandomPokemon(array){
     let randomNr = getRndNumber(1006);
-        await getPokemonFromApi (randomNr, array);
+        await getPokemonFromApi (randomNr, array, 'allPokemons');
 }
 
 
@@ -40,7 +40,7 @@ function setPokemonImageTitle(id) {
 
 
 // GET POKEMONS WITH STATS FROM API
-async function getPokemonFromApi (positionNr, array) {
+async function getPokemonFromApi (positionNr, array, arrayName) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
     let data = await response.json();
@@ -55,7 +55,8 @@ async function getPokemonFromApi (positionNr, array) {
                 animation : data.sprites.other.showdown.front_default,
                 stats : getStats(data),
                 artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`,
-                weight : data.weight,   
+                weight : data.weight,
+                arrayname : arrayName,
             })}
 
             catch (error) {
@@ -159,7 +160,7 @@ function addPokemonToAllPokemonArray() {
 async function get20Pokemons () {
     startLoadingAndRenderingCards();
         for (let pokeIndex = offset + 1; pokeIndex < limit + 1; pokeIndex++) {
-            await getPokemonFromApi(pokeIndex, allPokemons)
+            await getPokemonFromApi(pokeIndex, allPokemons, 'allPokemons');
     }
     offset += 20;
     limit += 20;
@@ -170,7 +171,7 @@ async function get20RandomPokemons () {
     startLoadingAndRenderingCards();
         for (let pokeIndex = 0; pokeIndex < 20; pokeIndex++) {
             const number = getRndNumber (1026);
-                await getPokemonFromApi(number, allPokemons);  
+                await getPokemonFromApi(number, allPokemons, 'allPokemons');  
     }
     finishLoadingAndRenderingCards();
 }
@@ -213,6 +214,7 @@ async function disabelCardContent () {
     let bodyRef = document.getElementById('body');
         cardsRef.classList.add('blur-grey-effect');
         bodyRef.classList.add('overflow-hidden');
+        bodyRef.classList.add('no-pointer-events');
         
 }
 
@@ -226,5 +228,6 @@ async function enableCardContent () {
     let bodyRef = document.getElementById('body');
         cardsRef.classList.remove('blur-grey-effect');
         bodyRef.classList.remove('overflow-hidden');
+        bodyRef.classList.remove('no-pointer-events');
 }
 

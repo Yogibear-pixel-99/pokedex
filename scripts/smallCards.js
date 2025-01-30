@@ -9,17 +9,17 @@ function renderSmallPokemonCards(array, id) {
 }
 
 
-function startAnimateSmallCardPokemon (id) {
+function startAnimateSmallCardPokemon (array, id) {
     let contentRef = document.getElementById(`small-card-pokemon-img${id}`);
-    let data = allPokemons[id].animation;
+    let data = array[id].animation;
         if (data != null) {
         contentRef.src = data;
     }
 }
      
 
-function stopAnimateSmallCardPokemon (id) {
+function stopAnimateSmallCardPokemon (array, id) {
         let contentRef = document.getElementById(`small-card-pokemon-img${id}`);
-        contentRef.src = allPokemons[id].pic;
+        contentRef.src = array[id].pic;
    }
    
