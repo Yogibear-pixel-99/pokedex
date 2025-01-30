@@ -3,7 +3,43 @@
 
 
 /* SEARCH BAR */
+
+.top-sticky,
+.bottom-sticky {
+    background-color: var(--header-footer-bg-color);
+    padding: 16px;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    border: solid 3px var(--poke-logo-blue);
+    border-radius: 20px;
+}
+
+.top-sticky {
+    top: 0;
+    position: sticky;
+}
+
+.bottom-sticky {
+    bottom: 0;
+    position: fixed;
+}
+
 .search-bar {
+    background-color: var(--poke-logo-blue);
+    padding: 10px;
+    /* position: fixed; */
+    bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    left: 20px;
+    right: 20px;
+    gap: 40px;
+    border: solid 2px var(--poke-logo-darkblue);
+    border-radius: 10px;
+    box-shadow: 0 0 8px 2px var(--poke-logo-darkblue);
+}
+/* .search-bar {
     border: solid 2px var(--poke-logo-darkblue);
     border-radius: 10px;
     padding: 10px 10px;
@@ -11,14 +47,12 @@
     justify-content: space-between;
     gap: 10px;
     font-family: montserrat;
-    margin: 14px 20px;
     background-color: var(--poke-logo-blue);
     color: var(--poke-logo-darkblue);
     box-shadow: 4px -4px 8px var(--poke-logo-darkblue);
     font-size: 18px;
-
     font-weight: 600;
-}
+} */
 
 .search-bar * {
     border: none;

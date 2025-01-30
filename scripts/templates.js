@@ -3,7 +3,7 @@
 function getTitleContentTemp() {
     return `<section 
                 id="title-container" 
-                class="title-container">
+                class="title-container ">
                     <img 
                         class="pokemon-logo" 
                         src="/assets/img/International_Pokémon_logo.svg.png" 
@@ -61,7 +61,7 @@ function getHeaderSearchTemp () {
     <div class="top-sticky" onclick="stopBubbling(event)">
         <div id="search-bar" class="search-bar">
             <div class="search-wrapper">
-                <a href="#card-container">
+                <a href="#searched-cards">
                     <button 
                         id="search-button" 
                         class="search-button" 
