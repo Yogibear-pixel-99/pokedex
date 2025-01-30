@@ -172,10 +172,6 @@ function getStatsFromApi(data) {
 }
 
 
-function changeGet20PokemonButtonText(){
-    let contentRef = document.getElementsByClassName('get-pokemon-button');
-        contentRef[0].innerText = `Get another 20 Pokemons`;
-}
 
 
 function selectName () {

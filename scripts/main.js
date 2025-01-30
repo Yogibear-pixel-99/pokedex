@@ -156,22 +156,47 @@ function addPokemonToAllPokemonArray() {
     placeholderAlreadyAdded = true;
 }
 
+async function get20Pokemons () {
+    startLoadingAndRenderingCards();
+        for (let pokeIndex = offset + 1; pokeIndex < limit + 1; pokeIndex++) {
+            await getPokemonFromApi(pokeIndex, allPokemons)
+    }
+    offset += 20;
+    limit += 20;
+    finishLoadingAndRenderingCards();
+}
 
-async function getPokemons(){
-     showLoadingSpinner();
-     disabelCardContent();
-     await delay(3000);
-     hideLoadingSpinner();
+async function get20RandomPokemons () {
+    startLoadingAndRenderingCards();
+        for (let pokeIndex = 0; pokeIndex < 20; pokeIndex++) {
+            const number = getRndNumber (1026);
+                await getPokemonFromApi(number, allPokemons);  
+    }
+    finishLoadingAndRenderingCards();
+}
 
 
-    // await getPokemonCardsFromApi(MAIN_URL, allPokemons);
-    // await renderSmallPokemonCards(allPokemons, 'all-cards');
-    // await enableCardContent();
-    // changeGet20PokemonButtonText();
-    // offset += 20;
-    // limit += 20;
-    // renderPosition += 20;
-    // document.body.style.overflow = 'visible';
+function startLoadingAndRenderingCards() {
+    showLoadingSpinner();
+    disabelCardContent();
+}
+
+
+async function finishLoadingAndRenderingCards () {
+    // await delay(3000);
+    await renderSmallPokemonCards(allPokemons, 'all-cards');
+    hideLoadingSpinner();
+    enableCardContent();
+     
+
+     
+
+
+
+     
+    
+
+    
 }
 
 
@@ -185,10 +210,10 @@ async function showLoadingSpinner () {
 
 async function disabelCardContent () {
     let cardsRef = document.getElementById('cards-wrapper');
-    // let placeholderRef = document.getElementById('placeholder-wrapper');
+    let bodyRef = document.getElementById('body');
         cardsRef.classList.add('blur-grey-effect');
-        cardsRef.classList.add('overflow-hidden');
-        // placeholderRef.classList.add('blur-grey-effect');
+        bodyRef.classList.add('overflow-hidden');
+        
 }
 
 async function hideLoadingSpinner () {
@@ -196,11 +221,10 @@ async function hideLoadingSpinner () {
         contentRef.innerHTML = ``
 }
 
-// async function enableCardContent () {
-//     let cardsRef = document.getElementById('all-cards');
-//     let placeholderRef = document.getElementById('placeholder-wrapper');
-//         cardsRef.classList.remove('blur-grey-effect');
-//         cardsRef.classList.remove('overflow-hidden');
-//         placeholderRef.classList.remove('blur-grey-effect');
-// }
+async function enableCardContent () {
+    let cardsRef = document.getElementById('cards-wrapper');
+    let bodyRef = document.getElementById('body');
+        cardsRef.classList.remove('blur-grey-effect');
+        bodyRef.classList.remove('overflow-hidden');
+}
 

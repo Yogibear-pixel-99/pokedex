@@ -158,12 +158,12 @@ function getFooterButtonTemp () {
                 <div class="button-wrapper">
                     <button 
                         class="get-pokemon-button" 
-                        onclick="getPokemons()">
+                        onclick="get20Pokemons()">
                         Get 20 Pokemons
                     </button>
                     <button 
                         class="get-pokemon-button" 
-                        onclick="getRandomPokemons()">
+                        onclick="get20RandomPokemons()">
                         Get 20 Random Pokemons
                     </button>
                 </div>

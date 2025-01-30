@@ -62,6 +62,10 @@
     overflow: hidden;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 .d_none {
     display: none;
 }
