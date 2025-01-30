@@ -16,3 +16,16 @@ function hideContainer (id) {
 function getRndNumber (maxNr) {
     return Math.floor(Math.random() * maxNr) + 1;
 }
+
+
+async function delay(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(), ms)
+    })
+    
+}
+
+
+function stopBubbling(event) {
+    event.stopPropagation()
+}
