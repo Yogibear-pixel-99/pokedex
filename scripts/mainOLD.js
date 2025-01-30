@@ -33,20 +33,7 @@ async function hideTitleContent() {
 
 
 
-async function getPokemons(){
-    await showLoadingSpinner();
-    await disabelCardContent();
-    await delay(3000);
-    await getPokemonCardsFromApi(MAIN_URL, allPokemons);
-    await hideLoadingSpinner();
-    await renderSmallPokemonCards(allPokemons, 'all-cards');
-    await enableCardContent();
-    changeGet20PokemonButtonText();
-    offset += 20;
-    limit += 20;
-    renderPosition += 20;
-    document.body.style.overflow = 'visible';
-}
+
 
 
 async function getPlaceholderPokemon(){
@@ -101,36 +88,7 @@ function getRndNumber (maxNr) {
 }
 
 
-async function showLoadingSpinner () {
-    let spinnerRef = document.getElementById(`loading-spinner-container${limit - offset}`);
-        spinnerRef.innerHTML += `
-        <img class="loading-spinner-img" src="./assets/img/logo.png" alt="loading-spinner">
-        </div>`
-}
 
-
-async function disabelCardContent () {
-    let cardsRef = document.getElementById('all-cards');
-    let placeholderRef = document.getElementById('placeholder-wrapper');
-        cardsRef.classList.add('blur-grey-effect');
-        cardsRef.classList.add('overflow-hidden');
-        placeholderRef.classList.add('blur-grey-effect');
-}
-
-
-async function enableCardContent () {
-    let cardsRef = document.getElementById('all-cards');
-    let placeholderRef = document.getElementById('placeholder-wrapper');
-        cardsRef.classList.remove('blur-grey-effect');
-        cardsRef.classList.remove('overflow-hidden');
-        placeholderRef.classList.remove('blur-grey-effect');
-}
-
-
-async function hideLoadingSpinner () {
-    let contentRef = document.getElementById(`loading-spinner-container${limit - offset}`);
-        contentRef.innerHTML = ``
-}
 
 
 async function getPokemonCardsFromApi (URL, array){

@@ -44,14 +44,15 @@ function getTitleContentTemp() {
 
 function getCardsContentTemp() {
     return  `${getHeaderSearchTemp()}
-            <div class="cards-wrapper">
+            <div class="cards-wrapper" id="cards-wrapper">
                 ${getRandomPokemonTemp()}
                 ${getFiltertSearchTemp()}
                 ${getAllCardsTemp()}
-                ${getLoadingSpinnerTemp()}
+                
             </div>     
                 ${getFooterButtonTemp()}   
-                ${getLargeCardTemp()}`
+                ${getLargeCardTemp()}
+                ${getLoadingSpinnerTemp()}`
 }
 
 
