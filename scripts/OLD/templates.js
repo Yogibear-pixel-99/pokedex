@@ -1,6 +1,6 @@
 
 
-function getTitleContentTemp() {
+function getTitleTemp() {
     return `<section id="title-container" class="title-container">
             <img class="pokemon-logo" src="/assets/img/International_Pokémon_logo.svg.png" al="pokemon header">
             <div>
@@ -16,24 +16,6 @@ function getTitleContentTemp() {
             </div>
         </section>`
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function getCardsTemp() {
