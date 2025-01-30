@@ -24,20 +24,6 @@ async function renderAllSmallPokemonCards(array, destination){
 //     }
 // }
 
-function startAnimateSmallCardPokemon (id) {
-    let contentRef = document.getElementById(`small-card-pokemon-img${id}`);
-    let data = allPokemons[id].animation;
-        if (data != null) {
-        contentRef.src = allPokemons[id].animation;
-    }
-}
-     
-
-function stopAnimateSmallCardPokemon (id) {
-        let contentRef = document.getElementById(`small-card-pokemon-img${id}`);
-        contentRef.src = allPokemons[id].pic;
-   }
-   
 
 
 

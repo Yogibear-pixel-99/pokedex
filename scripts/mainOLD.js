@@ -1,5 +1,5 @@
 
-let allPokemons = [];
+
 let responseErrors = [];
 let renderPosition = 0;
 let placeholderPokemon = [];
@@ -8,36 +8,6 @@ let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/'
 let titlePokemonPic = '';
 let onTitle = true;
-let placeholderAlreadyAdded = false;
-
-
-function init(){
-    getTitleContent();
-    getTitleInfo();
-    setInterval(getTitleInfo, 3000);
-}
-
-
-// Get title content
-function getTitleContent(){
-    let contentRef = document.getElementById('main-container');
-        contentRef.innerHTML = getTitleTemp();
-}
-
-
-async function getTitleInfo (){
-    if (onTitle === true) {
-        getTitlePokemon()
-    } ;
-}
-
-
-function getTitlePokemon(){
-    let contentRef = document.getElementById('title-pokemon');
-    let positionNr = getRndNumber(200);
-        contentRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`;
-    
-}
 
 
 // Enter Cards Content
@@ -61,19 +31,6 @@ async function hideTitleContent() {
         titleRef.classList.add('animate-main-content');
 }
 
-
-async function delay(ms) {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(), ms)
-    })
-    
-}
-
-
-async function getCardsContent () {
-    let contentRef = document.getElementById('main-container');
-        contentRef.innerHTML = getCardsTemp();
-}
 
 
 async function getPokemons(){
@@ -129,15 +86,7 @@ async function getFiltertInfos (MAIN_URL, positionNr, array) {
 }
 
 
-function addPokemonToSmallCardsArray() {
-    if (placeholderAlreadyAdded == false) {
-    allPokemons.unshift(placeholderPokemon[0]);
-    let contentRef = document.getElementById('all-cards');
-        contentRef.innerHTML = '';
-    renderAllSmallPokemonCards(allPokemons, 'all-cards');
-    }
-    placeholderAlreadyAdded = true;
-}
+
 
 
 async function getRandomPokemons() {

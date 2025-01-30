@@ -34,58 +34,12 @@
 
 
 
-function getPlaceholderInfosTemp () {
-    return `<div id="id-placeholder" class="placeholder-id">#${placeholderPokemon[0].id}</div>
-            <img id="img-placeholder" class="img-placeholder" src="${placeholderPokemon[0].artwork}" alt="pokemon-placeholder">
-            <div id="id-placeholder" class="placeholder-name">${placeholderPokemon[0].name}</div>`
-}
-
 
 // SMALL CARDS TEMPS
-function getSmallCardsTemp(smallCardsIndex, pokeArray){
-    
-    return `
-            <div id="small-card-content${smallCardsIndex}" 
-            class="${getCardColor(pokeArray[smallCardsIndex])}-card small-card" 
-            ${getSmallCardFunctions(smallCardsIndex, pokeArray)} >
-                <div class="small-card-header">
-                    <div>#${pokeArray[smallCardsIndex].id}</div>
-                    <div class="small-card-name">${pokeArray[smallCardsIndex].name}</div>
-                </div>
-                    <div class="small-card-img-container ${getCardColor(pokeArray[smallCardsIndex])}-inner">
-                        <img id="small-card-pokemon-img${smallCardsIndex}" src=${pokeArray[smallCardsIndex].pic}>
-                        <div class="small-card-border ${getCardColor(pokeArray[smallCardsIndex])}-border"></div>
-                    </div>
-                <div class="small-card-powers-container">
-                    <div class="powers-header">Powers</div>
-                    <div>${getSmallCardDetailsTemp(pokeArray[smallCardsIndex].abilities)}</div>
-                <div class="small-card-footer ${getCardColor(pokeArray[smallCardsIndex])}-footer">${getSmallCardDetailsTemp(pokeArray[smallCardsIndex].types)}</div>
-            </div> 
-           `
-}
 
 
-function getCardColor(array){
-    return array.types[0].name;
-}
 
 
-function getSmallCardFunctions (smallCardsIndex) {
-
-    return `
-        onclick="cardDetails(${smallCardsIndex})" 
-        onmouseover="startAnimateSmallCardPokemon(${smallCardsIndex})" 
-        onmouseout="stopAnimateSmallCardPokemon(${smallCardsIndex})"`
-}
-
-
-function getSmallCardDetailsTemp(array){
-    let element = "";
-    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
-        element += `<div>${array[detailIndex].name}</div>`;
-    }
-    return element;
-}
 
 
 function getLargePokemonCardTemp (cardId) {

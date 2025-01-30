@@ -40,8 +40,8 @@ function getTitleContentTemp() {
 
 
 // --ONCLICK: searchPokemons, selectName, selectType,
-// ONCLICK - addPokemonToSmallCardsArray
 // ONCLICK - getPokomons, getRandomPokemons
+
 function getCardsContentTemp() {
     return  `${getHeaderSearchTemp()}
             <div class="cards-wrapper">
@@ -120,7 +120,7 @@ function getRandomPokemonTemp () {
     return `<div 
                 id="random-pokemon-wrapper" 
                 class="random-pokemon-wrapper" 
-                onclick="addPokemonToSmallCardsArray()">
+                onclick="addPokemonToAllPokemonArray()">
             </div>`
 }
 
@@ -198,17 +198,69 @@ function getStartTextTemp() {
 }
 
 
-function getRandomPokemonMainTemp () {
-    return `<div class="random-pokemon-id">#${randomPokemon[0].id}</div>
-            <img id="random-pokemon-img" class="random-pokemon-img" src="${randomPokemon[0].artwork}" alt="random-pokemon">
-            <div class="random-pokemon-name">${randomPokemon[0].name}</div>`
+function getRandomPokemonAddToCardsTemp (array) {
+    return `<div class="random-pokemon-id">#${array[0].id}</div>
+            <img id="random-pokemon-img" class="random-pokemon-img" src="${array[0].artwork}" alt="random-pokemon">
+            <div class="random-pokemon-name">${array[0].name}</div>`
+}
+
+// HEEEEEEEEEEEEEEEEEEEEERRREE!!!!!!!!!!!!!!!!!!!!!!!
+function getSmallPokemonCardTemp(array, index){
+    
+    return `
+            <div 
+                id="small-card-content${index}" 
+                class="${getCardColor(array[index])}-card 
+                small-card" 
+                ${getSmallCardFunctions(index, array)} >
+                <div class="small-card-header">
+                    <div>#${array[index].id}</div>
+                    <div class="small-card-name">${array[index].name}</div>
+                </div>
+                    <div class="small-card-img-container ${getCardColor(array[index])}-inner">
+                        <img id="small-card-pokemon-img${index}" src=${array[index].pic}>
+                        <div class="small-card-border ${getCardColor(array[index])}-border"></div>
+                    </div>
+                <div class="small-card-powers-container">
+                    <div class="powers-header">Powers</div>
+                    <div>${getSmallCardAbilities(array[index].abilities)}</div>
+                <div 
+                    class="small-card-footer 
+                    ${getCardColor(array[index])}-footer">
+                    ${getSmallCardTypes(array[index].types)}
+                </div>
+            </div> 
+           `
 }
 
 
+function getCardColor(array){
+    return array.types[0];
+}
 
 
+function getSmallCardFunctions (index) {
+
+    return `
+        onclick="cardDetails(${index})" 
+        onmouseover="startAnimateSmallCardPokemon(${index})" 
+        onmouseout="stopAnimateSmallCardPokemon(${index})"`
+}
 
 
+function getSmallCardAbilities(array){
+    let element = "";
+    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+        element += `<div>${array[detailIndex].name}</div>`;
+    }
+    return element;
+}
 
 
-
+function getSmallCardTypes(array) {
+    let element = "";
+    for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+        element += `<div>${array[detailIndex]}</div>`;
+    }
+    return element;
+}

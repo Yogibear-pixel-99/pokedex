@@ -5,13 +5,17 @@ let responseErrors = [];
 
 let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
 
+let allPokemons = [];
+
 let limit = 20;
 let offset = 0;
+
+let placeholderAlreadyAdded = false;
 
 async function init(){
     // getTitleContent();
     enterCardsContent('main-container');
-    await getRandomPokemon();
+    // await getRandomPokemon(randomPokemon);
     // setPokemonImageTitle('title-pokemon');
 }
 
@@ -23,10 +27,9 @@ function getTitleContent(){
 }
 
 
-async function getRandomPokemon(){
-    randomPokemon = [];
+async function getRandomPokemon(array){
     let randomNr = getRndNumber(1006);
-        await getPokemonFromApi (randomNr, randomPokemon);
+        await getPokemonFromApi (randomNr, array);
 }
 
 
@@ -41,6 +44,7 @@ async function getPokemonFromApi (positionNr, array) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
     let data = await response.json();
+    console.log(data);
         array.push(
             {
                 id : data.id,
@@ -58,6 +62,7 @@ async function getPokemonFromApi (positionNr, array) {
                 responseErrors.push(positionNr + ' not found');
                 console.log(positionNr + ' not found');
             }
+    console.log(array);
 }
 
 
@@ -117,7 +122,7 @@ async function enterCardsContent() {
         // await delay(1500);
         getCardsContent('main-container');
         setRandomPokemonToMainContainer('random-pokemon-wrapper');
-        setInterval(setRandomPokemonToMainContainer, 5000);
+        // setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);
         // await delay(1500);  
 }
 // --------------------------------------------------------------
@@ -135,11 +140,20 @@ function getCardsContent (id) {
 
 
 async function setRandomPokemonToMainContainer (id) {
+        randomPokemon = [];
     let contentRef = document.getElementById(id);
-        await getRandomPokemon();
-        contentRef.innerHTML = getRandomPokemonMainTemp();
+        await getRandomPokemon(randomPokemon);
+        contentRef.innerHTML = getRandomPokemonAddToCardsTemp(randomPokemon);
 
 }
 
+
+function addPokemonToAllPokemonArray() {
+    if (placeholderAlreadyAdded == false) {
+        allPokemons.unshift(randomPokemon[0]);
+    renderSmallPokemonCards(allPokemons, 'all-cards');
+    }
+    placeholderAlreadyAdded = true;
+}
 
 
