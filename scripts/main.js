@@ -1,40 +1,35 @@
 
 
 let randomPokemon = [];
-
-
-
-
-
-let allPokemons = [];
 let responseErrors = [];
-let renderPosition = 0;
 
-let limit = 20;
-let offset = 0;
 let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
 
-let filtertPokemonsName = [];
-let filtertForUser = [];
-let searchedPokemons = [];
+// -----------------------------------
+// let allPokemons = [];
+// 
+// let renderPosition = 0;
+
+// let limit = 20;
+// let offset = 0;
+// '
+
+// let filtertPokemonsName = [];
+// let filtertForUser = [];
+// let searchedPokemons = [];
 
 
-let titlePokemonPic = '';
+// let titlePokemonPic = '';
 // let onTitle = true;
 
-let placeholderAlreadyAdded = false;
+// let placeholderAlreadyAdded = false;
+// ---------------------------------------
 
 
-
-
-
-
-
-function init(){
+async function init(){
     getTitleContent();
-    getRandomPokemon();
-    setPokemonImage('title');
-    // setInterval(getRandomPokemonImage, 3000);
+    await getRandomPokemon();
+    setPokemonImage('title-pokemon');
 }
 
 
@@ -48,19 +43,14 @@ function getTitleContent(){
 async function getRandomPokemon(){
     randomPokemon = [];
     let randomNr = getRndNumber(1000);
-
         await getPokemonFromApi (randomNr, randomPokemon);
-        // imgRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`;
-        // contentRef.innerHTML = getPlaceholderInfosTemp();
-        // placeholderAlreadyAdded = false;
 }
 
-// async function getTitleImage (){
-//     if (onTitle === true) {
-//         getRandomPokemonImage()
-//     } ;
-// }
 
+function setPokemonImage(id) {
+    let contentRef = document.getElementById(id);
+        contentRef.src = `${randomPokemon[0].artwork}`;
+}
 
 
 // GET POKEMONS WITH STATS FROM API
@@ -138,10 +128,41 @@ function getStats(data) {
 }
 // GET POKEMONS WITH STATS FROM API
 
-function setPokemonImage(id) {
-    let contentRef = document.getElementById(id);
-        contentRef.src = randomPokemon.artwork;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
