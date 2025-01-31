@@ -27,11 +27,7 @@ function displayLargeCardContainer(){
 function getLargeCard(array, id){
     let ref = document.getElementById('large-card-container');
         ref.innerHTML = getLargePokemonCardTemp(array, id);
-    // let cardRef = document.getElementById(`large-card-content${cardId}`);
-    //     cardRef.style.backgroundImage = `url(${allPokemons[cardId].artwork})`
 }
-
-
 
 
 function getLargeCardStats(array, id) {
@@ -43,13 +39,59 @@ function getLargeCardStats(array, id) {
 }
 
 
-// function getLargeCardPowers (id) {
-//     return `<div class="large-card-powers-container large-content-hide">
-//             ${getLargeCardPowersTemp(id)}
-//                 <div class="flex-ctr-spbtw abs-container large-content-hide weight">
-//             <div class="abs-name">weight</div>
-            
-//         </div>
-//              </div>
-//             `
-// }
+function showLargePokemonImageOnHover(array, id) {
+    showFooterPokemonNameOnHover(array, id);
+    showFooterImageOnHover();
+    hideFooterTypesOnHover();
+}
+
+
+function hideLargePokemonImageOnHover() {
+    hideFooterPokemonNameOnHover();
+    hideFooterImageOnHover();
+    showFooterTypesOnHover();
+}
+
+
+function showFooterPokemonNameOnHover(array, id) {
+    let footerRef = document.getElementById('pokemon-footer-name');
+        footerRef.innerText = `${array[id].name}`;
+};
+
+
+function hideFooterPokemonNameOnHover() {
+    let footerRef = document.getElementById(`pokemon-footer-name`);
+        footerRef.innerText = '';
+};
+
+
+function showFooterImageOnHover() {
+    let imgRef = document.getElementById('large-card-bg-img');
+        imgRef.classList.add('large-card-show-image');
+};
+
+
+function hideFooterImageOnHover() {
+    let imgRef = document.getElementById('large-card-bg-img');
+        imgRef.classList.remove('large-card-show-image');
+};
+
+
+function hideFooterTypesOnHover() {
+    let hideContent = document.getElementsByClassName('large-content-hide');
+        for (let index = 0; index < hideContent.length; index++) {
+            hideContent[index].classList.add('d-opacity');  
+    }  
+};
+
+
+function showFooterTypesOnHover() {
+    let hideContent = document.getElementsByClassName('large-content-hide');
+        for (let index = 0; index < hideContent.length; index++) {
+            hideContent[index].classList.remove('d-opacity');  
+    }  
+};
+
+
+
+

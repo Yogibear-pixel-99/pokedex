@@ -276,9 +276,11 @@ function getLargePokemonCardTemp (array, id) {
                         <div>#${array[id].id}</div>
                         <div class="large-card-name">${array[id].name}</div>
                     </div>
-                    <img id="large-card-bg-img${id}" class="large-card-bg-img" src="${array[id].artwork}">
-                        <div class="stats-container large-content-hide">
-                            ${getLargeCardStats(array, id)}
+                    <img id="large-card-bg-img" class="large-card-bg-img" src="${array[id].artwork}">
+                        <div 
+                            id="stats-container" 
+                            class="stats-container large-content-hide">
+                                ${getLargeCardStats(array, id)}
                         </div>
                     <div class="empty"></div>
                         ${getLargeCardPowersContainerTemp(array, id)}
@@ -330,8 +332,8 @@ function getLargeCardFooter (array, id) {
     return `<div 
                 class="large-card-footer 
                 ${getCardColor(array[id])}-footer" 
-                onmouseover="showLargePokemon(${id})" 
-                onmouseout="hideLargePokemon(${id})">
+                onmouseover="showLargePokemonImageOnHover(${array[id].arrayname}, ${id})" 
+                onmouseout="hideLargePokemonImageOnHover()">
                     <button 
                         class="switch-button 
                         ${getCardColor(array[id])}-card" 
@@ -339,9 +341,9 @@ function getLargeCardFooter (array, id) {
                         onmouseover="stopBubbling(event)">
                         <--
                     </button>
-                    ${getLargeCardDetailsTemp(array[id])}
+                    ${getLargeCardTypesTemp(array[id])}
                     <div 
-                        id="pokemon-footer-name${id}" 
+                        id="pokemon-footer-name" 
                         class="pokemon-footer-name">
                     </div>
                     <button 
@@ -368,10 +370,10 @@ function getLargeCardFooter (array, id) {
 
 
 
-function getLargeCardDetailsTemp(array){
+function getLargeCardTypesTemp(array){
     let element = "";
     for (let detailIndex = 0; detailIndex < array.types.length; detailIndex++) {
-        element += `<div class="large-content-hide">${array.types[detailIndex].name}</div>`;
+        element += `<div class="large-content-hide">${array.types[detailIndex]}</div>`;
     }
     return element;
 }

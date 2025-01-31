@@ -75,7 +75,7 @@
     to {filter: opacity(10%)}
 }
 
-.large-card-bg-active {
+.large-card-show-image {
     filter: opacity(100%) !important;
     /* z-index: 500 !important; */
 }
