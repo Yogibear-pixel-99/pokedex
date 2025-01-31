@@ -25,6 +25,10 @@ body {
     align-items: center;
 }
 
+.main-content {
+    position: relative;
+}
+
 .pokemon-logo {
     width: 700px;
 }
@@ -86,12 +90,12 @@ body {
     100% {width: 150px;}
 }
 
-/* .animate-main-content {
+.animate-main-content {
     animation-name: enter-menu;
     animation-duration: 3s;
     animation-iteration-count: 1;
    
-} */
+}
 
 @keyframes enter-menu {
 

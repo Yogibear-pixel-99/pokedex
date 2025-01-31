@@ -51,7 +51,7 @@ function getCardsContentTemp() {
                 
             </div>     
                 ${getFooterButtonTemp()}   
-                ${getLargeCardTemp()}
+                ${getLargeCardContainerTemp()}
                 ${getLoadingSpinnerTemp()}`
 }
 
@@ -171,7 +171,7 @@ function getFooterButtonTemp () {
 }
 
 
-function getLargeCardTemp () {
+function getLargeCardContainerTemp () {
     return `<div 
                 id="large-card-container" 
                 class="large-card-container" 
@@ -265,6 +265,7 @@ function getSmallCardTypes(array) {
     }
     return element;
 }
+
 
 
 

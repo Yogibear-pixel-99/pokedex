@@ -42,14 +42,14 @@ function getLargeCardStats(array, id) {
 function showLargePokemonImageOnHover(array, id) {
     showFooterPokemonNameOnHover(array, id);
     showFooterImageOnHover();
-    hideFooterTypesOnHover();
+    hideFooterInfosOnHover();
 }
 
 
 function hideLargePokemonImageOnHover() {
     hideFooterPokemonNameOnHover();
     hideFooterImageOnHover();
-    showFooterTypesOnHover();
+    showFooterInfosOnHover();
 }
 
 
@@ -77,7 +77,7 @@ function hideFooterImageOnHover() {
 };
 
 
-function hideFooterTypesOnHover() {
+function hideFooterInfosOnHover() {
     let hideContent = document.getElementsByClassName('large-content-hide');
         for (let index = 0; index < hideContent.length; index++) {
             hideContent[index].classList.add('d-opacity');  
@@ -85,12 +85,19 @@ function hideFooterTypesOnHover() {
 };
 
 
-function showFooterTypesOnHover() {
+function showFooterInfosOnHover() {
     let hideContent = document.getElementsByClassName('large-content-hide');
         for (let index = 0; index < hideContent.length; index++) {
             hideContent[index].classList.remove('d-opacity');  
     }  
 };
+
+
+function closeLargeCard(){
+    let contentRef = document.getElementById('large-card-container');
+        // contentRef.innerHTML = '';
+        contentRef.style.display = 'none';
+}
 
 
 
