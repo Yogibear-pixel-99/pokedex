@@ -329,7 +329,7 @@ function getLargeCardPowersDetailsTemp(array, id) {
 
 // OVER HERE STOPPED AT GET STATS LARGE CARD
 
-function getLargeCardFooter (array, id) {
+function getLargeCardFooter (array, id,) {
     return `<div 
                 class="large-card-footer 
                 ${getCardColor(array[id])}-footer" 
@@ -338,7 +338,7 @@ function getLargeCardFooter (array, id) {
                     <button 
                         class="switch-button 
                         ${getCardColor(array[id])}-card" 
-                        onclick="switchDown(${id})" 
+                        onclick="switchDown(${array[id].arrayname}, ${id})" 
                         onmouseover="stopBubbling(event)">
                             <img class="arrow-button" src="./assets/icons/left-arrow-svgrepo-com.svg" alt="switch down">
                     </button>
@@ -350,7 +350,7 @@ function getLargeCardFooter (array, id) {
                     <button 
                         class="switch-button 
                         ${getCardColor(array[id])}-card" 
-                        onclick="switchUp(${id})" 
+                        onclick="switchUp(${array[id].arrayname}, ${id})" 
                         onmouseover="stopBubbling(event)">
                             <img class="arrow-button" src="./assets/icons/right-arrow-svgrepo-com.svg" alt="switch down">
                     </button>

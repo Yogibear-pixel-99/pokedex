@@ -115,8 +115,36 @@ function getSingleBorderWidth(array, id, valueIndex) {
 
 
 function checkIfPokemonIsOverpowerd (data, borderValueRef, valueIndex) {
-    if ((data * 1.5) > 150) {
+    if ((data * 1.5) >= 150) {
         borderValueRef[valueIndex].innerText = "powerfull!";
         borderValueRef[valueIndex].classList.add('highlight-overpowerd', 'blink');
     }
 }
+
+
+function switchDown (array, id) {
+    if (id == 0) {
+        id = array.length - 1;
+        getLargeCard(array, id);
+        fillStatsBorderWithValue(array, id);
+    } else {
+        id--;
+        getLargeCard(array, id);
+        fillStatsBorderWithValue(array, id);
+        
+}
+}
+
+
+function switchUp (array, id) {
+    if (id == array.length - 1) {
+        id = 0;
+        getLargeCard(array, id);
+        fillStatsBorderWithValue(array, id);
+    } else {
+        id++;
+        getLargeCard(array, id);
+        fillStatsBorderWithValue(array, id);
+    }
+}
+
