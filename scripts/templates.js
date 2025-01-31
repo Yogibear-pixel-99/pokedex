@@ -278,19 +278,100 @@ function getLargePokemonCardTemp (array, id) {
                     </div>
                     <img id="large-card-bg-img${id}" class="large-card-bg-img" src="${array[id].artwork}">
                         <div class="stats-container large-content-hide">
-                        
-
-
-
-
-
-
-                            ${getStatsLargeCard(id)}
+                            ${getLargeCardStats(array, id)}
                         </div>
-
                     <div class="empty"></div>
-                        ${getLargeCardPowers(id)}
-                        ${getLargeFooter(id)}    
+                        ${getLargeCardPowersContainerTemp(array, id)}
+                        ${getLargeCardFooter(array, id)}    
             </div>`
 }
+
+
+function getLargeCardStatsTemp(array, id,statsId) {
+    return `<div class="large-details-wrapper">
+                     <div>${array[id].stats[statsId].name}</div>
+                     <div 
+                        class="stats-border-empty 
+                        stats-color-border-${array[id].stats[statsId].name}">
+                            <div 
+                                class="stats-border-filled-all 
+                                stats-color-border-filled-${array[id].stats[statsId].name}">
+                            </div>
+                     </div>
+                        <div 
+                            class="stats-value">${array[id].stats[statsId].value}</div>
+                    </div>`
+}
+
+
+function getLargeCardPowersContainerTemp (array, id) {
+    return `<div class="large-card-powers-container large-content-hide">
+                ${getLargeCardPowersDetailsTemp(array, id)}
+                    <div class="flex-ctr-spbtw abs-container large-content-hide weight">
+                         <div class="abs-name">weight</div>
+                    </div>
+            </div>`
+}
+
+function getLargeCardPowersDetailsTemp(array, id) {
+        let element = '';
+    for (let absIndex = 0; absIndex < array[id].abilities.length; absIndex++) {
+            element += `<div class="flex-ctr-spbtw abs-container">
+            <div class="abs-name">${array[id].abilities[absIndex].name}</div>
+            <div class="abs-text">${array[id].abilities[absIndex].text}</div>
+            </div>`        
+        }
+    return element
+}
+
 // OVER HERE STOPPED AT GET STATS LARGE CARD
+
+function getLargeCardFooter (array, id) {
+    return `<div 
+                class="large-card-footer 
+                ${getCardColor(array[id])}-footer" 
+                onmouseover="showLargePokemon(${id})" 
+                onmouseout="hideLargePokemon(${id})">
+                    <button 
+                        class="switch-button 
+                        ${getCardColor(array[id])}-card" 
+                        onclick="switchDown(${id})" 
+                        onmouseover="stopBubbling(event)">
+                        <--
+                    </button>
+                    ${getLargeCardDetailsTemp(array[id])}
+                    <div 
+                        id="pokemon-footer-name${id}" 
+                        class="pokemon-footer-name">
+                    </div>
+                    <button 
+                        class="switch-button 
+                        ${getCardColor(array[id])}-card" 
+                        onclick="switchUp(${id})" 
+                        onmouseover="stopBubbling(event)">
+                        -->
+                    </button>
+                    <div 
+                        class="left-footer-bubble" 
+                        onmouseover="stopBubbling(event)">
+                    </div>
+                    <div 
+                        class="right-footer-bubble" 
+                        onmouseover="stopBubbling(event)">
+                    </div>
+            </div>`
+}
+
+
+
+
+
+
+
+function getLargeCardDetailsTemp(array){
+    let element = "";
+    for (let detailIndex = 0; detailIndex < array.types.length; detailIndex++) {
+        element += `<div class="large-content-hide">${array.types[detailIndex].name}</div>`;
+    }
+    return element;
+}

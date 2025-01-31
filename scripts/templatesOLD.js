@@ -48,83 +48,12 @@
         </div> */}
 
 
-function getLargeCardPowers (cardId) {
-    return `<div class="large-card-powers-container large-content-hide">
-                
-                    
-                
-
-                
-            
-                    ${getLargeCardAbsTemp(cardId)}
-                <div class="flex-ctr-spbtw abs-container large-content-hide weight">
-            <div class="abs-name">weight</div>
-            <div>${allPokemons[cardId].weight}</div>
-        </div>
-             </div>
-            `
-}
-
-function getLargeCardAbsTemp(cardId) {
-        let element = '';
-    for (let absIndex = 0; absIndex < allPokemons[cardId].abilities.length; absIndex++) {
-            element += `<div class="flex-ctr-spbtw abs-container">
-            <div class="abs-name">${allPokemons[cardId].abilities[absIndex].name}</div>
-            <div class="abs-text">${allPokemons[cardId].abilities[absIndex].text}</div>
-            </div>
-            `
-        
-    }
-    return element
-
-}
-
-function getLargeFooter (cardId) {
-    return `
-        <div class="large-card-footer ${getCardColor(allPokemons[cardId])}-footer" onmouseover="showLargePokemon(${cardId})" onmouseout="hideLargePokemon(${cardId})">
-            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchDown(${cardId})" onmouseover="stopBubbling(event)"><--</button>
-            ${getLargeCardDetailsTemp(allPokemons[cardId])}
-            <div id="pokemon-footer-name${cardId}" class="pokemon-footer-name"></div>
-            <button class="switch-button ${getCardColor(allPokemons[cardId])}-card" 
-            onclick="switchUp(${cardId})" onmouseover="stopBubbling(event)">--></button>
-            
-            <div class="left-footer-bubble" onmouseover="stopBubbling(event)"></div>
-            <div class="right-footer-bubble" onmouseover="stopBubbling(event)"></div>
-
-            </div>
-        `
-}
 
 
-function getStatsLargeCard(cardId) {
-    let element = '';
-    for (let statsCardIndex = 0; statsCardIndex < allPokemons[cardId].stats.length; statsCardIndex++) {
-        element += getStatsTemp(cardId, statsCardIndex);
-    }
-    return element;
-}
 
 
-function getStatsTemp(cardId,statsCardIndex) {
-    return `<div class="large-details-wrapper">
-                     <div>${allPokemons[cardId].stats[statsCardIndex].name}</div>
-                     <div class="stats-border-empty stats-color-border-${allPokemons[cardId].stats[statsCardIndex].name}">
-                         <div class="stats-border-filled-all stats-color-border-filled-${allPokemons[cardId].stats[statsCardIndex].name}"></div>
-                     </div>
-                     <div class="stats-value">${allPokemons[cardId].stats[statsCardIndex].value}</div>
-                    </div>
-            `
-}
 
 
-function getLargeCardDetailsTemp(array){
-    let element = "";
-    for (let detailIndex = 0; detailIndex < array.types.length; detailIndex++) {
-        element += `<div class="large-content-hide">${array.types[detailIndex].name}</div>`;
-    }
-    return element;
-}
 
 // CHANGE TEMPLATE TO SEARCH , ANIMATION HOVER PROBLEM
 function getSearchedSmallCardsTemp(smallCardsIndex, pokeAarray){

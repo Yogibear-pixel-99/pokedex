@@ -30,3 +30,26 @@ function getLargeCard(array, id){
     // let cardRef = document.getElementById(`large-card-content${cardId}`);
     //     cardRef.style.backgroundImage = `url(${allPokemons[cardId].artwork})`
 }
+
+
+
+
+function getLargeCardStats(array, id) {
+    let element = '';
+    for (let statsCardIndex = 0; statsCardIndex < array[id].stats.length; statsCardIndex++) {
+        element += getLargeCardStatsTemp(array, id, statsCardIndex);
+    }
+    return element;
+}
+
+
+// function getLargeCardPowers (id) {
+//     return `<div class="large-card-powers-container large-content-hide">
+//             ${getLargeCardPowersTemp(id)}
+//                 <div class="flex-ctr-spbtw abs-container large-content-hide weight">
+//             <div class="abs-name">weight</div>
+            
+//         </div>
+//              </div>
+//             `
+// }
