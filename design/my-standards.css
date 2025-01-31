@@ -73,3 +73,28 @@
 .d_none {
     display: none;
 }
+
+
+.highlight-overpowerd {
+    filter: brightness(120%)
+}
+
+.blink {
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {filter: brightness(100%) saturate(100%)}
+    80% {filter: brightness(130%) saturate(300%)}
+    85% {filter: brightness(100%) saturate(100%)}
+    90% {filter: brightness(130%) saturate(300%)}
+    95% {filter: brightness(100%) saturate(100%)}
+    100% {filter: brightness(130%) saturate(300%)}
+}
+
+
+.d-opacity-10 {
+    filter: opacity(10%);
+}

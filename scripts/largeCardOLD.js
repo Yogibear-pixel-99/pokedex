@@ -42,12 +42,3 @@ function switchUp (cardId) {
 
 
 
-function fillStatsBorderWithValue (cardId) {
-    // let statsValueRef = document.getElementsByClassName('stats-value');
-    let borderValueRef = document.getElementsByClassName('stats-border-filled-all');
-    console.log(borderValueRef);
-    for (let valueIndex = 0; valueIndex < allPokemons[cardId].stats.length; valueIndex++) {
-        borderValueRef[valueIndex].style.width = `${allPokemons[cardId].stats[valueIndex].value}%`;
-        
-    }
-}

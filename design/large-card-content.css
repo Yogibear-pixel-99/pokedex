@@ -252,7 +252,3 @@
     transform: scale(0.95);
 }
 
-.d-opacity {
-    /* display: none; */
-    filter: opacity(1%);
-}

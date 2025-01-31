@@ -1,5 +1,6 @@
 
 
+
 let randomPokemon = [];
 let responseErrors = [];
 
@@ -17,6 +18,17 @@ async function init(){
     enterCardsContent('main-container');
     // await getRandomPokemon(randomPokemon);
     // setPokemonImageTitle('title-pokemon');
+}
+
+
+
+function getTypes(data){
+    let element = [];
+    for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
+        element.push(
+            data.types[typesIndex].type.name,
+        )}
+    return element;
 }
 
 

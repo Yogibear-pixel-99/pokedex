@@ -5,7 +5,7 @@ function cardDetails(array, id) {
     getClickEffect(id);
     setTimeout(() =>  displayLargeCardContainer(), 500);
     getLargeCard(array, id);
-    // fillStatsBorderWithValue(cardId);
+    fillStatsBorderWithValue(array, id);
 } 
 
 
@@ -80,7 +80,7 @@ function hideFooterImageOnHover() {
 function hideFooterInfosOnHover() {
     let hideContent = document.getElementsByClassName('large-content-hide');
         for (let index = 0; index < hideContent.length; index++) {
-            hideContent[index].classList.add('d-opacity');  
+            hideContent[index].classList.add('d-opacity-10');  
     }  
 };
 
@@ -88,17 +88,35 @@ function hideFooterInfosOnHover() {
 function showFooterInfosOnHover() {
     let hideContent = document.getElementsByClassName('large-content-hide');
         for (let index = 0; index < hideContent.length; index++) {
-            hideContent[index].classList.remove('d-opacity');  
+            hideContent[index].classList.remove('d-opacity-10');  
     }  
 };
 
 
 function closeLargeCard(){
     let contentRef = document.getElementById('large-card-container');
-        // contentRef.innerHTML = '';
         contentRef.style.display = 'none';
 }
 
 
+function fillStatsBorderWithValue (array, id) {
+    let borderValueRef = document.getElementsByClassName('stats-border-filled-all');
+        for (let valueIndex = 0; valueIndex < array[id].stats.length; valueIndex++) {
+            let data = getSingleBorderWidth(array, id, valueIndex);
+            borderValueRef[valueIndex].style.width = `${data}%`;
+            checkIfPokemonIsOverpowerd(data, borderValueRef, valueIndex);
+    }
+}
 
 
+function getSingleBorderWidth(array, id, valueIndex) {
+    return array[id].stats[valueIndex].value / 1.5;
+}
+
+
+function checkIfPokemonIsOverpowerd (data, borderValueRef, valueIndex) {
+    if ((data * 1.5) > 150) {
+        borderValueRef[valueIndex].innerText = "powerfull!";
+        borderValueRef[valueIndex].classList.add('highlight-overpowerd', 'blink');
+    }
+}
