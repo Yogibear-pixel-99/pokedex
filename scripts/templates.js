@@ -205,7 +205,7 @@ function getRandomPokemonAddToCardsTemp (array) {
             <div class="random-pokemon-name">${array[0].name}</div>`
 }
 
-// HEEEEEEEEEEEEEEEEEEEEERRREE!!!!!!!!!!!!!!!!!!!!!!!
+
 function getSmallPokemonCardTemp(array, index){
     
     return `
@@ -340,7 +340,7 @@ function getLargeCardFooter (array, id) {
                         ${getCardColor(array[id])}-card" 
                         onclick="switchDown(${id})" 
                         onmouseover="stopBubbling(event)">
-                        <--
+                            <img class="arrow-button" src="./assets/icons/left-arrow-svgrepo-com.svg" alt="switch down">
                     </button>
                     ${getLargeCardTypesTemp(array[id])}
                     <div 
@@ -352,7 +352,7 @@ function getLargeCardFooter (array, id) {
                         ${getCardColor(array[id])}-card" 
                         onclick="switchUp(${id})" 
                         onmouseover="stopBubbling(event)">
-                        -->
+                            <img class="arrow-button" src="./assets/icons/right-arrow-svgrepo-com.svg" alt="switch down">
                     </button>
                     <div 
                         class="left-footer-bubble" 
@@ -364,11 +364,6 @@ function getLargeCardFooter (array, id) {
                     </div>
             </div>`
 }
-
-
-
-
-
 
 
 function getLargeCardTypesTemp(array){
