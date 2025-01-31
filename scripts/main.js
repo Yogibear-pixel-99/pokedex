@@ -2,16 +2,16 @@
 
 
 let randomPokemon = [];
-let responseErrors = [];
-
-let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
-
 let allPokemons = [];
-
+let responseErrors = [];
+let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
 let limit = 20;
 let offset = 0;
+let randomPokemonAlreadyAddedToArray = false;
 
-let placeholderAlreadyAdded = false;
+
+
+
 
 async function init(){
     // getTitleContent();
@@ -162,11 +162,11 @@ async function setRandomPokemonToMainContainer (id) {
 
 
 function addPokemonToAllPokemonArray() {
-    if (placeholderAlreadyAdded == false) {
+    if (randomPokemonAlreadyAddedToArray == false) {
         allPokemons.unshift(randomPokemon[0]);
     renderSmallPokemonCards(allPokemons, 'all-cards');
     }
-    placeholderAlreadyAdded = true;
+    randomPokemonAlreadyAddedToArray = true;
 }
 
 async function get20Pokemons () {
