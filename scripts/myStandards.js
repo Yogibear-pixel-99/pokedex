@@ -29,3 +29,9 @@ async function delay(ms) {
 function stopBubbling(event) {
     event.stopPropagation()
 }
+
+
+function emptyContainer(idContent) {
+    let content = document.getElementById(idContent);
+        content.innerHTML = '';
+}

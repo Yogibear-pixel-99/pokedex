@@ -4,7 +4,16 @@
 let searchedPokemons = [];
 
 function searchPokemons (array) {
-    let userInput = document.getElementById('search-input').value.toLowerCase();
+    getUserRequest(array);
+    showContainer('searched-cards');
+    // emptyContainer('searched-container');
+    renderSmallPokemonCards(searchedPokemons, 'searched-cards');
+    // renderSmallSearchedPokemonCards(array);
+}
+
+
+function getUserRequest (array) {
+let userInput = document.getElementById('search-input').value.toLowerCase();
     let nameRadioButton = document.getElementById('radio-name');
     let typeRadioButton = document.getElementById('radio-type');
 
@@ -16,4 +25,3 @@ function searchPokemons (array) {
         searchedPokemons = array.filter(element => element.types.includes(userInput));
     }
 }
-
