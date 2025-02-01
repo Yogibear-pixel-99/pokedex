@@ -39,9 +39,6 @@ function getTitleContentTemp() {
 }
 
 
-// --ONCLICK: searchPokemons, selectName, selectType,
-// ONCLICK - getPokomons, getRandomPokemons
-
 function getCardsContentTemp() {
     return  `${getHeaderSearchTemp()}
             <div class="cards-wrapper" id="cards-wrapper">
@@ -66,7 +63,7 @@ function getHeaderSearchTemp () {
                     <button 
                         id="search-button" 
                         class="search-button" 
-                        onclick="searchPokemons()">
+                        onclick="searchPokemons(allPokemons)">
                         Search
                     </button>
                 </a>
@@ -77,8 +74,7 @@ function getHeaderSearchTemp () {
                     maxlength="20" value="" 
                     placeholder="put in a name or a type">
                 <label 
-                    class="search-type name-type" 
-                    onclick="selectName()"> 
+                    class="name-search-type"> 
                         <img id="check-name-color" class="check-img" src="./assets/img/logo.png">
                         <input 
                             type="radio" 
@@ -89,8 +85,7 @@ function getHeaderSearchTemp () {
                     <span>Name</span>
                 </label>
                 <label 
-                    class="search-type name-type" 
-                    onclick="selectType()">
+                    class="name-search-type">
                         <img id="check-type-color" class="check-img greyscale" src="./assets/img/logo.png">
                         <input 
                             type="radio" 
@@ -100,7 +95,7 @@ function getHeaderSearchTemp () {
                     <span>Type</span>
                 </label>
             </div>
-        <div class="filter-wrapper">
+        <div class="search-wrapper">
                 <select>
                     <option value="hp">HP</option>
                     <option value="attack">Attack</option>

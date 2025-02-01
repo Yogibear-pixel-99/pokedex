@@ -22,20 +22,15 @@
 
 .bottom-sticky {
     bottom: 0;
-    
-    position: fixed;
-    /* width: 100%; */
+    position: sticky;
 }
 
 .search-bar {
     background-color: var(--poke-logo-blue);
     padding: 10px;
-    bottom: 14px;
     display: flex;
     justify-content: space-between;
-    left: 20px;
-    right: 20px;
-    gap: 40px;
+    gap: 10px;
     border: solid 2px var(--poke-logo-darkblue);
     border-radius: 10px;
     box-shadow: 0 0 8px 2px var(--poke-logo-darkblue);
@@ -50,14 +45,13 @@
 }
 
 .search-button {
-    /* border: solid 2px var(--poke-logo-blue) !important; */
+    
     vertical-align: baseline;
     padding: 6px;
-    filter: brightness(95%);
+    filter: brightness(90%);
     border: solid 1px var(--poke-logo-blue) !important;
     border-radius: 5px;
-    width: 58px;
-    /* height: 30px; */
+    width: 70px;
 }
 
 .search-button:hover {
@@ -80,7 +74,6 @@ select {
 }
 
 .search-bar button {
-    /* height: auto; */
     background-color: var(--poke-logo-yellow);
     border: none;
 }
@@ -111,7 +104,6 @@ select {
 }
 
 .search-wrapper {
-
 background-color: var(--poke-logo-yellow);
 }
 
@@ -124,24 +116,25 @@ background-color: var(--poke-logo-yellow);
 
 .filter-wrapper {
     display: flex;
-    gap: 16px;
+    /* gap: 16px; */
     padding: 0;
 }
 
-.name-type {
-    /* position: relative; */
+.name-search-type {
+    position: relative;
     width: 15px;
     height: 15px;
     margin-left: 4px;
     margin-right: 4px;
 }
 
+/* Position noch ändern!!!!! */
 .check-img {
-    /* position: absolute; */
-    top: 2px;
+    position: absolute;
+    top: 10px;
     left: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
 }
 
 .greyscale {

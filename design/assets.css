@@ -53,3 +53,7 @@
 .arrow-button {
     width: 28px;
 }
+
+a {
+    text-decoration: none;
+}
