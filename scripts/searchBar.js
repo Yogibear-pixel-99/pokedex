@@ -5,6 +5,7 @@ let searchedPokemons = [];
 
 function searchPokemons (array) {
     getUserRequest(array);
+    changeArrayNameInObjectForFunktionsId(searchedPokemons, 'arrayname', 'searchedPokemons');
     showContainer('searched-cards');
     // emptyContainer('searched-container');
     renderSmallPokemonCards(searchedPokemons, 'searched-cards');
@@ -23,5 +24,15 @@ let userInput = document.getElementById('search-input').value.toLowerCase();
     } else if (typeRadioButton.checked) {
         
         searchedPokemons = array.filter(element => element.types.includes(userInput));
+        
+    }
+}
+
+// ÄNDERN DES ARRAYNAMEN VON allPokemons to searchedPokemons
+
+
+function changeArrayNameInObjectForFunktionsId (newArray, name, newArrayName) {
+    for (let arrayNameIndex = 0; arrayNameIndex < newArray.length; arrayNameIndex++) {
+        newArray[arrayNameIndex][name] = newArrayName;
     }
 }

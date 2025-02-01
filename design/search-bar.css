@@ -131,7 +131,7 @@ background-color: var(--poke-logo-yellow);
 /* Position noch ändern!!!!! */
 .check-img {
     position: absolute;
-    top: 10px;
+    top: 0;
     left: 0;
     width: 20px;
     height: 20px;

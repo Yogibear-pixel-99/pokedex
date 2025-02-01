@@ -205,7 +205,7 @@ function getSmallPokemonCardTemp(array, index){
     
     return `
             <div 
-                id="small-card-content${index}" 
+                id="small-card-content${array[index].arrayname}${index}" 
                 class="${getCardColor(array[index])}-card 
                 small-card" 
                 ${getSmallCardFunctions(array, index)} >
@@ -214,7 +214,7 @@ function getSmallPokemonCardTemp(array, index){
                     <div class="small-card-name">${array[index].name}</div>
                 </div>
                     <div class="small-card-img-container ${getCardColor(array[index])}-inner">
-                        <img id="small-card-pokemon-img${index}" src=${array[index].pic}>
+                        <img id="small-card-pokemon-img${array[index].arrayname}${index}" src=${array[index].pic}>
                         <div class="small-card-border ${getCardColor(array[index])}-border"></div>
                     </div>
                 <div class="small-card-powers-container">

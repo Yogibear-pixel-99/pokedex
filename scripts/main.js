@@ -195,9 +195,9 @@ function startLoadingAndRenderingCards() {
 }
 
 
-async function finishLoadingAndRenderingCards () {
+ function finishLoadingAndRenderingCards () {
     // await delay(3000);
-    await renderSmallPokemonCards(allPokemons, 'all-cards');
+    renderSmallPokemonCards(allPokemons, 'all-cards');
     hideLoadingSpinner();
     enableCardContent();
      

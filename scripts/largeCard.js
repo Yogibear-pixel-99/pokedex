@@ -2,7 +2,7 @@
 
 function cardDetails(array, id) {
 
-    getClickEffect(id);
+    getClickEffect(array, id);
     setTimeout(() =>  displayLargeCardContainer(), 500);
     getLargeCard(array, id);
     fillStatsBorderWithValue(array, id);
@@ -10,8 +10,8 @@ function cardDetails(array, id) {
 
 
 
-function getClickEffect(cardId) {
-    let contentRef = document.getElementById(`small-card-content${cardId}`);
+function getClickEffect(array, id) {
+    let contentRef = document.getElementById(`small-card-content${array[id].arrayname}${id}`);
     contentRef.classList.add('click-animation');
     setTimeout(() => {contentRef.classList.remove('click-animation');
             }, 400);
