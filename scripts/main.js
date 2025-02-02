@@ -131,11 +131,11 @@ function getStats(data) {
 // --------------------------------------------------------------
 // Enter Cards Content
 async function enterCardsContent() {
-        // animateEnterButton('main-container');
-        // await delay(1500);
+        animateEnterButton('main-container');
+        await delay(1500);
         getCardsContent('main-container');
         setRandomPokemonToMainContainer('random-pokemon-wrapper');
-        // setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);
+        setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);
         // await delay(1500);  
 }
 // --------------------------------------------------------------
@@ -153,11 +153,11 @@ function getCardsContent (id) {
 
 
 async function setRandomPokemonToMainContainer (id) {
+        randomPokemonAlreadyAddedToArray = false;
         randomPokemon = [];
     let contentRef = document.getElementById(id);
         await getRandomPokemon(randomPokemon);
         contentRef.innerHTML = getRandomPokemonAddToCardsTemp(randomPokemon);
-
 }
 
 

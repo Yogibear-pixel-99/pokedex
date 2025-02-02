@@ -74,7 +74,8 @@ function getHeaderSearchTemp () {
                     maxlength="20" value="" 
                     placeholder="put in a name or a type">
                 <label 
-                    class="name-search-type"> 
+                    class="name-search-type"
+                    onclick="selectName()"> 
                         <img id="check-name-color" class="check-img" src="./assets/img/logo.png">
                         <input 
                             type="radio" 
@@ -85,7 +86,8 @@ function getHeaderSearchTemp () {
                     <span>Name</span>
                 </label>
                 <label 
-                    class="name-search-type">
+                    class="name-search-type"
+                    onclick="selectType()">
                         <img id="check-type-color" class="check-img greyscale" src="./assets/img/logo.png">
                         <input 
                             type="radio" 

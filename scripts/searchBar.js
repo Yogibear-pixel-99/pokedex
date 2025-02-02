@@ -7,7 +7,7 @@ function searchPokemons (array) {
     getUserRequest(array);
     changeArrayNameInObjectForFunktionsId(searchedPokemons, 'arrayname', 'searchedPokemons');
     showContainer('searched-cards');
-    // emptyContainer('searched-container');
+    emptyContainer('searched-cards');
     renderSmallPokemonCards(searchedPokemons, 'searched-cards');
     // renderSmallSearchedPokemonCards(array);
 }
@@ -15,24 +15,46 @@ function searchPokemons (array) {
 
 function getUserRequest (array) {
 let userInput = document.getElementById('search-input').value.toLowerCase();
+let data = [];
     let nameRadioButton = document.getElementById('radio-name');
     let typeRadioButton = document.getElementById('radio-type');
-
-
         if (nameRadioButton.checked) {
-            searchedPokemons = array.filter(element => element.name.toLowerCase().includes(userInput));
+            data = array.filter(element => element.name.toLowerCase().includes(userInput));
+            searchedPokemons = structuredClone(data);
     } else if (typeRadioButton.checked) {
-        
-        searchedPokemons = array.filter(element => element.types.includes(userInput));
-        
+                data = array.filter((element) => filterTypes(element, userInput));
+            searchedPokemons = structuredClone(data);
     }
 }
 
-// ÄNDERN DES ARRAYNAMEN VON allPokemons to searchedPokemons
+
+function filterTypes (element, userInput) {
+    for (let typesIndex = 0; typesIndex < element.types.length; typesIndex++) {
+        if (element.types[typesIndex].includes(userInput)) {
+            return true;
+        }
+    }
+}
 
 
 function changeArrayNameInObjectForFunktionsId (newArray, name, newArrayName) {
     for (let arrayNameIndex = 0; arrayNameIndex < newArray.length; arrayNameIndex++) {
         newArray[arrayNameIndex][name] = newArrayName;
     }
+}
+
+
+function selectName () {
+    let nameRef = document.getElementById('check-name-color');
+    let typeRef = document.getElementById('check-type-color');
+    nameRef.classList.remove('greyscale');
+    typeRef.classList.add('greyscale');
+}
+
+
+function selectType () {
+    let nameRef = document.getElementById('check-name-color');
+    let typeRef = document.getElementById('check-type-color');
+    nameRef.classList.add('greyscale');
+    typeRef.classList.remove('greyscale');
 }
