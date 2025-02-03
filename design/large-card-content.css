@@ -51,18 +51,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation-name: bg-large-card;
+    /* animation-name: bg-large-card;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
     object-fit: contain;
     height: 100%;
     width: 100%;
+    filter: opacity(10%);
 }
 
-@keyframes bg-large-card {
+/* @keyframes bg-large-card {
     from {filter: opacity(100%)}
     to {filter: opacity(10%)}
-}
+} */
 
 .large-card-show-image {
     filter: opacity(100%) !important;

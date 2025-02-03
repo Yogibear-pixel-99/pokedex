@@ -190,7 +190,7 @@ function getLargeCardContainerTemp () {
 
 
 function getStartTextTemp() {
-    return `<div 
+    return `<div
                 class="nothing-found start-text">
                     Welcome to the world off pokemon-cards. 
                     Feel free to get 20 cards in a row or 20 cards by random. 
@@ -207,6 +207,21 @@ function getStartTextTemp() {
 }
 
 
+function nothingFoundTextTemp() {
+    return `<div
+                class="nothing-found start-text">
+                    Nothing found. You can search for a Pokemon by Name 
+                    or by Type listet below, or you can sort the pokemons listet 
+                    below or the searched Pokemons.
+                <button 
+                    class="get-pokemon-button" 
+                    onclick="hideContainer('searched-cards')">
+                    Click to close
+                </button>
+            </div>`
+}
+
+
 function getRandomPokemonAddToCardsTemp (array) {
     return `<div class="random-pokemon-id">#${array[0].id}</div>
             <img id="random-pokemon-img" class="random-pokemon-img" src="${array[0].artwork}" alt="random-pokemon">
@@ -214,7 +229,7 @@ function getRandomPokemonAddToCardsTemp (array) {
 }
 
 
-function getSmallPokemonCardTemp(array, index){
+function getSmallPokemonCardTemp(array, index, userInput){
     
     return `
             <div 
@@ -233,45 +248,16 @@ function getSmallPokemonCardTemp(array, index){
                 <div class="small-card-powers-container">
                     <div class="powers-header">Powers</div>
                     <div>${getSmallCardAbilities(array[index].abilities)}</div>
-                    <div id="small-card-sorted-stat-wrapper${array[index].arrayname}${index}" class="large-details-wrapper"></div>
+                    
                 <div 
                     class="small-card-footer 
                     ${getCardColor(array[index])}-footer">
                     ${getSmallCardTypes(array[index].types)}
                 </div>
+                <div id="small-card-sorted-stat-wrapper${array[index].arrayname}${index}" class="small-card-stat-wrapper stats-color-border-empty stats-border-${userInput} stats-color-border-${userInput}"></div>
             </div> 
            `
 }
-// function getSmallPokemonCardTemp(array, index, statsArrayPosition){
-    
-//     return `
-//             <div 
-//                 id="small-card-content${array[index].arrayname}${index}" 
-//                 class="${getCardColor(array[index])}-card 
-//                 small-card" 
-//                 ${getSmallCardFunctions(array, index)} >
-//                 <div class="small-card-header">
-//                     <div>#${array[index].id}</div>
-//                     <div class="small-card-name">${array[index].name}</div>
-//                 </div>
-//                     <div class="small-card-img-container ${getCardColor(array[index])}-inner">
-//                         <img id="small-card-pokemon-img${array[index].arrayname}${index}" src=${array[index].pic}>
-//                         <div class="small-card-border ${getCardColor(array[index])}-border"></div>
-//                     </div>
-//                 <div class="small-card-powers-container">
-//                     <div class="powers-header">Powers</div>
-//                     <div>${getSmallCardAbilities(array[index].abilities)}</div>
-//                     <div class="sorted-stats-small-card ">
-//                         <div>${array[index].stats[statsArrayPosition].name}</div>
-//                         <div>${array[index].stats[statsArrayPosition].value}</div>
-//                 <div 
-//                     class="small-card-footer 
-//                     ${getCardColor(array[index])}-footer">
-//                     ${getSmallCardTypes(array[index].types)}
-//                 </div>
-//             </div> 
-//            `
-// }
 
 
 function getCardColor(array){

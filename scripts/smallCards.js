@@ -1,10 +1,10 @@
 
 
-function renderSmallPokemonCards(array, id) {
+function renderSmallPokemonCards(array, id, userInput) {
     let contentRef = document.getElementById(id);
         contentRef.innerHTML = '';
         for (let allPokemonIndex = 0; allPokemonIndex < array.length; allPokemonIndex++) {
-            contentRef.innerHTML += getSmallPokemonCardTemp(array, allPokemonIndex);
+            contentRef.innerHTML += getSmallPokemonCardTemp(array, allPokemonIndex, userInput);
     }
 }
 

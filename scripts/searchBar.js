@@ -8,6 +8,7 @@ function searchPokemons (array) {
     showContainer('searched-cards');
     emptyContainer('searched-cards');
     renderSmallPokemonCards(searchedPokemons, 'searched-cards');
+    checkIfSearchIsEmpty(searchedPokemons);
 }
 
 
@@ -58,14 +59,23 @@ function selectType () {
 }
 
 
+function checkIfSearchIsEmpty (array) {
+    let contentRef = document.getElementById('searched-cards');
+        if (array.length == 0) {
+            contentRef.innerHTML = nothingFoundTextTemp ();
+        }
+}
+
+
 function sortPokemons (array) {
     let userInput = document.getElementById('sort-stats-menu').value;
     getUserSortRequest (array, userInput);
     showContainer('searched-cards');
     emptyContainer('searched-cards');
     changeArrayNameInObjectForFunktionsId(sortedPokemons, 'arrayname', 'sortedPokemons');
-    renderSmallPokemonCards(sortedPokemons, 'searched-cards');
+    renderSmallPokemonCards(sortedPokemons, 'searched-cards', userInput);
     displayValueInSmallCard (sortedPokemons, userInput);
+    checkIfSearchIsEmpty(sortedPokemons);
 }
 
 
