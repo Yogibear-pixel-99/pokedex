@@ -4,6 +4,7 @@
 let randomPokemon = [];
 let allPokemons = [];
 let searchedPokemons = [];
+let sortedPokemons = [];
 let responseErrors = [];
 let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
 let limit = 20;
@@ -57,7 +58,6 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
     let data = await response.json();
-    console.log(data);
         array.push(
             {
                 id : data.id,
@@ -76,7 +76,6 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 responseErrors.push(positionNr + ' not found');
                 console.log(positionNr + ' not found');
             }
-    console.log(array);
 }
 
 
