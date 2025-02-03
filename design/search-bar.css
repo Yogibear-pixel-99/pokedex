@@ -80,7 +80,7 @@ select {
 }
 
 .search-input {
-    width: 200px;
+    width: 186px;
     background-color: var(--poke-logo-blue);
     height: 46px;
     color: var(--poke-logo-yellow);
