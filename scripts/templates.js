@@ -210,9 +210,8 @@ function getStartTextTemp() {
 function nothingFoundTextTemp() {
     return `<div
                 class="nothing-found start-text">
-                    Nothing found. You can search for a Pokemon by Name 
-                    or by Type listet below, or you can sort the pokemons listet 
-                    below or the searched Pokemons.
+                    Nothing found. You can search for a Pokemon by name 
+                    or by type listet below.
                 <button 
                     class="get-pokemon-button" 
                     onclick="hideContainer('searched-cards')">
