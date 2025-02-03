@@ -97,8 +97,8 @@ function getHeaderSearchTemp () {
                     <span>Type</span>
                 </label>
             </div>
-        <div class="search-wrapper">
-                <select>
+        <div class="search-wrapper filter-wrapper">
+                <select id="sort-stats-menu">
                     <option value="hp">HP</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
@@ -106,7 +106,18 @@ function getHeaderSearchTemp () {
                     <option value="special-defense">Special-Defense</option>
                     <option value="speed">Speed</option>
                 </select>
-                <button class="search-button">sort</button>
+                    <div class="sort-button-wrapper">
+                        <button 
+                            class="search-button" 
+                            onclick="sortPokemons(searchedPokemons)">
+                            sort searched
+                        </button>
+                        <button 
+                            class="search-button" 
+                            onclick="sortPokemons(allPokemons)">
+                            sort all
+                        </button>
+                    </div>
             </div>
         </div>
     </div>

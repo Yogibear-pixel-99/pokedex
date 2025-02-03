@@ -51,7 +51,8 @@
     filter: brightness(90%);
     border: solid 1px var(--poke-logo-blue) !important;
     border-radius: 5px;
-    width: 70px;
+    width: 80px;
+    height: 46px;
 }
 
 .search-button:hover {
@@ -79,9 +80,9 @@ select {
 }
 
 .search-input {
-    width: 250px;
+    width: 200px;
     background-color: var(--poke-logo-blue);
-    height: 26px;
+    height: 46px;
     color: var(--poke-logo-yellow);
     padding-left: 12px;
     font-family: montserrat, sans-serif;
@@ -114,10 +115,15 @@ background-color: var(--poke-logo-yellow);
     border-radius: 5px;
 }
 
+.sort-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .filter-wrapper {
     display: flex;
-    /* gap: 16px; */
-    padding: 0;
+    /* gap: 10px; */
 }
 
 .name-search-type {
@@ -126,9 +132,9 @@ background-color: var(--poke-logo-yellow);
     height: 15px;
     margin-left: 4px;
     margin-right: 4px;
+    font-size: 14px;
 }
 
-/* Position noch ändern!!!!! */
 .check-img {
     position: absolute;
     top: 0;
@@ -140,6 +146,3 @@ background-color: var(--poke-logo-yellow);
 .greyscale {
     filter: grayscale(1);
 }
-
-
-

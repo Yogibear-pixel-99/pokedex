@@ -1,7 +1,6 @@
 
 
 
-let searchedPokemons = [];
 
 function searchPokemons (array) {
     getUserRequest(array);
@@ -9,7 +8,6 @@ function searchPokemons (array) {
     showContainer('searched-cards');
     emptyContainer('searched-cards');
     renderSmallPokemonCards(searchedPokemons, 'searched-cards');
-    // renderSmallSearchedPokemonCards(array);
 }
 
 
@@ -57,4 +55,10 @@ function selectType () {
     let typeRef = document.getElementById('check-type-color');
     nameRef.classList.add('greyscale');
     typeRef.classList.remove('greyscale');
+}
+
+
+function sortPokemons (array) {
+    let statsType = document.getElementById('sort-stats-menu').value;
+    console.log(statsType);
 }

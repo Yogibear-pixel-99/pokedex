@@ -3,6 +3,7 @@
 
 let randomPokemon = [];
 let allPokemons = [];
+let searchedPokemons = [];
 let responseErrors = [];
 let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
 let limit = 20;
