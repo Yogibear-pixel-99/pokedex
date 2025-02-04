@@ -98,3 +98,17 @@ function nothingFoundTextTemp() {
                 </button>
             </div>`
 }
+
+
+function minimumOfThreeCharsNeededTemp() {
+    return `<div
+                class="nothing-found start-text">
+                    You have to type in a Minimum of 
+                    three charakters to search for pokemons!
+                <button 
+                    class="get-pokemon-button" 
+                    onclick="hideContainer('searched-cards')">
+                    Click to close
+                </button>
+            </div>`
+};

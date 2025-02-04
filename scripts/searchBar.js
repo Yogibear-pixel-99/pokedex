@@ -1,4 +1,17 @@
 function searchPokemons (array) {
+    let userInput = document.getElementById('search-input').length;
+        userInput >= 3 ? searchRoutine(array) : displayErrorMessage();
+}
+
+
+function displayErrorMessage () {
+    let contentRef = document.getElementById('searched-cards');
+        showContainer('searched-cards');
+            contentRef.innerHTML = minimumOfThreeCharsNeededTemp();
+}
+
+
+function searchRoutine (array) {
     getUserSearchRequest(array);
     changeArrayNameInObjectForFunktionsId(searchedPokemons, 'arrayname', 'searchedPokemons');
     showContainer('searched-cards');
@@ -66,6 +79,7 @@ function selectType () {
 
 function checkIfSearchIsEmpty (array) {
     let contentRef = document.getElementById('searched-cards');
+        showContainer ('searched-cards');
         if (array.length == 0) {
             contentRef.innerHTML = nothingFoundTextTemp ();
         }
