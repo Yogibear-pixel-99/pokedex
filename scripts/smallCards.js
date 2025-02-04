@@ -1,5 +1,3 @@
-
-
 function renderSmallPokemonCards(array, id, userInput) {
     let contentRef = document.getElementById(id);
         contentRef.innerHTML = '';

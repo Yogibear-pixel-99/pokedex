@@ -1,14 +1,11 @@
-
-
-
-function showContainer (id) {
-    let content = document.getElementById(id);
+function showContainer (containerId) {
+    let content = document.getElementById(containerId);
         content.classList.remove('d-none');
 }
 
 
-function hideContainer (id) {
-    let content = document.getElementById(id);
+function hideContainer (containerId) {
+    let content = document.getElementById(containerId);
         content.classList.add('d-none');
 } 
 

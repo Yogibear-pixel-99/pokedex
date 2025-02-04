@@ -23,6 +23,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100dvh;
 }
 
 .main-container {
@@ -101,7 +103,9 @@ body {
 }
 
 @keyframes enter-menu {
-
+    0% {transform: translateY(0);}
+    50% {transform: translateY(100%);}
+    100% {transform: translateY(0);}
 }
 
 

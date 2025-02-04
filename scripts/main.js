@@ -1,6 +1,3 @@
-
-
-
 let randomPokemon = [];
 let allPokemons = [];
 let searchedPokemons = [];
@@ -12,17 +9,11 @@ let offset = 0;
 let randomPokemonAlreadyAddedToArray = false;
 
 
-
-
-
 async function init(){
     getTitleContent();
-    // enterCardsContent('main-container');
     await getRandomPokemon(randomPokemon);
     setPokemonImageTitle('title-pokemon');
 }
-
-
 
 
 // Get title content
@@ -44,7 +35,7 @@ function setPokemonImageTitle(id) {
 }
 
 
-// GET POKEMONS WITH STATS FROM API
+// GET POKEMONS FROM API
 async function getPokemonFromApi (positionNr, array, arrayName) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
@@ -119,7 +110,7 @@ function getStats(data) {
 }
 
 
-// Enter Cards Content
+// ENTER CARDS CONTENT
 async function enterCardsContent() {
         animateEnterButton('main-container');
         await delay(1500);
@@ -185,7 +176,6 @@ function startLoadingAndRenderingCards() {
 
 
  function finishLoadingAndRenderingCards () {
-    // await delay(3000);
     renderSmallPokemonCards(allPokemons, 'all-cards');
     hideLoadingSpinner();
     enableCardContent();

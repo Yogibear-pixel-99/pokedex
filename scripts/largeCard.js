@@ -1,5 +1,3 @@
-
-
 function cardDetails(array, id) {
     getClickEffect(array, id);
     setTimeout(() =>  disableCardContent (), 500);
@@ -31,9 +29,9 @@ function getLargeCard(array, id){
 
 function getLargeCardStats(array, id) {
     let element = '';
-    for (let statsCardIndex = 0; statsCardIndex < array[id].stats.length; statsCardIndex++) {
-        element += getLargeCardStatsTemp(array, id, statsCardIndex);
-    }
+        for (let statsCardIndex = 0; statsCardIndex < array[id].stats.length; statsCardIndex++) {
+            element += getLargeCardStatsTemp(array, id, statsCardIndex);
+        }
     return element;
 }
 
@@ -41,14 +39,14 @@ function getLargeCardStats(array, id) {
 function showLargePokemonImageOnHover(array, id) {
     showFooterPokemonNameOnHover(array, id);
     showFooterImageOnHover();
-    hideFooterInfosOnHover();
+    hideFooterTypesOnHover();
 }
 
 
 function hideLargePokemonImageOnHover() {
     hideFooterPokemonNameOnHover();
     hideFooterImageOnHover();
-    showFooterInfosOnHover();
+    showFooterTypesOnHover();
 }
 
 
@@ -76,7 +74,7 @@ function hideFooterImageOnHover() {
 };
 
 
-function hideFooterInfosOnHover() {
+function hideFooterTypesOnHover() {
     let hideContent = document.getElementsByClassName('large-content-hide');
         for (let index = 0; index < hideContent.length; index++) {
             hideContent[index].classList.add('d-opacity-10');  
@@ -84,7 +82,7 @@ function hideFooterInfosOnHover() {
 };
 
 
-function showFooterInfosOnHover() {
+function showFooterTypesOnHover() {
     let hideContent = document.getElementsByClassName('large-content-hide');
         for (let index = 0; index < hideContent.length; index++) {
             hideContent[index].classList.remove('d-opacity-10');  
@@ -93,12 +91,12 @@ function showFooterInfosOnHover() {
 
 
 function closeLargeCard(){
-    hideCardContainer ();
+    hideLargeCardContainer ();
     enableCardContent ();
 }
 
 
-function hideCardContainer () {
+function hideLargeCardContainer () {
     let contentRef = document.getElementById('large-card-container');
         contentRef.style.display = 'none';
 }

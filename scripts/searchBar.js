@@ -1,7 +1,3 @@
-
-
-
-
 function searchPokemons (array) {
     getUserSearchRequest(array);
     changeArrayNameInObjectForFunktionsId(searchedPokemons, 'arrayname', 'searchedPokemons');
@@ -14,20 +10,29 @@ function searchPokemons (array) {
 
 function getUserSearchRequest (array) {
 let userInput = document.getElementById('search-input').value.toLowerCase();
-let data = [];
     let nameRadioButton = document.getElementById('radio-name');
-    let typeRadioButton = document.getElementById('radio-type');
-        if (nameRadioButton.checked) {
-            data = array.filter(element => element.name.toLowerCase().includes(userInput));
-            searchedPokemons = structuredClone(data);
-    } else if (typeRadioButton.checked) {
-                data = array.filter((element) => filterTypes(element, userInput));
-            searchedPokemons = structuredClone(data);
-    }
+        checkIfSearchNameOrType (array, nameRadioButton, userInput);      
 }
 
 
-function filterTypes (element, userInput) {
+function checkIfSearchNameOrType (array, nameRadioButton, userInput) {
+    nameRadioButton.checked ? filterNamesToArray(array, userInput) : filterTypesToArray(array, userInput);
+}
+
+
+function filterNamesToArray (array, userInput) {
+    let data = array.filter(element => element.name.toLowerCase().includes(userInput));
+            searchedPokemons = structuredClone(data);
+}
+
+
+function filterTypesToArray (array, userInput) {
+    let data = array.filter((element) => filterTypesFromArray(element, userInput));
+            searchedPokemons = structuredClone(data);
+}
+
+
+function filterTypesFromArray (element, userInput) {
     for (let typesIndex = 0; typesIndex < element.types.length; typesIndex++) {
         if (element.types[typesIndex].includes(userInput)) {
             return true;
@@ -86,14 +91,6 @@ function getUserSortRequest (array, userInput) {
 }
 
 
-function displayValueInSmallCard (array, userInput) {
-    let statsArrayPosition = getStatsPositionNumberInArray(userInput);
-    for (let valueIndex = 0; valueIndex < array.length; valueIndex++) {
-        let contentRef = document.getElementById(`small-card-sorted-stat-wrapper${array[valueIndex].arrayname}${valueIndex}`);
-            contentRef.innerHTML = getSmallCardSortedStatsTemp (array, valueIndex, statsArrayPosition);
-    }
-}
-
 
 function sortPokemonsThroughStats (a, b, statsArrayPosition) {
         return (b.stats[statsArrayPosition].value - a.stats[statsArrayPosition].value);    
@@ -110,5 +107,14 @@ function getStatsPositionNumberInArray (userInput) {
         case 'speed' : return 5;
         default:
             break;
+    }
+}
+
+
+function displayValueInSmallCard (array, userInput) {
+    let statsArrayPosition = getStatsPositionNumberInArray(userInput);
+    for (let valueIndex = 0; valueIndex < array.length; valueIndex++) {
+        let contentRef = document.getElementById(`small-card-sorted-stat-wrapper${array[valueIndex].arrayname}${valueIndex}`);
+            contentRef.innerHTML = getSmallCardSortedStatsTemp (array, valueIndex, statsArrayPosition);
     }
 }
