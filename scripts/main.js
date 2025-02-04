@@ -191,7 +191,7 @@ async function get20RandomPokemons () {
 
 function startLoadingAndRenderingCards() {
     showLoadingSpinner();
-    disabelCardContent();
+    disableCardContent();
 }
 
 
@@ -200,16 +200,6 @@ function startLoadingAndRenderingCards() {
     renderSmallPokemonCards(allPokemons, 'all-cards');
     hideLoadingSpinner();
     enableCardContent();
-     
-
-     
-
-
-
-     
-    
-
-    
 }
 
 
@@ -221,25 +211,61 @@ async function showLoadingSpinner () {
 }
 
 
-async function disabelCardContent () {
-    let cardsRef = document.getElementById('cards-wrapper');
-    let bodyRef = document.getElementById('body');
-        cardsRef.classList.add('blur-grey-effect');
-        bodyRef.classList.add('overflow-hidden');
-        bodyRef.classList.add('no-pointer-events');
-        
-}
-
 async function hideLoadingSpinner () {
     let contentRef = document.getElementById(`loading-spinner-container`);
         contentRef.innerHTML = ``
 }
 
-async function enableCardContent () {
-    let cardsRef = document.getElementById('cards-wrapper');
-    let bodyRef = document.getElementById('body');
-        cardsRef.classList.remove('blur-grey-effect');
-        bodyRef.classList.remove('overflow-hidden');
-        bodyRef.classList.remove('no-pointer-events');
+
+function disableCardContent () {
+        enableBlurGreyEffect ();
+        disableOverflow ();
+        disablePointerEventOnSmallCards ();
 }
 
+
+function enableCardContent () {
+        disableBlurGreyEffect ();
+        enableOverflow ();
+        enablePointerEventOnSmallCards ();
+}
+
+
+function disablePointerEventOnSmallCards () {
+    let smallCardsRef = document.getElementsByClassName('small-card');
+        for (let cardIndex = 0; cardIndex < smallCardsRef.length; cardIndex++) {
+            smallCardsRef[cardIndex].classList.add('no-pointer-events');
+        }
+}
+
+
+function enablePointerEventOnSmallCards () {
+    let smallCardsRef = document.getElementsByClassName('small-card');
+        for (let cardIndex = 0; cardIndex < smallCardsRef.length; cardIndex++) {
+            smallCardsRef[cardIndex].classList.remove('no-pointer-events');
+        }
+}
+
+
+function disableBlurGreyEffect () {
+    let cardsContentRef = document.getElementById('cards-wrapper');
+        cardsContentRef.classList.remove('blur-grey-effect');
+}
+
+
+function enableBlurGreyEffect () {
+    let cardsContentRef = document.getElementById('cards-wrapper');
+        cardsContentRef.classList.add('blur-grey-effect');
+}
+
+
+function disableOverflow () {
+    let bodyRef = document.getElementById('body');
+        bodyRef.classList.add('overflow-hidden');
+}
+
+
+function enableOverflow () {
+    let bodyRef = document.getElementById('body');
+        bodyRef.classList.remove('overflow-hidden');
+}

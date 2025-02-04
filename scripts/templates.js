@@ -232,6 +232,7 @@ function getSmallPokemonCardTemp(array, index, userInput){
     
     return `
             <div 
+                
                 id="small-card-content${array[index].arrayname}${index}" 
                 class="${getCardColor(array[index])}-card 
                 small-card" 

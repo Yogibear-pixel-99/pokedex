@@ -1,11 +1,20 @@
 
 
 function cardDetails(array, id) {
-
+    
     getClickEffect(array, id);
+    // disabelCardContent();
+    setTimeout(() =>  disableCardContent (), 500);
     setTimeout(() =>  displayLargeCardContainer(), 500);
     getLargeCard(array, id);
     fillStatsBorderWithValue(array, id);
+    // let test = document.getElementById('cards-wrapper');
+    //     test.classList.add('blur-grey-effect');
+    //     test.display.disable = true;
+        // overflow-hidden am cards container
+    // disableCardContent ();
+    disableCardContent ();
+    // no pointer effect auf die kleinen karten anwenden, eventuell die hauptfuktion danach anpassen.
 } 
 
 
@@ -94,6 +103,12 @@ function showFooterInfosOnHover() {
 
 
 function closeLargeCard(){
+    hideCardContainer ();
+    enableCardContent ();
+}
+
+
+function hideCardContainer () {
     let contentRef = document.getElementById('large-card-container');
         contentRef.style.display = 'none';
 }
