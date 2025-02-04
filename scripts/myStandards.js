@@ -31,7 +31,43 @@ function stopBubbling(event) {
 }
 
 
-function emptyContainer(idContent) {
-    let content = document.getElementById(idContent);
+function emptyContainer(containerId) {
+    let content = document.getElementById(containerId);
         content.innerHTML = '';
+}
+
+
+function disablePointerEvents (containerId) {
+    let contentRef = document.getElementById(`${containerId}`);
+        contentRef.classList.add('no-pointer-events');
+}
+
+
+function enablePointerEvents (containerId) {
+    let contentRef = document.getElementById(`${containerId}`);
+        contentRef.classList.remove('no-pointer-events');
+}
+
+
+function enableBlurGreyEffect (containerId) {
+    let cardsContentRef = document.getElementById(`${containerId}`);
+        cardsContentRef.classList.add('blur-grey-effect');
+}
+
+
+function disableBlurGreyEffect (containerId) {
+    let cardsContentRef = document.getElementById(`${containerId}`);
+        cardsContentRef.classList.remove('blur-grey-effect');
+}
+
+
+function disableOverflow (containerId) {
+    let bodyRef = document.getElementById(`${containerId}`);
+        bodyRef.classList.add('overflow-hidden');
+}
+
+
+function enableOverflow (containerId) {
+    let bodyRef = document.getElementById(`${containerId}`);
+        bodyRef.classList.remove('overflow-hidden');
 }

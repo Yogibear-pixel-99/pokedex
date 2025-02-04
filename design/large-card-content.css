@@ -34,11 +34,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px 10px 57px;
     font-family: montserrat, sans-serif;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 16px;
     transition: 500ms ease-in-out;
     z-index: -200;
     height: 100%;
@@ -73,6 +73,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-top: 20px;
     font-family: cabin, sans-serif;
     align-items:baseline;
     width: 90%;
@@ -121,24 +122,36 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    /* align-self: flex-end; */
 }
 
 .abs-container {
     display: flex;
-    vertical-align: top;
+    /* vertical-align: top; */
     border-bottom: solid black 2px;
-    margin-top: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    align-items: flex-start;
+}
+
+.abs-container:last-child {
+    border-bottom: none !important;
 }
 
 .abs-name {
-   height: 100%;
+   display: inline-block !important;
+   /* height: 100%; */
    font-weight: 600;
+   vertical-align:bottom;
+   text-align: left;
+   align-self: flex-end;
 }
 
 .abs-text {
   width: 80%;
   text-align: end;
+  align-self: flex-end;
 }
 
 .stats-container {

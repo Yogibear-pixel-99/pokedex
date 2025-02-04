@@ -24,15 +24,6 @@ async function init(){
 
 
 
-function getTypes(data){
-    let element = [];
-    for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
-        element.push(
-            data.types[typesIndex].type.name,
-        )}
-    return element;
-}
-
 
 // Get title content
 function getTitleContent(){
@@ -70,12 +61,24 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`,
                 weight : data.weight,
                 arrayname : arrayName,
+                cries : getCries(data),
             })}
 
             catch (error) {
                 responseErrors.push(positionNr + ' not found');
                 console.log(positionNr + ' not found');
             }
+            console.log(array);
+}
+
+
+function getCries (data) {
+    let element = [];
+        element.push({
+            latest : data.cries.latest,
+            legacy : data.cries.legacy,
+        })        
+    return element;
 }
 
 
@@ -87,6 +90,16 @@ function getTypes(data){
         )}
     return element;
 }
+
+
+// function getTypes(data){
+//     let element = [];
+//     for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
+//         element.push(
+//             data.types[typesIndex].type.name,
+//         )}
+//     return element;
+// }
 
 
 async function getAbilities(data){
@@ -108,7 +121,7 @@ async function getAbilitiesText(data, absIndex) {
     let response = await fetch(data.abilities[absIndex].ability.url)
     let effectData = await response.json();
         if (effectData.effect_entries[0] != null) {
-        return effectData.effect_entries[0].short_effect;
+        return effectData.effect_entries[1].short_effect;
         } else {return '';}
 
 }   
@@ -218,16 +231,44 @@ async function hideLoadingSpinner () {
 
 
 function disableCardContent () {
-        enableBlurGreyEffect ();
-        disableOverflow ();
-        disablePointerEventOnSmallCards ();
+    enableAllBlurGreyEffects ();
+    disableAllPointerEvents ();
+    disableOverflow ('body');
 }
 
 
 function enableCardContent () {
-        disableBlurGreyEffect ();
-        enableOverflow ();
-        enablePointerEventOnSmallCards ();
+    disableAllBlurGreyEffects ();
+    enableAllPointerEvents ();
+    enableOverflow ('body');
+}
+
+
+function enableAllPointerEvents () {
+    enablePointerEventOnSmallCards ();
+    enablePointerEvents ('search-bar');
+    enablePointerEvents ('get-pokemons-button-bar');
+}
+
+
+function disableAllPointerEvents () {
+    disablePointerEventOnSmallCards ();
+    disablePointerEvents ('search-bar');
+    disablePointerEvents ('get-pokemons-button-bar');
+}
+
+
+function enableAllBlurGreyEffects () {
+    enableBlurGreyEffect ('cards-wrapper');
+    enableBlurGreyEffect ('header-search-bar');
+    enableBlurGreyEffect ('get-pokemons-button-bar');
+}
+
+
+function disableAllBlurGreyEffects () {
+    disableBlurGreyEffect ('cards-wrapper');
+    disableBlurGreyEffect ('header-search-bar');
+    disableBlurGreyEffect ('get-pokemons-button-bar');
 }
 
 
@@ -247,25 +288,3 @@ function enablePointerEventOnSmallCards () {
 }
 
 
-function disableBlurGreyEffect () {
-    let cardsContentRef = document.getElementById('cards-wrapper');
-        cardsContentRef.classList.remove('blur-grey-effect');
-}
-
-
-function enableBlurGreyEffect () {
-    let cardsContentRef = document.getElementById('cards-wrapper');
-        cardsContentRef.classList.add('blur-grey-effect');
-}
-
-
-function disableOverflow () {
-    let bodyRef = document.getElementById('body');
-        bodyRef.classList.add('overflow-hidden');
-}
-
-
-function enableOverflow () {
-    let bodyRef = document.getElementById('body');
-        bodyRef.classList.remove('overflow-hidden');
-}

@@ -56,10 +56,12 @@ function getCardsContentTemp() {
 
 function getHeaderSearchTemp () {
     return `
-    <div class="top-sticky" onclick="stopBubbling(event)">
+    <div class="top-sticky"
+        id="header-search-bar" 
+        onclick="stopBubbling(event)">
         <div id="search-bar" class="search-bar">
             <div class="search-wrapper">
-                <a href="#searched-cards">
+                <a href="#top">
                     <button 
                         id="search-button" 
                         class="search-button" 
@@ -73,29 +75,31 @@ function getHeaderSearchTemp () {
                     type="text" minlength="3" 
                     maxlength="20" value="" 
                     placeholder="put in a name or a type">
+                    <label 
+                    class="name-search-type"
+                    onclick="selectType()">
+                        <img id="check-type-color" class="check-img" src="./assets/img/logo.png">
+                        <input 
+                            type="radio" 
+                            name="sort-pokemon" 
+                            value="type"
+                            checked="checked" 
+                            id="radio-type">
+                    <span>Type</span>
+                </label>
                 <label 
                     class="name-search-type"
                     onclick="selectName()"> 
-                        <img id="check-name-color" class="check-img" src="./assets/img/logo.png">
+                        <img id="check-name-color" class="check-img greyscale" src="./assets/img/logo.png">
                         <input 
                             type="radio" 
                             name="sort-pokemon" 
                             value="name" 
-                            checked="checked" 
+                             
                             id="radio-name">
                     <span>Name</span>
                 </label>
-                <label 
-                    class="name-search-type"
-                    onclick="selectType()">
-                        <img id="check-type-color" class="check-img greyscale" src="./assets/img/logo.png">
-                        <input 
-                            type="radio" 
-                            name="sort-pokemon" 
-                            value="type" 
-                            id="radio-type">
-                    <span>Type</span>
-                </label>
+                
             </div>
         <div class="search-wrapper filter-wrapper">
                 <select id="sort-stats-menu">
@@ -161,6 +165,7 @@ function getLoadingSpinnerTemp () {
 
 function getFooterButtonTemp () {
     return `<div 
+            id="get-pokemons-button-bar"
             class="bottom-sticky" 
             onclick="stopBubbling(event)">
                 <div class="button-wrapper">
@@ -300,9 +305,21 @@ function getLargePokemonCardTemp (array, id) {
                 class="${getCardColor(array[id])}-card large-card">
                     <div class="large-card-header large-content-hide">
                         <div>#${array[id].id}</div>
-                        <div class="large-card-name">${array[id].name}</div>
+                        <div class="cry-button-wrapper">
+                            <button 
+                                class="pokemon-cry"
+                                id="latest-cry"
+                                onclick="playLatestCry('latest')">Latest cry
+                            </button>
+                            <button 
+                                class="pokemon-cry"
+                                id="legacy-cry"
+                                onclick="playLatestCry('legacy')">Legacy cry
+                            </button>
+                        </div>
+                        <div id="large-card-name" class="large-card-name">${array[id].name}</div>
                     </div>
-                    <img id="large-card-bg-img" class="large-card-bg-img" src="${array[id].artwork}">
+                    <img id="large-card-bg-img" class="large-card-bg-img" style="display: none" src="${array[id].artwork}">
                         <div 
                             id="stats-container" 
                             class="stats-container large-content-hide">
@@ -353,9 +370,7 @@ function getLargeCardStatsTemp(array, id, statsId) {
 function getLargeCardPowersContainerTemp (array, id) {
     return `<div class="large-card-powers-container large-content-hide">
                 ${getLargeCardPowersDetailsTemp(array, id)}
-                    <div class="flex-ctr-spbtw abs-container large-content-hide weight">
-                         <div class="abs-name">weight</div>
-                    </div>
+                    
             </div>`
 }
 
@@ -363,8 +378,8 @@ function getLargeCardPowersDetailsTemp(array, id) {
         let element = '';
     for (let absIndex = 0; absIndex < array[id].abilities.length; absIndex++) {
             element += `<div class="flex-ctr-spbtw abs-container">
-            <div class="abs-name">${array[id].abilities[absIndex].name}</div>
-            <div class="abs-text">${array[id].abilities[absIndex].text}</div>
+            <span class="abs-name">${array[id].abilities[absIndex].name}</span>
+            <span class="abs-text">${array[id].abilities[absIndex].text}</span>
             </div>`        
         }
     return element

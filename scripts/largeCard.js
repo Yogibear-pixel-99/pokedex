@@ -1,22 +1,12 @@
 
 
 function cardDetails(array, id) {
-    
     getClickEffect(array, id);
-    // disabelCardContent();
     setTimeout(() =>  disableCardContent (), 500);
     setTimeout(() =>  displayLargeCardContainer(), 500);
     getLargeCard(array, id);
     fillStatsBorderWithValue(array, id);
-    // let test = document.getElementById('cards-wrapper');
-    //     test.classList.add('blur-grey-effect');
-    //     test.display.disable = true;
-        // overflow-hidden am cards container
-    // disableCardContent ();
-    disableCardContent ();
-    // no pointer effect auf die kleinen karten anwenden, eventuell die hauptfuktion danach anpassen.
 } 
-
 
 
 function getClickEffect(array, id) {
@@ -163,3 +153,18 @@ function switchUp (array, id) {
     }
 }
 
+
+async function playLatestCry (cryType) {
+    let contentRef = document.getElementById('large-card-name');
+    let pokemonName = contentRef.innerText;
+    let response = await fetch(MAIN_URL + pokemonName);
+    let data = await response.json();
+    let playSound = data.cries[cryType];
+        if (playSound != '') {
+            let newCryAudio = new Audio(playSound);
+            newCryAudio.play();
+        }  else {
+            let content = document.getElementById(`${cryType}-cry`);
+                content.innerText = 'no cry here!';
+        }
+}
