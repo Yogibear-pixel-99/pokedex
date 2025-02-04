@@ -120,9 +120,9 @@ function getSingleBorderWidth(array, id, valueIndex) {
 
 
 function checkIfPokemonIsOverpowerd (data, borderValueRef, valueIndex) {
-    if ((data * 1.5) >= 150) {
+    if ((data * 1.5) >= 120) {
         borderValueRef[valueIndex].innerText = "powerfull!";
-        borderValueRef[valueIndex].classList.add('highlight-overpowerd', 'blink');
+        borderValueRef[valueIndex].classList.add('highlight-overpowerd', 'blink', 'font-700');
     }
 }
 

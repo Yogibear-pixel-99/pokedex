@@ -98,3 +98,8 @@
 .d-opacity-10 {
     filter: opacity(10%);
 }
+
+
+.font-700 {
+    font-weight: 600;
+}
