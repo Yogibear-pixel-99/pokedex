@@ -112,11 +112,14 @@ function getStats(data) {
 
 // ENTER CARDS CONTENT
 async function enterCardsContent() {
+        disableOverflow('body');
         animateEnterButton('main-container');
         await delay(1500);
         getCardsContent('main-container');
         setRandomPokemonToMainContainer('random-pokemon-wrapper');
-        setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);  
+        setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);
+        await delay(1500);
+        enableOverflow('body');  
 }
 
 

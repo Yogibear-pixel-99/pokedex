@@ -8,13 +8,26 @@
 .bottom-sticky {
     background-color: var(--header-footer-bg-color);
     padding: 16px;
-    right: 0;
     left: 0;
+    right: 0;
     z-index: 1000;
     border: solid 3px var(--poke-logo-blue);
     border-radius: 20px;
     position: fixed;
+    
 }
+/* .top-sticky,
+.bottom-sticky {
+    background-color: var(--header-footer-bg-color);
+    padding: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border: solid 3px var(--poke-logo-blue);
+    border-radius: 20px;
+    position: fixed;
+    width: 97.5%;
+} */
 
 .top-sticky {
     top: 0;

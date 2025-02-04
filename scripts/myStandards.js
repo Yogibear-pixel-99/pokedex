@@ -1,3 +1,4 @@
+// MY OWN FUNCTIONS THAT CAN BY USED WITH THE PARAMETER IN EVERY PROGRAMM
 function showContainer (containerId) {
     let content = document.getElementById(containerId);
         content.classList.remove('d-none');
