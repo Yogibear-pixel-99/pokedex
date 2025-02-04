@@ -111,16 +111,20 @@ function getHeaderSearchTemp () {
                     <option value="speed">Speed</option>
                 </select>
                     <div class="sort-button-wrapper">
-                        <button 
-                            class="search-button" 
-                            onclick="sortPokemons(searchedPokemons)">
-                            sort searched
-                        </button>
-                        <button 
-                            class="search-button" 
-                            onclick="sortPokemons(allPokemons)">
-                            sort all
-                        </button>
+                        <a href="#top">
+                            <button 
+                                class="search-button" 
+                                onclick="sortPokemons(searchedPokemons)">
+                                sort searched
+                            </button>
+                        </a>
+                        <a href="#top">
+                            <button 
+                                class="search-button" 
+                                onclick="sortPokemons(allPokemons)">
+                                sort all
+                            </button>
+                        </a>
                     </div>
             </div>
         </div>
@@ -176,8 +180,8 @@ function getFooterButtonTemp () {
                     </button>
                     <button 
                         class="get-pokemon-button" 
-                        onclick="get20RandomPokemons()">
-                        Get 20 Random Pokemons
+                        onclick="get10RandomPokemons()">
+                        Get 10 Random Pokemons
                     </button>
                 </div>
             </div>`
@@ -305,18 +309,6 @@ function getLargePokemonCardTemp (array, id) {
                 class="${getCardColor(array[id])}-card large-card">
                     <div class="large-card-header large-content-hide">
                         <div>#${array[id].id}</div>
-                        <div class="cry-button-wrapper">
-                            <button 
-                                class="pokemon-cry"
-                                id="latest-cry"
-                                onclick="playLatestCry('latest')">Latest cry
-                            </button>
-                            <button 
-                                class="pokemon-cry"
-                                id="legacy-cry"
-                                onclick="playLatestCry('legacy')">Legacy cry
-                            </button>
-                        </div>
                         <div id="large-card-name" class="large-card-name">${array[id].name}</div>
                     </div>
                     <img id="large-card-bg-img" class="large-card-bg-img" style="display: none" src="${array[id].artwork}">

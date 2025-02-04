@@ -152,19 +152,3 @@ function switchUp (array, id) {
         fillStatsBorderWithValue(array, id);
     }
 }
-
-
-async function playLatestCry (cryType) {
-    let contentRef = document.getElementById('large-card-name');
-    let pokemonName = contentRef.innerText;
-    let response = await fetch(MAIN_URL + pokemonName);
-    let data = await response.json();
-    let playSound = data.cries[cryType];
-        if (playSound != '') {
-            let newCryAudio = new Audio(playSound);
-            newCryAudio.play();
-        }  else {
-            let content = document.getElementById(`${cryType}-cry`);
-                content.innerText = 'no cry here!';
-        }
-}

@@ -25,8 +25,11 @@ body {
     align-items: center;
 }
 
-.main-content {
-    position: relative;
+.main-container {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
 }
 
 .pokemon-logo {

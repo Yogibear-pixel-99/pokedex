@@ -61,7 +61,6 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`,
                 weight : data.weight,
                 arrayname : arrayName,
-                cries : getCries(data),
             })}
 
             catch (error) {
@@ -69,16 +68,6 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 console.log(positionNr + ' not found');
             }
             console.log(array);
-}
-
-
-function getCries (data) {
-    let element = [];
-        element.push({
-            latest : data.cries.latest,
-            legacy : data.cries.legacy,
-        })        
-    return element;
 }
 
 
@@ -92,16 +81,6 @@ function getTypes(data){
 }
 
 
-// function getTypes(data){
-//     let element = [];
-//     for (let typesIndex = 0; typesIndex < data.types.length; typesIndex++) {
-//         element.push(
-//             data.types[typesIndex].type.name,
-//         )}
-//     return element;
-// }
-
-
 async function getAbilities(data){
     let element = [];
     for (let absIndex = 0; absIndex < data.abilities.length; absIndex++) {
@@ -110,7 +89,6 @@ async function getAbilities(data){
             {
                 name : data.abilities[absIndex].ability.name,
                 text : await getAbilitiesText(data, absIndex),
-
             }
     )} else {return ''}}
     return element;
@@ -192,9 +170,9 @@ async function get20Pokemons () {
     finishLoadingAndRenderingCards();
 }
 
-async function get20RandomPokemons () {
+async function get10RandomPokemons () {
     startLoadingAndRenderingCards();
-        for (let pokeIndex = 0; pokeIndex < 20; pokeIndex++) {
+        for (let pokeIndex = 0; pokeIndex < 10; pokeIndex++) {
             const number = getRndNumber (1026);
                 await getPokemonFromApi(number, allPokemons, 'allPokemons');  
     }
