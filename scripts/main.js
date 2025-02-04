@@ -16,10 +16,10 @@ let randomPokemonAlreadyAddedToArray = false;
 
 
 async function init(){
-    // getTitleContent();
-    enterCardsContent('main-container');
-    // await getRandomPokemon(randomPokemon);
-    // setPokemonImageTitle('title-pokemon');
+    getTitleContent();
+    // enterCardsContent('main-container');
+    await getRandomPokemon(randomPokemon);
+    setPokemonImageTitle('title-pokemon');
 }
 
 
@@ -117,19 +117,17 @@ function getStats(data) {
         }
     return element;
 }
-// GET POKEMONS WITH STATS FROM API
-// --------------------------------------------------------------
-// --------------------------------------------------------------
+
+
 // Enter Cards Content
 async function enterCardsContent() {
         animateEnterButton('main-container');
         await delay(1500);
         getCardsContent('main-container');
         setRandomPokemonToMainContainer('random-pokemon-wrapper');
-        setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);
-        // await delay(1500);  
+        setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);  
 }
-// --------------------------------------------------------------
+
 
 function animateEnterButton(id) {
     let titleRef = document.getElementById(id);

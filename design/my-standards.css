@@ -86,12 +86,12 @@
 }
 
 @keyframes blink {
-    0% {filter: brightness(100%) saturate(100%)}
-    80% {filter: brightness(130%) saturate(300%)}
-    85% {filter: brightness(100%) saturate(100%)}
-    90% {filter: brightness(130%) saturate(300%)}
-    95% {filter: brightness(100%) saturate(100%)}
-    100% {filter: brightness(130%) saturate(300%)}
+    0% {filter: brightness(100%) saturate(70%)}
+    80% {filter: brightness(130%) saturate(100%)}
+    85% {filter: brightness(100%) saturate(70%)}
+    90% {filter: brightness(130%) saturate(100%)}
+    95% {filter: brightness(100%) saturate(70%)}
+    100% {filter: brightness(130%) saturate(100%)}
 }
 
 

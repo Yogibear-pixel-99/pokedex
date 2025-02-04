@@ -13,16 +13,15 @@
     z-index: 1000;
     border: solid 3px var(--poke-logo-blue);
     border-radius: 20px;
+    position: fixed;
 }
 
 .top-sticky {
     top: 0;
-    position: sticky;
 }
 
 .bottom-sticky {
     bottom: 0;
-    position: sticky;
 }
 
 .search-bar {
@@ -81,7 +80,6 @@ select {
 
 .search-input {
     width: 300px;
-    /* width: 186px; */
     background-color: var(--poke-logo-blue);
     height: 46px;
     color: var(--poke-logo-yellow);
@@ -94,7 +92,6 @@ select {
 
 .search-input::placeholder {
     color: var(--poke-logo-yellow);
-    /* padding-left: 6px; */
 }
 
 
@@ -124,7 +121,6 @@ background-color: var(--poke-logo-yellow);
 
 .filter-wrapper {
     display: flex;
-    /* gap: 10px; */
 }
 
 .name-search-type {

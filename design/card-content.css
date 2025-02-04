@@ -4,11 +4,12 @@
 
 .all-cards {
     position: relative;
-    padding: 20px;
+    padding: 6px 20px 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
+    margin-bottom: 120px;
 }
 
 .loading-spinner-container {
@@ -21,18 +22,21 @@
 .cards-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex: 1;
 }
 
 .random-pokemon-wrapper {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    position: relative;
+    top: 0;
+    margin-top: 156px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     vertical-align:middle;
+    cursor: url('../assets/icons/pokemon-icon2.png') 8 8, pointer;
 }
 
 .nothing-found {

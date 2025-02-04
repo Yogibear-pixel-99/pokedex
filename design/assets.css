@@ -57,3 +57,16 @@
 a {
     text-decoration: none;
 }
+
+button {
+    cursor: url('../assets/icons/pokemon-icon2.png') 8 8, pointer;
+}
+
+label {
+    cursor: pointer;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
