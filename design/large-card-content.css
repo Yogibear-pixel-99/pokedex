@@ -220,6 +220,7 @@
     animation: footer-blink;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+    z-index: 300;
 }
 
 @keyframes footer-blink {
@@ -252,7 +253,7 @@
 }
 
 .switch-button {
-    height: 26px;
+    height: 36px;
     width: 50px;
     display: flex;
     justify-content: center;

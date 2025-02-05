@@ -19,7 +19,7 @@ function getHeaderSearchTemp () {
                     class="search-input" 
                     type="text" minlength="3" 
                     maxlength="20" value="" 
-                    placeholder="name or a type">
+                    placeholder="max. search 10 cards">
                 </div>
                     <div class="select-type-name-wrapper">
                         <label 

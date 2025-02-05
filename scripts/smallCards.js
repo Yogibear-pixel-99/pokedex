@@ -1,9 +1,16 @@
 function renderSmallPokemonCards(array, id, userInput) {
     let contentRef = document.getElementById(id);
-        contentRef.innerHTML = '';
-        for (let allPokemonIndex = 0; allPokemonIndex < array.length; allPokemonIndex++) {
-            contentRef.innerHTML += getSmallPokemonCardTemp(array, allPokemonIndex, userInput);
-    }
+            contentRef.innerHTML = '';
+            for (let pokemonIndex = 0; pokemonIndex < array.length; pokemonIndex++) {
+                if (checkMaxSearchableCards(array, pokemonIndex)) { break };
+                contentRef.innerHTML += getSmallPokemonCardTemp(array, pokemonIndex, userInput);
+        }
+}
+
+
+function checkMaxSearchableCards (array, pokemonIndex) {
+    if ((array[0].arrayname == "searchedPokemons" || array[0].arrayname == "sortedPokemons") && pokemonIndex > 9)
+        return true;
 }
 
 
