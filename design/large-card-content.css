@@ -42,9 +42,8 @@
     font-weight: 500;
     font-size: 16px;
     transition: 500ms ease-in-out;
-    /* z-index: 200; */
+    z-index: 300;
     height: 90%;
-    /* width: 100%; */
 }
 
 
@@ -60,6 +59,7 @@
     height: 100%;
     width: 100%;
     filter: opacity(10%);
+    z-index: 100;
 }
 
 /* @keyframes bg-large-card {
@@ -110,6 +110,7 @@
     overflow-y:auto;
     margin-top:12px;
     margin-bottom: 12px;
+    z-index: 300;
 }
 
 .large-card-powers-container::-webkit-scrollbar {

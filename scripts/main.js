@@ -114,6 +114,7 @@ function getStats(data) {
 // ENTER CARDS CONTENT
 async function enterCardsContent() {
         disableOverflow('body');
+        playPiccachuSound();
         animateEnterButton('main-container');
         await delay(1500);
         getCardsContent('main-container');
@@ -124,7 +125,13 @@ async function enterCardsContent() {
 }
 
 
-function animateEnterButton(id) {
+function playPiccachuSound () {
+    let sound = new Audio('./assets/sounds/weird-pikachu-101090.mp3');
+        sound.play();
+}
+
+
+function animateEnterButton (id) {
     let titleRef = document.getElementById(id);
         titleRef.classList.add('animate-main-content');
 }
