@@ -33,6 +33,7 @@ function getTitleContentTemp() {
                                 src="./assets/img/pokebol-2898038_1280.png" 
                                 alt="pokeball">
                     </div>
+                    <span class="copyright-text">(c) Joachim Pürcher
             </section>`
 }
 

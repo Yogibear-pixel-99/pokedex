@@ -50,7 +50,7 @@ function getHeaderSearchTemp () {
             </div>
         <div class="search-wrapper filter-wrapper">
                 <select id="sort-stats-menu"class="sort-stats-menu search-button">
-                    <option value="hp">HP</option>
+                    <option value="hp">Health</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
                     <option value="special-attack">Special-Attack</option>

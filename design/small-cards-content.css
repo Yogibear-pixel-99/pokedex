@@ -15,7 +15,6 @@
 }
 
 .small-card {
-    /* filter: brightness */
     position: relative;
     display: flex;
     flex-direction: column;

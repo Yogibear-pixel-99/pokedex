@@ -72,6 +72,24 @@
     .select-type-name-wrapper {
         margin-right: 50px;
     }
+
+    .pokemon-logo {
+        width: 500px;
+    }
+
+    .name {
+        width: 320px;
+    }
+
+    .by {
+        width: 36px;
+    }
+
+    @keyframes enterLarge {
+        0% {width: 125px;}
+        50% {width: 175px;}
+        100% {width: 125px;}
+    }
 }
 
 @media (max-width: 590px) {
@@ -124,6 +142,10 @@
     .random-pokemon-wrapper {
         margin-bottom: 0;
     }
+
+    .enter {
+        bottom: 240px;
+    }
 }
 
 @media (max-width: 521px) {
@@ -136,6 +158,52 @@
     .searched-cards {
         margin: 20px 10px;
         padding: 20px;
+    }
+
+    .pokemon-logo {
+        width: 350px;
+    }
+
+    .name {
+        width: 280px;
+    }
+
+    .by {
+        width: 36px;
+    }
+
+    .pokemon-title-img {
+        width: 150px;
+        height: 150px;
+        bottom: 28px;
+    }
+
+    .enter {
+        left: 32px;
+        bottom: 43px;
+    }
+
+    .enter {
+        object-fit: contain;
+        width: 150px;
+        align-self: flex-end;
+        position: absolute;
+        bottom: 240px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-name: enterLarge;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes enterLarge {
+        0% {width: 100px;}
+        50% {width: 150px;}
+        100% {width: 100px;}
+    }
+
+    .pokeball-title {
+        width: 250px;
     }
 }
 
@@ -208,6 +276,7 @@
            height: 90px;
             width: 110px;
         }
+    
 }
 
 @media (max-width: 370px) {
@@ -240,5 +309,26 @@
 
      .random-pokemon-wrapper {
         margin-top: 230px;
+    }
+
+    .pokemon-logo {
+        width: 300px;
+    }
+
+    .name {
+        width: 240px;
+    }
+
+    .by {
+        width: 30px;
+    }
+
+    .pokemon-title-img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .pokeball-title {
+        display: none;
     }
 }

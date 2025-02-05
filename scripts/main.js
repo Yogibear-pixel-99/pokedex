@@ -10,10 +10,10 @@ let randomPokemonAlreadyAddedToArray = false;
 
 
 async function init(){
-    enterCardsContent();
-    // getTitleContent();
-    // await getRandomPokemon(randomPokemon);
-    // setPokemonImageTitle('title-pokemon');
+    // enterCardsContent();
+    getTitleContent();
+    await getRandomPokemon(randomPokemon);
+    setPokemonImageTitle('title-pokemon');
 }
 
 
