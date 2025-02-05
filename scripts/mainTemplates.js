@@ -107,7 +107,7 @@ function getStartTextTemp() {
                     Click on a small card to expand it, and hover over the card footer
                     to see the Pokémon's art design.
                 <button 
-                    class="get-pokemon-button" 
+                    class="get-pokemon-button close-button" 
                     onclick="hideContainer('searched-cards')">
                     Click to close
                 </button>

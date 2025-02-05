@@ -2,7 +2,7 @@ function getHeaderSearchTemp () {
     return `
     <div class="top-sticky"
         id="header-search-bar" 
-        onclick="stopBubbling(event)">
+        >
         <div id="search-bar" class="search-bar">
             <div class="search-wrapper">
                 <div class="search-button-input-wrapper">
@@ -95,7 +95,7 @@ function nothingFoundTextTemp() {
                     Nothing found. You can search for a Pokemon by name 
                     or by type listet below.
                 <button 
-                    class="get-pokemon-button" 
+                    class="get-pokemon-button close-button" 
                     onclick="hideContainer('searched-cards')">
                     Click to close
                 </button>
@@ -109,7 +109,7 @@ function minimumOfThreeCharsNeededTemp() {
                     You have to type in a minimum of 
                     three characters to search for Pokémon!
                 <button 
-                    class="get-pokemon-button" 
+                    class="get-pokemon-button close-button" 
                     onclick="hideContainer('searched-cards')">
                     Click to close
                 </button>

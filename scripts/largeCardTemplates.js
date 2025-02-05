@@ -7,7 +7,7 @@ function getLargeCardContainerTemp () {
             </div>`
 }
 
-// HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERRREEEEEEE
+
 function getLargePokemonCardTemp (array, id) {
     return  `<div 
                  id="large-card-content${id}" 
@@ -16,7 +16,7 @@ function getLargePokemonCardTemp (array, id) {
                          <div>#${array[id].id}</div>
                          <div id="large-card-name" class="large-card-name">${array[id].name}</div>
                      </div>
-                     <img id="large-card-bg-img" class="large-card-bg-img" style="display: none;" src="${array[id].artwork}">
+                     <img id="large-card-bg-img" class="large-card-bg-img" src="${array[id].artwork}">
                          <div 
                              id="stats-container" 
                              class="stats-container large-content-hide">

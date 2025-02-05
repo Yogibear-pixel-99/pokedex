@@ -21,6 +21,10 @@
         /* justify-content: center; */
     }
 
+    .searched-cards {
+        margin-top: 20px;
+    }
+
     .search-bar,
     .button-wrapper {
         padding: 4px;
@@ -52,7 +56,6 @@
         display: flex;
         gap: 4px;
     }
-
 }
 
 @media (max-width: 705px) {
@@ -79,7 +82,6 @@
 
     .search-wrapper {
         flex-direction: column;
-        /* justify-content: space-between; */
     }
 
     .search-input {
@@ -118,6 +120,10 @@
     .searched-cards {
         margin: 20px;
     }
+
+    .random-pokemon-wrapper {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 521px) {
@@ -144,7 +150,6 @@
     .search-button-input-wrapper {
         display: flex;
         justify-content: space-between;
-        /* gap: 20px; */
         width: 100%;
     }
 
@@ -152,18 +157,12 @@
         min-width: 64px;
     }
 
-    /* .search-input {
-        width:100%;
-    } */
-
     .filter-wrapper {
         flex-direction: row;
     }
 
     .select-type-name-wrapper {
         display:flex;
-        /* width: 100%; */
-        /* justify-content: space-between; */
         gap: 60px;
     }
 
@@ -185,6 +184,11 @@
     .searched-cards {
         margin: 20px 0;
         padding: 20px;
+        border-radius: 0;
+    }
+
+    .random-pokemon-wrapper {
+        margin-top: 190px;
     }
 }
 
@@ -204,11 +208,18 @@
            height: 90px;
             width: 110px;
         }
-
-    
 }
 
 @media (max-width: 370px) {
+
+    .random-pokemon-img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .close-button {
+        height: 46px !important;
+    }
 
     .filter-wrapper {
         flex-direction: column;
@@ -226,4 +237,8 @@
      .small-card {
         width: 100px;
      }
+
+     .random-pokemon-wrapper {
+        margin-top: 230px;
+    }
 }
