@@ -26,6 +26,7 @@ function getTitleContent(){
 
 async function getRandomPokemon(array){
     let randomNr = getRndNumber(1006);
+        console.log(randomNr);
         await getPokemonFromApi (randomNr, array, 'allPokemons');
 }
 
@@ -146,18 +147,20 @@ async function setRandomPokemonToMainContainer (id) {
         randomPokemon = [];
     let contentRef = document.getElementById(id);
         await getRandomPokemon(randomPokemon);
-        contentRef.innerHTML = getRandomPokemonAddToCardsTemp(randomPokemon);
+        if (randomPokemon[0].id == undefined) {
+            setRandomPokemonToMainContainer ('random-pokemon-wrapper');
+        } else {
+            contentRef.innerHTML = getRandomPokemonAddToCardsTemp(randomPokemon);
+        }
 }
 
 
 function addPokemonToAllPokemonArray() {
-
     if (randomPokemonAlreadyAddedToArray == false) {
         allPokemons.unshift(randomPokemon[0]);
         randomPokemonAlreadyAddedToArray = true;
     renderSmallPokemonCards(allPokemons, 'all-cards');
     }
-    
 }
 
 async function get20Pokemons () {

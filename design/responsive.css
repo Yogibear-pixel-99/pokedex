@@ -1,3 +1,10 @@
+@media (max-width: 1450px) {
+    .top-sticky,
+    .bottom-sticky {
+        width: calc(100% - 36px);
+    }
+}
+
 @media (max-width: 1000px) {
     .search-button {
         padding: 0 8px;
@@ -5,7 +12,6 @@
     }
 
     .search-input {
-        /* width: 90%; */
         width:190px;
     }
 }
@@ -18,7 +24,6 @@
 
     .search-bar {
         flex-direction: column;
-        /* justify-content: center; */
     }
 
     .searched-cards {
@@ -47,7 +52,6 @@
 
     .select-type-name-wrapper {
         display: flex;
-        /* width: 20%; */
         justify-content: space-between;
         gap: 46px;
     }
@@ -136,11 +140,11 @@
     }
 
     .searched-cards {
-        margin: 20px;
+        margin: 0 20px 20px;
     }
 
     .random-pokemon-wrapper {
-        margin-bottom: 0;
+        margin-bottom: 24px;
     }
 
     .enter {
@@ -156,7 +160,7 @@
     }
 
     .searched-cards {
-        margin: 20px 10px;
+        margin: 0 20px 10px;
         padding: 20px;
     }
 
@@ -250,7 +254,7 @@
     }
 
     .searched-cards {
-        margin: 20px 0;
+        margin: 0 0 20px;
         padding: 20px;
         border-radius: 0;
     }
