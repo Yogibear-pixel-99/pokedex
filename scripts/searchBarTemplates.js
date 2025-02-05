@@ -5,6 +5,7 @@ function getHeaderSearchTemp () {
         onclick="stopBubbling(event)">
         <div id="search-bar" class="search-bar">
             <div class="search-wrapper">
+                <div class="search-button-input-wrapper">
                 <a href="#top">
                     <button 
                         id="search-button" 
@@ -18,35 +19,37 @@ function getHeaderSearchTemp () {
                     class="search-input" 
                     type="text" minlength="3" 
                     maxlength="20" value="" 
-                    placeholder="put in a name or a type">
+                    placeholder="name or a type">
+                </div>
+                    <div class="select-type-name-wrapper">
+                        <label 
+                        class="name-search-type"
+                        onclick="selectType()">
+                            <img id="check-type-color" class="check-img" src="./assets/img/logo.png">
+                            <input 
+                                type="radio" 
+                                name="sort-pokemon" 
+                                value="type"
+                                checked="checked" 
+                                id="radio-type">
+                        <span>Type</span>
+                    </label>
                     <label 
-                    class="name-search-type"
-                    onclick="selectType()">
-                        <img id="check-type-color" class="check-img" src="./assets/img/logo.png">
-                        <input 
-                            type="radio" 
-                            name="sort-pokemon" 
-                            value="type"
-                            checked="checked" 
-                            id="radio-type">
-                    <span>Type</span>
-                </label>
-                <label 
-                    class="name-search-type"
-                    onclick="selectName()"> 
-                        <img id="check-name-color" class="check-img greyscale" src="./assets/img/logo.png">
-                        <input 
-                            type="radio" 
-                            name="sort-pokemon" 
-                            value="name" 
+                        class="name-search-type"
+                        onclick="selectName()"> 
+                            <img id="check-name-color" class="check-img greyscale" src="./assets/img/logo.png">
+                            <input 
+                                type="radio" 
+                                name="sort-pokemon" 
+                                value="name" 
                              
-                            id="radio-name">
-                    <span>Name</span>
-                </label>
-                
+                                id="radio-name">
+                        <span>Name</span>
+                    </label>
+                </div>
             </div>
         <div class="search-wrapper filter-wrapper">
-                <select id="sort-stats-menu">
+                <select id="sort-stats-menu"class="sort-stats-menu search-button">
                     <option value="hp">HP</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
@@ -103,8 +106,8 @@ function nothingFoundTextTemp() {
 function minimumOfThreeCharsNeededTemp() {
     return `<div
                 class="nothing-found start-text">
-                    You have to type in a Minimum of 
-                    three charakters to search for pokemons!
+                    You have to type in a minimum of 
+                    three characters to search for Pokémon!
                 <button 
                     class="get-pokemon-button" 
                     onclick="hideContainer('searched-cards')">

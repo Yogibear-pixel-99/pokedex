@@ -10,9 +10,10 @@ let randomPokemonAlreadyAddedToArray = false;
 
 
 async function init(){
-    getTitleContent();
-    await getRandomPokemon(randomPokemon);
-    setPokemonImageTitle('title-pokemon');
+    enterCardsContent();
+    // getTitleContent();
+    // await getRandomPokemon(randomPokemon);
+    // setPokemonImageTitle('title-pokemon');
 }
 
 
@@ -145,11 +146,13 @@ async function setRandomPokemonToMainContainer (id) {
 
 
 function addPokemonToAllPokemonArray() {
+
     if (randomPokemonAlreadyAddedToArray == false) {
         allPokemons.unshift(randomPokemon[0]);
+        randomPokemonAlreadyAddedToArray = true;
     renderSmallPokemonCards(allPokemons, 'all-cards');
     }
-    randomPokemonAlreadyAddedToArray = true;
+    
 }
 
 async function get20Pokemons () {

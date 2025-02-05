@@ -95,7 +95,7 @@ body {
     100% {width: 150px;}
 }
 
-.animate-main-content {
+/* .animate-main-content {
     animation-name: enter-menu;
     animation-duration: 3s;
     animation-iteration-count: 1;
@@ -106,6 +106,6 @@ body {
     0% {transform: translateY(0);}
     50% {transform: translateY(100%);}
     100% {transform: translateY(0);}
-}
+} */
 
 

@@ -4,15 +4,15 @@ function getTitleContentTemp() {
                 class="title-container ">
                     <img 
                         class="pokemon-logo" 
-                        src="/assets/img/International_Pokémon_logo.svg.png" 
+                        src="./assets/img/International_Pokémon_logo.svg.png" 
                         alt="pokemon header">
                     <div>
                         <img 
                             class="by" 
-                            src="/assets/img/by.png">
+                            src="./assets/img/by.png">
                         <img 
                             class="name" 
-                            src="/assets/img/name.png" 
+                            src="./assets/img/name.png" 
                             alt="Joachim Pürcher">
                     </div>
                     <div 
@@ -26,11 +26,11 @@ function getTitleContentTemp() {
                                 <img 
                                     onclick="enterCardsContent()" 
                                     id="enter" class="enter" 
-                                    src="/assets/img/enterlarge.png">
+                                    src="./assets/img/enterlarge.png">
                             </div>
                             <img 
                                 class="pokeball-title" 
-                                src="/assets/img/pokebol-2898038_1280.png" 
+                                src="./assets/img/pokebol-2898038_1280.png" 
                                 alt="pokeball">
                     </div>
             </section>`
@@ -100,12 +100,12 @@ function getFooterButtonTemp () {
 function getStartTextTemp() {
     return `<div
                 class="nothing-found start-text">
-                    Welcome to the world off pokemon-cards. 
-                    Feel free to get 20 cards in a row or 20 cards by random. 
-                    You can search the cards listet below by type or name.
-                    You can sort the searched pokemons by diffrent stats. Highest first. 
-                    Click on a small card to expand and hover over the cardfooter, 
-                    to see the pokemon art design.
+                    Welcome to the world of Pokémon cards.
+                    Feel free to get 20 cards in a row or 10 random cards.
+                    You can search the card list below by type or name.
+                    You can sort the searched Pokémon by different stats, highest first.
+                    Click on a small card to expand it, and hover over the card footer
+                    to see the Pokémon's art design.
                 <button 
                     class="get-pokemon-button" 
                     onclick="hideContainer('searched-cards')">

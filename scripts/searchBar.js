@@ -1,6 +1,6 @@
 function searchPokemons (array) {
-    let userInput = document.getElementById('search-input').length;
-        userInput >= 3 ? searchRoutine(array) : displayErrorMessage();
+    let userInput = document.getElementById('search-input').value;
+        userInput.length >= 3 ? searchRoutine(array) : displayErrorMessage();
 }
 
 
