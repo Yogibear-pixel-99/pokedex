@@ -127,7 +127,7 @@ function getStatsPositionNumberInArray (userInput) {
 
 function displayValueInSmallCard (array, userInput) {
     let statsArrayPosition = getStatsPositionNumberInArray(userInput);
-    for (let valueIndex = 0; valueIndex < array.length; valueIndex++) {
+    for (let valueIndex = 0; valueIndex < Math.min(10, array.length); valueIndex++) {
         let contentRef = document.getElementById(`small-card-sorted-stat-wrapper${array[valueIndex].arrayname}${valueIndex}`);
             contentRef.innerHTML = getSmallCardSortedStatsTemp (array, valueIndex, statsArrayPosition);
     }

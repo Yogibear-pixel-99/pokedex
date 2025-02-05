@@ -57,9 +57,7 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
 
             catch (error) {
                 responseErrors.push(positionNr + ' not found');
-                console.log(positionNr + ' not found');
             }
-            console.log(array);
 }
 
 
