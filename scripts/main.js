@@ -26,7 +26,6 @@ function getTitleContent(){
 
 async function getRandomPokemon(array){
     let randomNr = getRndNumber(1006);
-        console.log(randomNr);
         await getPokemonFromApi (randomNr, array, 'allPokemons');
 }
 
