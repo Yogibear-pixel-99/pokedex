@@ -10,7 +10,7 @@
     padding: 16px;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 100;
     border: solid 3px var(--poke-logo-blue);
     border-radius: 20px;
     position: fixed;
