@@ -28,3 +28,25 @@ function stopAnimateSmallCardPokemon (array, id) {
         contentRef.src = array[id].pic;
    }
    
+
+function getCardColor(array){
+    return array.types[0];
+}
+
+
+function getSmallCardAbilitiesTemp(array){
+    let element = "";
+        for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+            element += `<div>${array[detailIndex].name}</div>`;
+    }
+    return element;
+}
+
+
+function getSmallCardTypesTemp(array) {
+    let element = "";
+        for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
+            element += `<div>${array[detailIndex]}</div>`;
+    }
+    return element;
+}

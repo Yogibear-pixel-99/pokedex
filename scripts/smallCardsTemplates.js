@@ -1,8 +1,5 @@
 function getSmallPokemonCardTemp(array, index, userInput){
-    
-    return `
-            <div 
-                
+    return `<div 
                 id="small-card-content${array[index].arrayname}${index}" 
                 class="${getCardColor(array[index])}-card 
                 small-card" 
@@ -18,53 +15,25 @@ function getSmallPokemonCardTemp(array, index, userInput){
                 <div class="small-card-powers-container">
                     <div class="powers-header">Powers</div>
                     <div>${getSmallCardAbilitiesTemp(array[index].abilities)}</div>
-                    
                 <div 
                     class="small-card-footer 
                     ${getCardColor(array[index])}-footer">
                     ${getSmallCardTypesTemp(array[index].types)}
                 </div>
                 <div id="small-card-sorted-stat-wrapper${array[index].arrayname}${index}" class="small-card-stat-wrapper stats-color-border-empty stats-border-${userInput} stats-color-border-${userInput}"></div>
-            </div> 
-           `
-}
-
-
-function getCardColor(array){
-    return array.types[0];
+            </div>`
 }
 
 
 function getSmallCardFunctions (array, index) {
-
-    return `
-        onclick="cardDetails(${array[index].arrayname}, ${index})" 
-        onmouseover="startAnimateSmallCardPokemon(${array[index].arrayname}, ${index})" 
-        onmouseout="stopAnimateSmallCardPokemon(${array[index].arrayname}, ${index})"`
-}
-
-
-function getSmallCardAbilitiesTemp(array){
-    let element = "";
-        for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
-            element += `<div>${array[detailIndex].name}</div>`;
-    }
-    return element;
-}
-
-
-function getSmallCardTypesTemp(array) {
-    let element = "";
-        for (let detailIndex = 0; detailIndex < array.length; detailIndex++) {
-            element += `<div>${array[detailIndex]}</div>`;
-    }
-    return element;
+    return `onclick="cardDetails(${array[index].arrayname}, ${index})" 
+            onmouseover="startAnimateSmallCardPokemon(${array[index].arrayname}, ${index})" 
+            onmouseout="stopAnimateSmallCardPokemon(${array[index].arrayname}, ${index})"`
 }
 
 
 function getSmallCardSortedStatsTemp (array, id, statsArrayPosition) {
-    return `
-                     <div>${array[id].stats[statsArrayPosition].name}</div>
+    return `<div>${array[id].stats[statsArrayPosition].name}</div>
                      <div 
                         class="small-stats-border-empty 
                         small-stats-color-border-${array[id].stats[statsArrayPosition].name}">

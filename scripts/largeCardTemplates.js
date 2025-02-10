@@ -49,20 +49,7 @@ function getLargePokemonCardTemp (array, id) {
 function getLargeCardPowersContainerTemp (array, id) {
     return `<div class="large-card-powers-container large-content-hide">
                 ${getLargeCardPowersDetailsTemp(array, id)}
-                    
             </div>`
-}
-
-
-function getLargeCardPowersDetailsTemp(array, id) {
-        let element = '';
-    for (let absIndex = 0; absIndex < array[id].abilities.length; absIndex++) {
-            element += `<div class="flex-ctr-spbtw abs-container">
-            <span class="abs-name">${array[id].abilities[absIndex].name}</span>
-            <span class="abs-text">${array[id].abilities[absIndex].text}</span>
-            </div>`        
-        }
-    return element
 }
 
 
@@ -100,13 +87,4 @@ function getLargeCardFooter (array, id) {
                         onmouseover="stopBubbling(event)">
                     </div>
             </div>`
-}
-
-
-function getLargeCardTypesTemp(array){
-    let element = "";
-    for (let detailIndex = 0; detailIndex < array.types.length; detailIndex++) {
-        element += `<div class="large-content-hide">${array.types[detailIndex]}</div>`;
-    }
-    return element;
 }
