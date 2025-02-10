@@ -46,7 +46,7 @@ function getCardsContentTemp() {
                 ${getAllCardsTemp()}               
             </div>     
                 ${getFooterButtonTemp()}   
-                ${getLargeCardContainerTemp()}
+                ${getlargeCardOverlayContainerTemp()}
                 ${getLoadingSpinnerTemp()}`
 }
 

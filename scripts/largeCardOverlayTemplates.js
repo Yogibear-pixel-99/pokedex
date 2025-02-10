@@ -1,4 +1,4 @@
-function getLargeCardContainerTemp () {
+function getlargeCardOverlayContainerTemp () {
     return `<div 
                 id="large-card-container" 
                 class="large-card-container" 
@@ -20,16 +20,16 @@ function getLargePokemonCardTemp (array, id) {
                          <div 
                              id="stats-container" 
                              class="stats-container large-content-hide">
-                                 ${getLargeCardStats(array, id)}
+                                 ${getlargeCardOverlayStats(array, id)}
                          </div>
                      <div class="empty"></div>
-                         ${getLargeCardPowersContainerTemp(array, id)}
-                         ${getLargeCardFooter(array, id)}    
+                         ${getlargeCardOverlayPowersContainerTemp(array, id)}
+                         ${getlargeCardOverlayFooter(array, id)}    
              </div>`
  }
  
  
- function getLargeCardStatsTemp(array, id, statsId) {
+ function getlargeCardOverlayStatsTemp(array, id, statsId) {
     return `<div class="large-details-wrapper">
                      <div>${array[id].stats[statsId].name}</div>
                      <div 
@@ -46,14 +46,14 @@ function getLargePokemonCardTemp (array, id) {
 }
 
 
-function getLargeCardPowersContainerTemp (array, id) {
+function getlargeCardOverlayPowersContainerTemp (array, id) {
     return `<div class="large-card-powers-container large-content-hide">
-                ${getLargeCardPowersDetailsTemp(array, id)}
+                ${getlargeCardOverlayPowersDetailsTemp(array, id)}
             </div>`
 }
 
 
-function getLargeCardFooter (array, id) {
+function getlargeCardOverlayFooter (array, id) {
     return `<div 
                 class="large-card-footer 
                 ${getCardColor(array[id])}-footer" 
@@ -66,7 +66,7 @@ function getLargeCardFooter (array, id) {
                         onmouseover="stopBubbling(event)">
                             <img class="arrow-button" src="./assets/icons/left-arrow-svgrepo-com.svg" alt="switch down">
                     </button>
-                    ${getLargeCardTypesTemp(array[id])}
+                    ${getlargeCardOverlayTypesTemp(array[id])}
                     <div 
                         id="pokemon-footer-name" 
                         class="pokemon-footer-name">

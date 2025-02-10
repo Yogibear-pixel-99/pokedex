@@ -1,8 +1,8 @@
 function cardDetails(array, id) {
     getClickEffect(array, id);
     setTimeout(() =>  disableCardContent (), 500);
-    setTimeout(() =>  displayLargeCardContainer(), 500);
-    getLargeCard(array, id);
+    setTimeout(() =>  displaylargeCardOverlayContainer(), 500);
+    getlargeCardOverlay(array, id);
     fillStatsBorderWithValue(array, id);
 } 
 
@@ -15,22 +15,22 @@ function getClickEffect(array, id) {
 }
 
 
-function displayLargeCardContainer(){
+function displaylargeCardOverlayContainer(){
     let contentRef = document.getElementById('large-card-container');
         contentRef.style.display = 'block';
 }
 
 
-function getLargeCard(array, id){
+function getlargeCardOverlay(array, id){
     let ref = document.getElementById('large-card-container');
         ref.innerHTML = getLargePokemonCardTemp(array, id);
 }
 
 
-function getLargeCardStats(array, id) {
+function getlargeCardOverlayStats(array, id) {
     let element = '';
         for (let statsCardIndex = 0; statsCardIndex < array[id].stats.length; statsCardIndex++) {
-            element += getLargeCardStatsTemp(array, id, statsCardIndex);
+            element += getlargeCardOverlayStatsTemp(array, id, statsCardIndex);
         }
     return element;
 }
@@ -90,13 +90,13 @@ function showFooterTypesOnHover() {
 };
 
 
-function closeLargeCard(){
-    hideLargeCardContainer ();
+function closelargeCardOverlay(){
+    hidelargeCardOverlayContainer ();
     enableCardContent ();
 }
 
 
-function hideLargeCardContainer () {
+function hidelargeCardOverlayContainer () {
     let contentRef = document.getElementById('large-card-container');
         contentRef.style.display = 'none';
 }
@@ -128,11 +128,11 @@ function checkIfPokemonIsOverpowerd (data, borderValueRef, valueIndex) {
 function switchDown (array, id) {
     if (id == 0) {
         id = array.length - 1;
-        getLargeCard(array, id);
+        getlargeCardOverlay(array, id);
         fillStatsBorderWithValue(array, id);
     } else {
         id--;
-        getLargeCard(array, id);
+        getlargeCardOverlay(array, id);
         fillStatsBorderWithValue(array, id);
         
 }
@@ -142,17 +142,17 @@ function switchDown (array, id) {
 function switchUp (array, id) {
     if (id == array.length - 1) {
         id = 0;
-        getLargeCard(array, id);
+        getlargeCardOverlay(array, id);
         fillStatsBorderWithValue(array, id);
     } else {
         id++;
-        getLargeCard(array, id);
+        getlargeCardOverlay(array, id);
         fillStatsBorderWithValue(array, id);
     }
 }
 
 
-function getLargeCardTypesTemp(array){
+function getlargeCardOverlayTypesTemp(array){
     let element = "";
     for (let detailIndex = 0; detailIndex < array.types.length; detailIndex++) {
         element += `<div class="large-content-hide">${array.types[detailIndex]}</div>`;
@@ -162,7 +162,7 @@ function getLargeCardTypesTemp(array){
 
 
 
-function getLargeCardPowersDetailsTemp(array, id) {
+function getlargeCardOverlayPowersDetailsTemp(array, id) {
     let element = '';
 for (let absIndex = 0; absIndex < array[id].abilities.length; absIndex++) {
         element += `<div class="flex-ctr-spbtw abs-container">
