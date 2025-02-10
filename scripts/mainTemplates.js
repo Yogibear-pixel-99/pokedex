@@ -82,12 +82,12 @@ function getFooterButtonTemp () {
             class="bottom-sticky" 
             onclick="stopBubbling(event)">
                 <div class="button-wrapper">
-                    <a href="#random-pokemon-wrapper"><button 
+                    <a href="#top"><button 
                         class="get-pokemon-button" 
                         onclick="get20Pokemons()">
                         Get 20 Pokemons
                     </button></a>
-                    <a href="#random-pokemon-wrapper"><button 
+                    <a href="#top"><button 
                         class="get-pokemon-button" 
                         onclick="get10RandomPokemons()">
                         Get 10 Random Pokemons

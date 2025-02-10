@@ -46,26 +46,17 @@
     height: 90%;
 }
 
-
 .large-card-bg-img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* animation-name: bg-large-card;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; */
     object-fit: contain;
     height: 100%;
     width: 100%;
     filter: opacity(10%);
     z-index: 100;
 }
-
-/* @keyframes bg-large-card {
-    from {filter: opacity(100%)}
-    to {filter: opacity(10%)}
-} */
 
 .large-card-show-image {
     filter: opacity(100%) !important;
@@ -221,6 +212,7 @@
     animation-duration: 4s;
     animation-iteration-count: infinite;
     z-index: 300;
+    cursor: url('../assets/icons/pokemon-icon2.png') 8 8, pointer;
 }
 
 @keyframes footer-blink {

@@ -66,7 +66,7 @@ function getLargeCardPowersDetailsTemp(array, id) {
 }
 
 
-function getLargeCardFooter (array, id,) {
+function getLargeCardFooter (array, id) {
     return `<div 
                 class="large-card-footer 
                 ${getCardColor(array[id])}-footer" 

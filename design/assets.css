@@ -60,6 +60,7 @@ a {
 
 button {
     cursor: url('../assets/icons/pokemon-icon2.png') 8 8, pointer;
+    transition-duration: 0ms !important;
 }
 
 label {
