@@ -10,14 +10,12 @@ let randomPokemonAlreadyAddedToArray = false;
 
 
 async function init(){
-    // enterCardsContent();
     getTitleContent();
     await getRandomPokemon(randomPokemon);
     setPokemonImageTitle('title-pokemon');
 }
 
 
-// Get title content
 function getTitleContent(){
     let contentRef = document.getElementById('main-container');
         contentRef.innerHTML = getTitleContentTemp();
@@ -32,11 +30,15 @@ async function getRandomPokemon(array){
 
 function setPokemonImageTitle(id) {
     let contentRef = document.getElementById(id);
+        if (randomPokemon.length !== 0) {
         contentRef.src = `${randomPokemon[0].artwork}`;
+        } else {
+            getRandomPokemon();
+            setPokemonImageTitle('title-pokemon')
+        }
 }
 
 
-// GET POKEMONS FROM API
 async function getPokemonFromApi (positionNr, array, arrayName) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
@@ -109,7 +111,6 @@ function getStats(data) {
 }
 
 
-// ENTER CARDS CONTENT
 async function enterCardsContent() {
         disableOverflow('body');
         playPiccachuSound();
@@ -146,7 +147,7 @@ async function setRandomPokemonToMainContainer (id) {
         randomPokemon = [];
     let contentRef = document.getElementById(id);
         await getRandomPokemon(randomPokemon);
-        if (randomPokemon[0].id == undefined) {
+        if (randomPokemon.length == 0) {
             setRandomPokemonToMainContainer ('random-pokemon-wrapper');
         } else {
             contentRef.innerHTML = getRandomPokemonAddToCardsTemp(randomPokemon);
