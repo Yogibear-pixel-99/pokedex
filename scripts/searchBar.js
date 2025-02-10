@@ -12,6 +12,7 @@ function displayErrorMessage () {
 
 
 function searchRoutine (array) {
+    hideContainer('all-cards');
     getUserSearchRequest(array);
     changeArrayNameInObjectForFunktionsId(searchedPokemons, 'arrayname', 'searchedPokemons');
     showContainer('searched-cards');
@@ -88,6 +89,7 @@ function checkIfSearchIsEmpty (array) {
 
 function sortPokemons (array) {
     let userInput = document.getElementById('sort-stats-menu').value;
+    hideContainer('all-cards');
     getUserSortRequest (array, userInput);
     showContainer('searched-cards');
     emptyContainer('searched-cards');

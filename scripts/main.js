@@ -43,7 +43,7 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
     let data = await response.json();
-        array.push(
+        array.unshift(
             {
                 id : data.id,
                 name : data.name,
@@ -165,6 +165,8 @@ function addPokemonToAllPokemonArray() {
 
 async function get20Pokemons () {
     startLoadingAndRenderingCards();
+    hideContainer('searched-cards');
+    showContainer('all-cards');
         for (let pokeIndex = offset + 1; pokeIndex < limit + 1; pokeIndex++) {
             await getPokemonFromApi(pokeIndex, allPokemons, 'allPokemons');
     }
@@ -174,6 +176,8 @@ async function get20Pokemons () {
 }
 
 async function get10RandomPokemons () {
+    hideContainer('searched-cards');
+    showContainer('all-cards');
     startLoadingAndRenderingCards();
         for (let pokeIndex = 0; pokeIndex < 10; pokeIndex++) {
             const number = getRndNumber (1026);

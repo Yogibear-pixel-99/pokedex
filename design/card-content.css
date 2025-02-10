@@ -4,7 +4,7 @@
 
 .all-cards {
     position: relative;
-    padding: 6px 40px 20px;
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -31,7 +31,7 @@
     position: relative;
     top: 0;
     margin-top: 160px;
-    margin-bottom: 26px;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,7 @@
 .searched-cards {
     background-color: var(--poke-logo-blue);
     border-radius: 10px;
-    margin: 40px;
+    margin: 40px 40px 140px;
     padding: 40px;
 }
 

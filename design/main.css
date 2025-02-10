@@ -9,6 +9,10 @@ html {
     padding: 0;
 }
 
+* {
+    transition: 500ms ease-in-out;
+}
+
 body {
     background-color: var(--main-bg-color);
     margin: 0;

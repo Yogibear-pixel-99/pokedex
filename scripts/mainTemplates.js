@@ -43,8 +43,7 @@ function getCardsContentTemp() {
             <div class="cards-wrapper" id="cards-wrapper">
                 ${getRandomPokemonTemp()}
                 ${getFiltertSearchTemp()}
-                ${getAllCardsTemp()}
-                
+                ${getAllCardsTemp()}               
             </div>     
                 ${getFooterButtonTemp()}   
                 ${getLargeCardContainerTemp()}
@@ -83,16 +82,16 @@ function getFooterButtonTemp () {
             class="bottom-sticky" 
             onclick="stopBubbling(event)">
                 <div class="button-wrapper">
-                    <button 
+                    <a href="#random-pokemon-wrapper"><button 
                         class="get-pokemon-button" 
                         onclick="get20Pokemons()">
                         Get 20 Pokemons
-                    </button>
-                    <button 
+                    </button></a>
+                    <a href="#random-pokemon-wrapper"><button 
                         class="get-pokemon-button" 
                         onclick="get10RandomPokemons()">
                         Get 10 Random Pokemons
-                    </button>
+                    </button></a>
                 </div>
             </div>`
 }

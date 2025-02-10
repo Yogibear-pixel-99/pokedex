@@ -28,6 +28,7 @@
 
     .searched-cards {
         margin-top: 20px;
+        margin-bottom: 120px;
     }
 
     .search-bar,
@@ -67,6 +68,11 @@
     .all-cards {
         padding-left: 20px;
         padding-right: 20px;
+        padding-top: 20px;
+    }
+
+    .get-pokemon-button {
+        width: 140px;
     }
 
     .search-wrapper {
@@ -136,15 +142,10 @@
 
     .random-pokemon-wrapper {
         margin-top: 230px;
-        margin-bottom: 20px;
     }
 
     .searched-cards {
-        margin: 0 20px 20px;
-    }
-
-    .random-pokemon-wrapper {
-        margin-bottom: 24px;
+        margin: 20px 20px 120px;
     }
 
     .enter {
@@ -160,7 +161,7 @@
     }
 
     .searched-cards {
-        margin: 0 20px 10px;
+        margin: 20px 20px 120px;
         padding: 20px;
     }
 
@@ -219,6 +220,10 @@
         align-items: center;
     }
 
+    .button-wrapper {
+        gap: 10px;
+    }
+
     .search-button-input-wrapper {
         display: flex;
         justify-content: space-between;
@@ -254,7 +259,7 @@
     }
 
     .searched-cards {
-        margin: 0 0 20px;
+        margin: 20px 0 120px;
         padding: 20px;
         border-radius: 0;
     }
@@ -274,6 +279,11 @@
     .small-card {
         width: 130px;
         padding: 8px;
+    }
+
+    .small-card-header {
+        flex-direction: column;
+        align-items: center;
     }
 
     .small-card-img-container {
@@ -299,7 +309,8 @@
     }
 
     .get-pokemon-button {
-        height: auto;
+        height: 57px;
+        width: 100px;
     }
 
     .small-card-img-container {
