@@ -84,7 +84,6 @@ function checkIfSearchIsEmpty (array) {
         showContainer ('searched-cards');
         if (array.length == 0) {
             contentRef.innerHTML = nothingFoundTextTemp ();
-            hideContainer('close-searched-cards-button');
         }
 }
 

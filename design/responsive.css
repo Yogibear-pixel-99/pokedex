@@ -10,13 +10,17 @@
         padding: 0 8px;
         width: auto;
     }
+}
 
+@media (max-width: 1080px) {
     .search-input {
         width:190px;
     }
 }
 
-@media (max-width: 890px) {
+
+
+@media (max-width: 990px) {
     .top-sticky,
     .bottom-sticky {
         padding: 6px;
@@ -235,7 +239,7 @@
     }
 
     .filter-wrapper {
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .select-type-name-wrapper {
