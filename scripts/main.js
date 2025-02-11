@@ -163,7 +163,7 @@ async function setRandomPokemonToMainContainer (id) {
 
 
 function addPokemonToAllPokemonArray() {
-    if (randomPokemonAlreadyAddedToArray == false) {
+    if (randomPokemonAlreadyAddedToArray == false && randomPokemon.length != 0) {
         allPokemons.unshift(randomPokemon[0]);
         randomPokemonAlreadyAddedToArray = true;
     renderSmallPokemonCards(allPokemons, 'all-cards');

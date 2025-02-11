@@ -39,6 +39,12 @@
     cursor: url('../assets/icons/pokemon-icon2.png') 8 8, pointer;
 }
 
+.random-info-text {
+    position: absolute;
+    right:0;
+    bottom: 0;
+}
+
 .nothing-found {
     font-family: montserrat, sans-serif;
     font-size: 20px;

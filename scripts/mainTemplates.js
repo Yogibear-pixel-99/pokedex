@@ -56,7 +56,7 @@ function getRandomPokemonTemp () {
                 id="random-pokemon-wrapper" 
                 class="random-pokemon-wrapper" 
                 onclick="addPokemonToAllPokemonArray()">
-            </div>`
+                </div>`
 }
 
 
@@ -100,12 +100,13 @@ function getFooterButtonTemp () {
 function getStartTextTemp() {
     return `<div
                 class="nothing-found start-text">
-                    Welcome to the world of Pokémon cards.
-                    Feel free to get 20 cards in a row or 10 random cards.
-                    You can search the card list below by type or name.
-                    You can sort the searched Pokémon by different stats, highest first.
-                    Click on a small card to expand it, and hover over the card footer
-                    to see the Pokémon's art design.
+                    Welcome to the world of Pokémon cards!
+                    Feel free to get 20 cards at once, 10 random cards or click on
+                    the random Pokémon picture to add it.
+                    You can search the cards list below by type or name.
+                    Sort the Pokémon you find by different stats, with the highest first.
+                    Click on a small card to expand it, and hover over the card footer 
+                    to see the Pokémon's artwork.
                 <button 
                     class="get-pokemon-button close-button" 
                     onclick="hideContainer('searched-cards')">

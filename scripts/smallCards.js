@@ -15,18 +15,38 @@ function checkMaxSearchableCards (array, pokemonIndex) {
 
 
 function startAnimateSmallCardPokemon (array, id) {
-    let contentRef = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
+    let contentRefNormal = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
+    let contentRefAnimate = document.getElementById(`small-card-pokemon-img-animate${array[id].arrayname}${id}`);
     let data = array[id].animation;
         if (data != null) {
-        contentRef.src = data;
+        contentRefNormal.classList.add('d-none');
+        contentRefAnimate.classList.remove('d-none');
     }
 }
      
 
 function stopAnimateSmallCardPokemon (array, id) {
-        let contentRef = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
-        contentRef.src = array[id].pic;
+    let contentRefNormal = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
+    let contentRefAnimate = document.getElementById(`small-card-pokemon-img-animate${array[id].arrayname}${id}`);
+    let data = array[id].animation;
+        if (data != null) {
+        contentRefNormal.classList.remove('d-none');
+        contentRefAnimate.classList.add('d-none');
+    }
    }
+// function startAnimateSmallCardPokemon (array, id) {
+//     let contentRef = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
+//     let data = array[id].animation;
+//         if (data != null) {
+//         contentRef.src = data;
+//     }
+// }
+     
+
+// function stopAnimateSmallCardPokemon (array, id) {
+//         let contentRef = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
+//         contentRef.src = array[id].pic;
+//    }
    
 
 function getCardColor(array){
