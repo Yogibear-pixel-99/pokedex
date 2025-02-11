@@ -1,0 +1,109 @@
+.flex-ctr-spbtw-40 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.flex-ctr-ctr-40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flex-ctr-spbtw-20 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flex-ctr-ctr-20 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flex-ctr-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-ctr-spbtw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p40 {
+    padding: 40px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.m40 {
+    margin: 40px;
+}
+
+.m20 {
+    margin: 20px;
+}
+
+.blur-grey-effect {
+    filter: grayscale(60%) blur(3px);
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.d-none {
+    display: none;
+}
+
+
+.highlight-overpowerd {
+    filter: brightness(120%)
+}
+
+.blink {
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {filter: brightness(100%) saturate(70%)}
+    80% {filter: brightness(130%) saturate(100%)}
+    85% {filter: brightness(100%) saturate(70%)}
+    90% {filter: brightness(130%) saturate(100%)}
+    95% {filter: brightness(100%) saturate(70%)}
+    100% {filter: brightness(130%) saturate(100%)}
+}
+
+
+.d-opacity-10 {
+    filter: opacity(10%);
+}
+
+
+.font-700 {
+    font-weight: 600;
+}
+
+.neutral-button {
+
+}

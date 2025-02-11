@@ -1,0 +1,75 @@
+:root {
+
+--hp-color: green;
+--attack-color:red;
+--defense-color: blue;
+--special-attack-color: purple;
+--special-defense-color: orange;
+--speed-color: yellow;
+
+}
+
+
+.stats-color-border-hp,
+.stats-color-border-attack,
+.stats-color-border-defense,
+.stats-color-border-special-attack,
+.stats-color-border-special-defense,
+.stats-color-border-speed {
+    border: solid 1px ;
+    border-radius: 20px;
+}
+
+
+
+.stats-color-border-hp {
+    border-color: var(--hp-color);
+}
+
+
+.stats-color-border-attack {
+    border-color: var(--attack-color);
+}
+
+
+.stats-color-border-defense {
+    border-color: var(--defense-color);
+}
+
+
+.stats-color-border-special-attack {
+    border-color: var(--special-attack-color);
+}
+
+.stats-color-border-special-defense {
+    border-color: var(--special-defense-color);
+}
+
+.stats-color-border-speed {
+    border-color: var(--speed-color);
+}
+
+
+.stats-color-border-filled-hp {
+    background-color: var(--hp-color);
+}
+
+.stats-color-border-filled-attack {
+    background-color: var(--attack-color);
+}
+
+.stats-color-border-filled-defense {
+    background-color: var(--defense-color);
+}
+
+.stats-color-border-filled-special-attack {
+    background-color: var(--special-attack-color);
+}
+
+.stats-color-border-filled-special-defense {
+    background-color: var(--special-defense-color);
+}
+
+.stats-color-border-filled-speed {
+    background-color: var(--speed-color);
+}

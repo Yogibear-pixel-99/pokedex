@@ -126,13 +126,7 @@ async function enterCardsContent() {
         setRandomPokemonToMainContainer('random-pokemon-wrapper');
         setInterval(() => setRandomPokemonToMainContainer('random-pokemon-wrapper'), 5000);
         await delay(1500);
-        enableOverflow('body');
-        setOnclickCloseLargeCardFunction(); 
-}
-
-
-function setOnclickCloseLargeCardFunction() {
-    body.setAttribute("onclick", "closelargeCardOverlay()")
+        enableOverflow('body');  
 }
 
 

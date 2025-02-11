@@ -1,0 +1,125 @@
+
+
+
+html {
+    scroll-behavior: smooth;
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+* {
+    transition: 350ms ease-in-out;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    margin: 0;
+}
+
+.copyright-text {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-family: montserrat;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--poke-logo-yellow);
+}
+
+.title-container {
+    position: relative;
+    top : 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100dvh;
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.pokemon-logo {
+    width: 700px;
+}
+
+.by {
+    width: 40px;
+    margin-bottom: 200px;
+    margin-right: 20px;
+}
+
+.name {
+    margin-bottom: 200px;
+    width: 400px;
+}
+
+.title-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-title-img {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    object-fit: cover;
+    width: 200px;
+}
+
+.pokeball-title {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+}
+
+.enter-wrapper {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.enter {
+    object-fit: contain;
+    width: 150px;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 40px;
+    animation-name: enterLarge;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes enterLarge {
+    0% {width: 150px;}
+    50% {width: 200px;}
+    100% {width: 150px;}
+}
+
+.animate-main-content {
+    animation-name: enter-menu;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+   
+}
+
+@keyframes enter-menu {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(100%);}
+    100% {transform: translateY(0);}
+}
+
+
