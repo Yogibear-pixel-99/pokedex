@@ -239,7 +239,7 @@
     }
 
     .filter-wrapper {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .select-type-name-wrapper {
