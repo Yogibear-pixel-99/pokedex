@@ -19,6 +19,7 @@ function searchRoutine (array) {
     emptyContainer('searched-cards');
     renderSmallPokemonCards(searchedPokemons, 'searched-cards');
     checkIfSearchIsEmpty(searchedPokemons);
+
 }
 
 
@@ -83,6 +84,7 @@ function checkIfSearchIsEmpty (array) {
         showContainer ('searched-cards');
         if (array.length == 0) {
             contentRef.innerHTML = nothingFoundTextTemp ();
+            hideContainer('close-searched-cards-button');
         }
 }
 
@@ -133,4 +135,10 @@ function displayValueInSmallCard (array, userInput) {
         let contentRef = document.getElementById(`small-card-sorted-stat-wrapper${array[valueIndex].arrayname}${valueIndex}`);
             contentRef.innerHTML = getSmallCardSortedStatsTemp (array, valueIndex, statsArrayPosition);
     }
+}
+
+
+function closeSearchedShowAllPokemons() {
+    hideContainer('searched-cards');
+    showContainer('all-cards');
 }

@@ -1,9 +1,10 @@
+const MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
+
 let randomPokemon = [];
 let allPokemons = [];
 let searchedPokemons = [];
 let sortedPokemons = [];
 let responseErrors = [];
-let MAIN_URL = 'https://pokeapi.co/api/v2/pokemon/'
 let limit = 20;
 let offset = 0;
 let randomPokemonAlreadyAddedToArray = false;
@@ -57,9 +58,9 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 arrayname : arrayName,
             })}
 
-            catch (error) {
-                responseErrors.push(positionNr + ' not found');
-            }
+        catch (error) {
+            responseErrors.push(positionNr + ' not found');
+        }
 }
 
 
@@ -88,12 +89,17 @@ async function getAbilities(data){
 
 
 async function getAbilitiesText(data, absIndex) {
+    try {
     let response = await fetch(data.abilities[absIndex].ability.url)
     let effectData = await response.json();
         if (effectData.effect_entries[0] != null) {
         return effectData.effect_entries[1].short_effect;
-        } else {return '';}
-
+        } else {
+            return '';
+        }
+    } catch (error) {
+        responseErrors.push(error);
+    }
 }   
 
 function getStats(data) {
@@ -126,6 +132,7 @@ async function enterCardsContent() {
 
 function playPiccachuSound () {
     let sound = new Audio('./assets/sounds/weird-pikachu-101090.mp3');
+        sound.volume = 0.2;
         sound.play();
 }
 
@@ -215,44 +222,24 @@ async function hideLoadingSpinner () {
 
 
 function disableCardContent () {
-    enableAllBlurGreyEffects ();
-    disableAllPointerEvents ();
-    disableOverflow ('body');
-}
-
-
-function enableCardContent () {
-    disableAllBlurGreyEffects ();
-    enableAllPointerEvents ();
-    enableOverflow ('body');
-}
-
-
-function enableAllPointerEvents () {
-    enablePointerEventOnSmallCards ();
-    enablePointerEvents ('search-bar');
-    enablePointerEvents ('get-pokemons-button-bar');
-}
-
-
-function disableAllPointerEvents () {
+    enableBlurGreyEffect ('cards-wrapper');
+    enableBlurGreyEffect ('header-search-bar');
+    enableBlurGreyEffect ('get-pokemons-button-bar');
+    disableOverflow('body');
     disablePointerEventOnSmallCards ();
     disablePointerEvents ('search-bar');
     disablePointerEvents ('get-pokemons-button-bar');
 }
 
 
-function enableAllBlurGreyEffects () {
-    enableBlurGreyEffect ('cards-wrapper');
-    enableBlurGreyEffect ('header-search-bar');
-    enableBlurGreyEffect ('get-pokemons-button-bar');
-}
-
-
-function disableAllBlurGreyEffects () {
+function enableCardContent () {
     disableBlurGreyEffect ('cards-wrapper');
     disableBlurGreyEffect ('header-search-bar');
     disableBlurGreyEffect ('get-pokemons-button-bar');
+    enableOverflow('body');
+    enablePointerEventOnSmallCards ();
+    enablePointerEvents('search-bar');
+    enablePointerEvents('get-pokemons-button-bar');
 }
 
 

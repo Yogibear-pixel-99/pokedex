@@ -57,6 +57,7 @@
     border-radius: 5px;
     width: auto;
     height: 46px;
+    min-width: 46px;
 }
 
 .search-button:hover {
@@ -153,4 +154,23 @@ background-color: var(--poke-logo-yellow);
 
 .greyscale {
     filter: grayscale(1);
+}
+
+.close-searched-button {
+    position: absolute;
+    top: 380px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--poke-logo-blue);
+    color: var(--poke-logo-yellow);
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+    padding-block: 0;
+    padding-inline: 0;
+}
+
+.close-searched-button:hover {
+    box-shadow: none;
 }

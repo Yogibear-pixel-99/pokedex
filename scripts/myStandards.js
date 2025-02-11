@@ -35,6 +35,11 @@ function emptyContainer(containerId) {
 }
 
 
+function togglePointerEvents (containerId) {
+    let contentRef = document.getElementById(`${containerId}`);
+        contentRef.classList.toggle('no-pointer-events');
+}
+
 function disablePointerEvents (containerId) {
     let contentRef = document.getElementById(`${containerId}`);
         contentRef.classList.add('no-pointer-events');
@@ -47,6 +52,11 @@ function enablePointerEvents (containerId) {
 }
 
 
+function toggleBlurGreyEffect (containerId) {
+    let cardsContentRef = document.getElementById(`${containerId}`);
+        cardsContentRef.classList.toggle('blur-grey-effect');
+}
+
 function enableBlurGreyEffect (containerId) {
     let cardsContentRef = document.getElementById(`${containerId}`);
         cardsContentRef.classList.add('blur-grey-effect');
@@ -58,6 +68,11 @@ function disableBlurGreyEffect (containerId) {
         cardsContentRef.classList.remove('blur-grey-effect');
 }
 
+
+function toggleOverflow (containerId) {
+    let bodyRef = document.getElementById(`${containerId}`);
+        bodyRef.classList.toggle('overflow-hidden');
+}
 
 function disableOverflow (containerId) {
     let bodyRef = document.getElementById(`${containerId}`);

@@ -72,6 +72,11 @@ function getHeaderSearchTemp () {
                                 sort all
                             </button>
                         </a>
+                        <button 
+                                class="search-button" 
+                                onclick="closeSearchedShowAllPokemons()">
+                                close
+                            </button>
                     </div>
             </div>
         </div>
