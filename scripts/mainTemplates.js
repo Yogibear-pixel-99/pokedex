@@ -84,13 +84,13 @@ function getFooterButtonTemp () {
                 <div class="button-wrapper">
                     <a href="#top"><button 
                         class="get-pokemon-button" 
-                        onclick="get20Pokemons()">
-                        Get 20 Pokemons
+                        onclick="get15Pokemons()">
+                        Get 15 Pokémons
                     </button></a>
                     <a href="#top"><button 
                         class="get-pokemon-button" 
                         onclick="get10RandomPokemons()">
-                        Get 10 Random Pokemons
+                        Get 10 random Pokémons
                     </button></a>
                 </div>
             </div>`

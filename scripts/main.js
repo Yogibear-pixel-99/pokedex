@@ -5,7 +5,7 @@ let allPokemons = [];
 let searchedPokemons = [];
 let sortedPokemons = [];
 let responseErrors = [];
-let limit = 20;
+let limit = 15;
 let offset = 0;
 let randomPokemonAlreadyAddedToArray = false;
 
@@ -64,7 +64,6 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 animation : getAnimation(data),
                 stats : getStats(data),
                 artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`,
-                weight : data.weight,
                 arrayname : arrayName,
             })}
 
@@ -196,15 +195,15 @@ function addPokemonToAllPokemonArray() {
     }
 }
 
-async function get20Pokemons () {
+async function get15Pokemons () {
     startLoadingAndRenderingCards();
     hideContainer('searched-cards');
     showContainer('all-cards');
         for (let pokeIndex = offset + 1; pokeIndex < limit + 1; pokeIndex++) {
             await getPokemonFromApi(pokeIndex, allPokemons, 'allPokemons');
     }
-    offset += 20;
-    limit += 20;
+    offset += 15;
+    limit += 15;
     finishLoadingAndRenderingCards();
 }
 
