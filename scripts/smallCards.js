@@ -18,7 +18,7 @@ function startAnimateSmallCardPokemon (array, id) {
     let contentRefNormal = document.getElementById(`small-card-pokemon-img${array[id].arrayname}${id}`);
     let contentRefAnimate = document.getElementById(`small-card-pokemon-img-animate${array[id].arrayname}${id}`);
     let data = array[id].animation;
-        if (data != null) {
+        if (data != "") {
         contentRefNormal.classList.add('d-none');
         contentRefAnimate.classList.remove('d-none');
     }

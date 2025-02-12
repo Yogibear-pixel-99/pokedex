@@ -9,9 +9,9 @@ html {
     padding: 0;
 }
 
-* {
-    transition: 350ms ease-in-out;
-}
+/* * {
+    transition: 200ms ease-in-out;
+} */
 
 body {
     background-color: var(--main-bg-color);

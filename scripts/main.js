@@ -12,8 +12,7 @@ let randomPokemonAlreadyAddedToArray = false;
 
 async function init(){
     getTitleContent();
-    await getRandomPokemon(randomPokemon);
-    setPokemonImageTitle('title-pokemon');
+    getTitlePokemonPicFromApi();
 }
 
 
@@ -40,6 +39,17 @@ function setPokemonImageTitle(id) {
 }
 
 
+async function getTitlePokemonPicFromApi(){
+    let randomNr = getRndNumber(1006);
+    let contentRef = document.getElementById('title-pokemon');
+        if (`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNr}.png` != null) {
+        contentRef.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomNr}.png`;
+        } else {
+            getTitlePokemonPicFromApi();
+        }
+}
+
+
 async function getPokemonFromApi (positionNr, array, arrayName) {
     try {
     let response = await fetch(MAIN_URL + positionNr);
@@ -51,7 +61,7 @@ async function getPokemonFromApi (positionNr, array, arrayName) {
                 types : getTypes(data),
                 pic : data.sprites.front_default,
                 abilities : await getAbilities(data),
-                animation : data.sprites.other.showdown.front_default,
+                animation : getAnimation(data),
                 stats : getStats(data),
                 artwork : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${positionNr}.png`,
                 weight : data.weight,
@@ -100,7 +110,17 @@ async function getAbilitiesText(data, absIndex) {
     } catch (error) {
         responseErrors.push(error);
     }
-}   
+}
+
+
+function getAnimation(data){
+    if (data.sprites.other.showdown.front_default == null) {
+        return '';
+    } else {
+        return data.sprites.other.showdown.front_default;
+    }
+}
+
 
 function getStats(data) {
     let element = [];
